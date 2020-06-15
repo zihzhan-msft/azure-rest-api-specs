@@ -157,6 +157,7 @@
         "description": "List of operations supported by the RP."
       },
       "Error": {
+        "type": "object",
         "properties": {
           "code": {
             "type": "string",
