@@ -113,6 +113,7 @@
         }
       },
       "StoragePoolRPOperation": {
+        "type": "object",
         "properties": {
           "name": {
             "type": "string",
@@ -140,6 +141,7 @@
         }
       },
       "StoragePoolOperationListResult": {
+        "type": "object",
         "properties": {
           "value": {
             "type": "array",
@@ -169,6 +171,7 @@
         }
       },
       "DiskPoolListResult": {
+        "type": "object",
         "properties": {
             "value": {
                 "type": "array",
@@ -199,6 +202,7 @@
         }
       },
       "DiskPoolPayload": {
+        "type": "object",
         "x-ms-azure-resource": true,
         "allOf": [
           {
@@ -218,6 +222,7 @@
         ]
       },
       "IscsiTargetList": {
+        "type": "object",
         "properties": {
             "value": {
                 "type": "array",
@@ -374,6 +379,7 @@
         }
       },
       "ArmTopLevelResourcePayload": {
+        "type": "object",
         "properties": {
           "location": {
             "type": "string",
