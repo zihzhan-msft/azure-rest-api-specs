@@ -71,10 +71,10 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools": {
       "get": {
         "tags": [
-          "StoragePools"
+          "DiskPools"
         ],
-        "operationId": "StoragePools_List",
-        "description": "Gets a list of StoragePools.",
+        "operationId": "DiskPools_List",
+        "description": "Gets a list of DiskPools.",
         "parameters": [
           {
             "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
@@ -107,10 +107,10 @@
   "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools/{diskPoolName}": {
     "put": {
       "tags": [
-        "StoragePools"
+        "DiskPools"
       ],
-      "operationId": "StoragePools_Create",
-      "description": "Create a new Storage Pool.",
+      "operationId": "DiskPools_Create",
+      "description": "Create a new Disk Pool.",
       "parameters": [
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
@@ -125,7 +125,7 @@
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
         },
         {
-          "$ref": "../../common/2020-03-15/definitions.json#/definitions/StoragePool"
+          "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
         }
       ],
       "responses": {
@@ -148,9 +148,9 @@
     },
     "patch": {
       "tags": [
-        "StoragePools"
+        "DiskPools"
       ],
-      "operationId": "StoragePools_Update",
+      "operationId": "DiskPools_Update",
       "description": "Update a Storage Pool.",
       "parameters": [
         {
@@ -189,10 +189,10 @@
     },
     "delete": {
       "tags": [
-        "StoragePools"
+        "DiskPools"
       ],
-      "operationId": "StoragePools_Delete",
-      "description": "Delete a Storage Pool.",
+      "operationId": "DiskPools_Delete",
+      "description": "Delete a Disk Pool.",
       "parameters": [
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
@@ -227,10 +227,10 @@
     },
     "get": {
       "tags": [
-        "StoragePools"
+        "DiskPools"
       ],
-      "operationId": "StoragePools_Get",
-      "description": "Get a Storage Pool.",
+      "operationId": "DiskPools_Get",
+      "description": "Get a Disk Pool.",
       "parameters": [
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersionP"
@@ -266,10 +266,10 @@
       }
     }
   },
-  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePools/diskPools/{diskPoolName}/iscsiTargets": {
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools/{diskPoolName}/iscsiTargets": {
     "get": {
       "description": "Get iSCSI Targets within a Disk Pool",
-      "operationId": "StoragePoolIscsiTargets_List",
+      "operationId": "DiskPoolIscsiTargets_List",
       "parameters": [
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
@@ -306,7 +306,7 @@
   "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools/{diskPoolName}/iscsiTargets/{targetName}": {
     "put": {
       "description": "Create an Iscsi target",
-      "operationId": "StoragePoolIscsiTargets_Create",
+      "operationId": "DiskPoolIscsiTargets_Create",
       "parameters": [
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
@@ -348,7 +348,7 @@
     },
     "patch": {
       "description": "",
-      "operationId": "StoragePoolIscsiTargets_Update",
+      "operationId": "DiskPoolIscsiTargets_Update",
       "parameters": [
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
@@ -428,7 +428,7 @@
   "/subscriptions/{subscriptionId}/providers/Microsoft.StoragePool/locations/{location}/operationresults/{operationId}": {
     "get": {
       "description": "Get Operation Status",
-      "operationId": "StoragePoolOperationStatus_Get",
+      "operationId": "DiskPoolOperationStatus_Get",
       "parameters": [
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
