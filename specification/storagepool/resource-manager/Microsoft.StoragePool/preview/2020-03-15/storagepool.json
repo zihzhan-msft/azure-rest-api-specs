@@ -233,7 +233,7 @@
       "description": "Get a Disk Pool.",
       "parameters": [
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersionP"
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
         },
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
