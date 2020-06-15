@@ -130,6 +130,7 @@
             "description": "Indicates the action type."
           },
           "display": {
+            "type": "object",
             "$ref": "#/definitions/StoragePoolOperationDisplay",
             "required": true
           },
