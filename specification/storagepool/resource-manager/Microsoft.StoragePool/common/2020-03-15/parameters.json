@@ -1,0 +1,84 @@
+{
+    "swagger": "2.0",
+    "security": [
+      {
+        "azure_auth": [
+          "user_impersonation"
+        ]
+      }
+    ],
+    "securityDefinitions": {
+      "azure_auth": {
+        "type": "oauth2",
+        "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "flow": "implicit",
+        "description": "Azure Active Directory OAuth2 Flow",
+        "scopes": {
+          "user_impersonation": "impersonate your user account"
+        }
+      }
+    },
+    "info": {
+      "version": "2020-03-15",
+      "title": "Parameters"
+    },
+    "parameters": {
+      "SubscriptionId": {
+        "name": "subscriptionId",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "description": "The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)"
+      },
+      "ApiVersion": {
+        "name": "api-version",
+        "in": "query",
+        "required": true,
+        "type": "string",
+        "description": "Client Api Version."
+      },
+      "ResourceGroupName": {
+        "name": "resourceGroupName",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "pattern": "^[-\\w\\._]+$",
+        "minLength": 1,
+        "maxLength": 90,
+        "x-ms-parameter-location": "method",
+        "description": "The name of the Resource group."
+      },
+      "DiskPoolName": {
+        "name": "diskPoolName",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "pattern":  "^[-\\w\\._]+$",
+        "minLength": 1,
+        "maxLength": 90,
+        "description": "The name of the Disk Pool"
+      },
+      "IscsiTargetName": {
+        "name": "iscsiTargetName",
+        "type": "string",
+        "required": true,
+        "in": "path",
+        "description": "The name of the iSCSI target",
+        "x-ms-parameter-location": "method"
+      },
+      "CorrelationId": {
+        "name": "x-ms-correlation-request-id",
+        "description": "Identifies this specific client request.",
+        "type": "string",
+        "required": false,
+        "in": "header",
+        "x-ms-parameter-location": "method"
+      },
+      "Referer": {
+        "name": "referer",
+        "description": "The full URI that the client connected to",
+        "required": true,
+        "in": "header"
+      }
+    }
+  }

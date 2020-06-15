@@ -1,0 +1,428 @@
+{
+    "swagger": "2.0",
+    "security": [
+      {
+        "azure_auth": [
+          "user_impersonation"
+        ]
+      }
+    ],
+    "securityDefinitions": {
+      "azure_auth": {
+        "type": "oauth2",
+        "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "flow": "implicit",
+        "description": "Azure Active Directory OAuth2 Flow",
+        "scopes": {
+          "user_impersonation": "impersonate your user account"
+        }
+      }
+    },
+    "info": {
+      "version": "2020-03-15",
+      "title": "Common types"
+    },
+    "definitions": {
+      "Plan": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "A publisher defined name of the 3rd Party Artifact that is being procured.",
+            "required": true
+          },
+          "publisher": {
+            "type": "string",
+            "description": "The publisher of the 3 rd Party Artifact that is being bought.",
+            "required": true
+          },
+          "product": {
+            "type": "string",
+            "description": "The 3rd Party artifact that is being procured.",
+            "required": true
+          },
+          "promotionalCode": {
+            "type": "string",
+            "description": "A publisher provided promotion code as provisioned in Data Market for the said product/artifact.",
+            "required": false
+          },
+          "version": {
+            "type": "string",
+            "description": "The version of the desired product/artifact. Ignored by commerce.",
+            "required": false
+          },
+          "managedBy": {
+            "type": "string",
+            "description": "Indicates if this resource is managed by another azure resource.",
+            "required": false
+          }
+        }
+      },
+      "Sku": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Required (if sku is specified), string. The name of the SKU. This is typically a letter + number code, such as A0 or P3.",
+            "required": true
+          },
+          "tier": {
+            "type": "string",
+            "description": "The tier of this particular SKU.",
+            "required": false
+          },
+          "size": {
+            "type": "string",
+            "required": false
+          },
+          "family": {
+            "type": "string",
+            "description": "If the service has different generations of hardware, for the same SKU, then that can be captured here.",
+            "required": false
+          },
+          "capacity": {
+            "type": "integer",
+            "description": "If the SKU supports scale out/in then the capacity integer should be included. If scale out/in is not possible for the resource this may be omitted.",
+            "required": false
+          }
+        }
+      },
+      "StoragePoolOperationDisplay": {
+        "type": "object",
+        "properties": {
+          "provider": {
+            "type": "string",
+            "description": "Localized friendly form of the resource provider name.",
+            "required": true
+          },
+          "resource": {
+            "type": "string",
+            "description": "Localized friendly form of the resource type related to this action/operation.",
+            "required": true
+          },
+          "operation": {
+            "type": "string",
+            "description": "Localized friendly name for the operation, as it should be shown to the user.",
+            "required": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Localized friendly description for the operation, as it should be shown to the user.",
+            "required": true
+          }
+        }
+      },
+      "StoragePoolRPOperation": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the operation being performed on this particular object",
+            "required": true
+          },
+          "isDataAction": {
+            "type": "boolean",
+            "description": "Indicates whether the operation applies to data-plane.",
+            "required": true
+          },
+          "actionType": {
+            "type": "string",
+            "description": "Indicates the action type."
+          },
+          "display": {
+            "$ref": "#/definitions/StoragePoolOperationDisplay",
+            "required": true
+          },
+          "origin": {
+            "type": "string",
+            "description": "The intended executor of the operation; governs the display of the operation in the RBAC UX and the audit logs UX.",
+            "required": false
+          }
+        }
+      },
+      "StoragePoolOperationListResult": {
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/StoragePoolRPOperation"
+            }
+          },
+          "nextLink": {
+            "type": "string",
+            "required": false
+          }
+        },
+        "description": "List of operations supported by the RP."
+      },
+      "ErrorResponse": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Indicates the status code for the error. Required",
+            "required": true
+          },
+          "message": {
+            "type": "string",
+            "description": "Indicates what error occured. Required.",
+            "required": true
+          }
+        }
+      },
+      "DiskPoolListResult": {
+        "properties": {
+            "value": {
+                "type": "array",
+                "items": "#definitions/DiskPoolPayload"
+            },
+            "nextLink": {
+                "type": "string",
+                "required": "false"
+            }
+        }
+      },
+      "DiskPoolPayloadProperties": {
+        "type": "object",
+        "properties": {
+            "diskPool": {
+                "type": "object",
+                "$ref": "#/definitions/DiskPool",
+                "required": true
+            },
+            "provisioningState": {
+                "type": "string",
+                "description": ""
+            },
+            "comment": {
+                "type": "string",
+                "description": ""
+            }
+        }
+      },
+      "DiskPoolPayload": {
+        "x-ms-azure-resource": true,
+        "allOf": [
+          {
+            "$ref": "#/definitions/ArmTopLevelResourcePayload"
+          },
+          {
+            "properties": {
+              "type": "object",
+              "properties": {
+                  "properties": {
+                      "type": "object",
+                      "$ref": "#definitions/DiskPoolPayloadProperties"
+                  }
+              }
+            }
+          }
+        ]
+      },
+      "IscsiTargetList": {
+        "properties": {
+            "value": {
+                "type": "array",
+                "items": "#definitions/IscsiTargetPayload"
+            },
+            "nextLink": {
+                "type": "string",
+                "required": "false"
+            }
+        }
+      },
+      "IscsiTargetPayload": {
+        "x-ms-azure-resource": true,
+        "type": "object",
+        "properties": {
+          "initiatorIqn": {
+            "type": "string",
+            "required": true,
+            "minLength": 5,
+            "maxLength": 223
+          },
+          "targetIqn": {
+            "type": "string",
+            "required": true
+          },
+          "username": {
+            "type": "string",
+            "required": true,
+            "minLength": 7,
+            "maxLength": 128
+          },
+          "password": {
+            "type": "string",
+            "required": true,
+            "minLength": 12,
+            "maxLength": 512
+          },
+          "luns": {
+            "$ref": "#/definitions/IscsiLunList",
+            "required": true
+          }
+        }
+      },
+      "IscsiLun": {
+        "type": "object",
+        "properties": {
+          "lun": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 63,
+            "required": true,
+            "description": ""
+          },
+          "managedDiskAzureResourceId": {
+            "type": "string",
+            "required": true,
+            "description": "Unique Azure resource id of the managed disk. Required."
+          }
+        }
+      },
+      "IscsiLunList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/IscsiLun"
+        },
+        "description": "Lun list to be exposed through the Iscsi target. Required",
+        "required": true,
+        "minLength": 1,
+        "maxLength": 8
+      },
+      "Disk": {
+        "type": "object",
+        "description": "Managed disk to attach to the DiskPool. Required.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique Azure resource id of the managed disk. Required.",
+            "required": true
+          }
+        }
+      },
+      "DiskList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Disk"
+        },
+        "description": "List of Azure managed disks to attach to a DiskPool",
+        "minLength": 1,
+        "maxLength": 15
+      },
+      "DiskPool": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name for the Disk Pool. Required.",
+            "minLength": 8,
+            "maxLength": 30,
+            "required": true
+          },
+          "disks": {
+            "$ref": "#/definitions/DiskList",
+            "required": true
+          }
+        }
+      },
+      "OperationStatusPayload": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string",
+                "description": "Unique id of the operation.",
+                "required": false
+            },
+            "name": {
+                "type": "string",
+                "description": "Last segment of the operation id.",
+                "required": false
+            },
+            "status": {
+                "type": "string",
+                "enum": [
+                    "Succeeded",
+                    "Failed",
+                    "Cancelled",
+                    "In progress"
+                ],
+                "x-ms-enum": {
+                    "name": "OperationStatus",
+                    "modelAsString": false
+                },
+                "required": true
+            },
+            "startTime": {
+                "type": "string",
+                "description": "DateLiteral using ISO8601, per 1API guidelines.",
+                "required": false
+            },
+            "endTime": {
+                "type": "string",
+                "description": "DateLiteral using ISO8601, per 1API guidelines.",
+                "required": false
+            },
+            "percentComplete": {
+                "type": "integer",
+                "description": "Double between 0 and 100.",
+                "required": false
+            },
+            "error": {
+                "type": "object",
+                "$ref": "#/definitions/Error"
+            }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "description": "",
+        "properties":{
+          "code": {
+            "type": "string",
+            "description": "http error status"
+          },
+          "message": {
+            "type": "string",
+            "description": "error message"
+          }
+        }
+      },
+      "ArmTopLevelResourcePayload": {
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "Required. Gets or sets the location of the resource. This will be one of the supported and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a resource cannot be changed once it is created, but if an identical geo region is specified on update, the request will succeed."
+          },
+          "tags": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Gets or sets a list of key value pairs that describe the resource. These tags can be used for viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key with a length no greater than 128 characters and a value with a length no greater than 256 characters."
+          },
+          "sku": {
+            "$ref": "#/definitions/Sku",
+            "description": "Required. Gets or sets the SKU name."
+          },
+          "plan": {
+            "$ref": "#/definitions/Plan",
+            "description": "Required. Gets or sets the SKU name."
+          },
+          "kind": {
+            "type": "string",
+            "description": "Required. Indicates the type of storage account.",
+            "enum": [
+            ],
+            "x-ms-enum": {
+              "name": "Kind",
+              "modelAsString": true
+            }
+          },
+          "managedBy": {
+            "type": "string",
+            "description": "Indicates if this resource is managed by another azure resource."
+          }
+        }
+      }
+    }
+  }

@@ -2,19 +2,27 @@
   "swagger": "2.0",
   "info": {
     "version": "2020-03-15",
-    "title": "storagepool",
-    "description": "Description of the new service",
+    "title": "StoragePoolManagement",
+    "description": "Exposes Azure Managed Disks as targets through a storage protocol",
     "x-ms-code-generation-settings": {
       "name": "storagepoolClient"
     }
   },
   "host": "management.azure.com",
-  "schemes": ["https"],
-  "consumes": ["application/json"],
-  "produces": ["application/json"],
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
   "security": [
     {
-      "azure_auth": ["user_impersonation"]
+      "azure_auth": [
+        "user_impersonation"
+      ]
     }
   ],
   "securityDefinitions": {
@@ -29,104 +37,454 @@
     }
   },
   "paths": {
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/operations": {
+    "/providers/Microsoft.StoragePool/operations": {
       "get": {
-        "tags": ["Tag1"],
-        "operationId": "OperationGroup_Get",
-        "x-ms-examples": {
-          "BatchAccountDelete": { "$ref": "./examples/OperationGroupGet.json" }
-        },
-        "description": "This is a sample get operation, please see guidelines in azure-rest-api-specs repository for more info",
+        "tags": [
+          "StoragePoolOperations"
+        ],
+        "operationId": "Operations_List",
+        "description": "Gets a list of StoragePool operations.",
         "parameters": [
           {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/ResourceGroupNameParameter"
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
           }
         ],
         "responses": {
           "200": {
-            "description": "Describe the result of a successful operation.",
+            "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Result"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/StoragePoolOperationListResult"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": "Error from the RP",
             "schema": {
-              "$ref": "#/definitions/ErrorResponse"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
             }
           }
-        }
-      }
-    }
-  },
-  "definitions": {
-    "Result": {
-      "description": "Sample result definition",
-      "properties": {
-        "sampleProperty": {
-          "type": "string",
-          "description": "Sample property of type string"
+        },
+        "x-ms-pageable": {
+          "nextLinkName": null
         }
       }
     },
-    "ErrorResponse": {
-      "description": "Error response.",
-      "properties": {
-        "error": {
-          "$ref": "#/definitions/ErrorDefinition",
-          "description": "The error details."
-        }
-      }
-    },
-    "ErrorDefinition": {
-      "description": "Error definition.",
-      "properties": {
-        "code": {
-          "description": "Service specific error code which serves as the substatus for the HTTP error code.",
-          "type": "string",
-          "readOnly": true
-        },
-        "message": {
-          "description": "Description of the error.",
-          "type": "string",
-          "readOnly": true
-        },
-        "details": {
-          "description": "Internal error details.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ErrorDefinition"
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools": {
+      "get": {
+        "tags": [
+          "StoragePools"
+        ],
+        "operationId": "StoragePools_List",
+        "description": "Gets a list of StoragePools.",
+        "parameters": [
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
           },
-          "readOnly": true
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolListResult"
+            }
+          },
+          "default": {
+            "description": "Error from the RP",
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+          }
+        }
+      },
+      "x-ms-pageable": {
+        "nextLinkName": "nextLink"
+      }
+    }
+  },
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools/{diskPoolName}": {
+    "put": {
+      "tags": [
+        "StoragePools"
+      ],
+      "operationId": "StoragePools_Create",
+      "description": "Create a new Storage Pool.",
+      "parameters": [
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+        },
+        {
+          "$ref": "../../common/2020-03-15/definitions.json#/definitions/StoragePool"
+        }
+      ],
+      "responses": {
+        "202": {
+          "description": "Accepted",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
+          }
+        },
+        "default": {
+          "description": "Error from the RP",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+          }
+        }
+      },
+      "x-ms-long-running-operation": true,
+      "x-ms-examples": {
+        "Create or update a Disk Pool.": {
+          "$ref": ""
+        }
+      }
+    },
+    "patch": {
+      "tags": [
+        "StoragePools"
+      ],
+      "operationId": "StoragePools_Update",
+      "description": "Update a Storage Pool.",
+      "parameters": [
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+        },
+        {
+          "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
+        }
+      ],
+      "responses": {
+        "202": {
+          "description": "Accepted",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
+          }
+        },
+        "default": {
+          "description": "Error from the RP",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+          }
+        }
+      },
+      "x-ms-long-running-operation": true,
+      "x-ms-examples": {
+        "Create a Disk Pool.": {
+          "$ref": ""
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "StoragePools"
+      ],
+      "operationId": "StoragePools_Delete",
+      "description": "Delete a Storage Pool.",
+      "parameters": [
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+        }
+      ],
+      "responses": {
+        "202": {
+          "description": "Accepted",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPool"
+          }
+        },
+        "default": {
+          "description": "Error from the RP",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+          }
+        }
+      },
+      "x-ms-long-running-operation": true,
+      "x-ms-examples": {
+        "Delete a Disk Pool.": {
+          "$ref": ""
+        }
+      }
+    },
+    "get": {
+      "tags": [
+        "StoragePools"
+      ],
+      "operationId": "StoragePools_Get",
+      "description": "Get a Storage Pool.",
+      "parameters": [
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersionP"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetName"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTarget"
+          }
+        },
+        "default": {
+          "description": "Error from the RP",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+          }
+        }
+      },
+      "x-ms-examples": {
+        "Get an iSCSI Target.": {
+          "$ref": ""
         }
       }
     }
   },
-  "parameters": {
-    "SubscriptionIdParameter": {
-      "name": "subscriptionId",
-      "in": "path",
-      "required": true,
-      "type": "string",
-      "description": "The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)"
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePools/diskPools/{diskPoolName}/iscsiTargets": {
+    "get": {
+      "description": "Get iSCSI Targets within a Disk Pool",
+      "operationId": "StoragePoolIscsiTargets_List",
+      "parameters": [
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetList"
+          }
+        },
+        "default": {
+          "description": "Error from the RP",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+          }
+        }
+      },
+      "x-ms-pageable": {
+        "nextLinkName": "nextLink"
+      }
+    }
+  },
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools/{diskPoolName}/iscsiTargets/{targetName}": {
+    "put": {
+      "description": "Create an Iscsi target",
+      "operationId": "StoragePoolIscsiTargets_Create",
+      "parameters": [
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+        },
+        {
+          "$ref": "../../common/v1/parameters.json#/parameters/ResourceGroupName"
+        },
+        {
+          "$ref": "../../common/v1/parameters.json#/parameters/DiskPoolName"
+        },
+        {
+          "$ref": "../../common/v1/parameters.json#/parameters/IscsiTargetName"
+        },
+        {
+          "$ref": "../../common/v1/definitions.json#/definitions/IscsiTargetPayload"
+        }
+      ],
+      "responses": {
+        "202": {
+          "description": "Accepted",
+          "schema": {
+            "$ref": "../../common/v1/definitions.json#/definitions/IscsiTargetPayload"
+          }
+        },
+        "default": {
+          "description": "Error from the RP",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+          }
+        }
+      },
+      "x-ms-long-running-operation": true,
+      "x-ms-examples": {
+        "Create an iSCSI target.": {
+          "$ref": ""
+        }
+      }
     },
-    "ResourceGroupNameParameter": {
-      "name": "resourceGroupName",
-      "in": "path",
-      "required": true,
-      "type": "string",
-      "description": "The name of the resource group.",
-      "x-ms-parameter-location": "method"
+    "patch": {
+      "description": "",
+      "operationId": "StoragePoolIscsiTargets_Update",
+      "parameters": [
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+        },
+        {
+          "$ref": "../../common/v1/parameters.json#/parameters/ResourceGroupName"
+        },
+        {
+          "$ref": "../../common/v1/parameters.json#/parameters/DiskPoolName"
+        },
+        {
+          "$ref": "../../common/v1/parameters.json#/parameters/IscsiTargetName"
+        },
+        {
+          "$ref": "../../common/v1/definitions.json#/definitions/IscsiTargetPayload"
+        }
+      ],
+      "responses": {
+        "202": {
+          "description": "Accepted",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
+          }
+        },
+        "default": {
+          "description": "Error from the RP",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+          }
+        }
+      },
+      "x-ms-long-running-operation": true,
+      "x-ms-examples": {
+        "Update a Disk Pool.": {
+          "$ref": ""
+        }
+      }
     },
-    "ApiVersionParameter": {
-      "name": "api-version",
-      "in": "query",
-      "required": true,
-      "type": "string",
-      "description": "The API version to be used with the HTTP request."
+    "delete": {
+      "responses": {
+        "202": {
+          "description": "Accepted"
+        },
+        "default": {
+          "description": "Error from the RP",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+          }
+        }
+      },
+      "x-ms-long-running-operation": true,
+      "x-ms-examples": {
+        "Delete a Disk Pool.": {
+          "$ref": ""
+        }
+      }
+    },
+    "get": {
+      "responses": {
+        "202": {
+          "description": "Accepted",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
+          }
+        },
+        "default": {
+          "description": "Error from the RP",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+          }
+        }
+      },
+      "x-ms-examples": {
+        "Get a Disk Pool.": {
+          "$ref": ""
+        }
+      }
+    }
+  },
+  "/subscriptions/{subscriptionId}/providers/Microsoft.StoragePool/locations/{location}/operationresults/{operationId}": {
+    "get": {
+      "description": "Get Operation Status",
+      "operationId": "StoragePoolOperationStatus_Get",
+      "parameters": [
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/Location"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/OperationId"
+        }
+      ],
+      "responses": {
+        "202": {
+          "description": "Accepted",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/OperationStatusPayload"
+          }
+        },
+        "default": {
+          "description": "Error from the RP",
+          "schema": {
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+          }
+        }
+      },
+      "x-ms-examples": {
+        "Get Operation Status.": {
+          "$ref": ""
+        }
+      }
     }
   }
 }
