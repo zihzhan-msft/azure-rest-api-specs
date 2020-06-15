@@ -211,7 +211,7 @@
         "202": {
           "description": "Accepted",
           "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPool"
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
           }
         },
         "default": {
