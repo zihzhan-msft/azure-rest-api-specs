@@ -76,6 +76,7 @@
       },
       "Referer": {
         "name": "referer",
+        "type": "string",
         "description": "The full URI that the client connected to",
         "required": true,
         "in": "header"
