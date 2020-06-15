@@ -144,9 +144,6 @@
       },
       "x-ms-long-running-operation": true,
       "x-ms-examples": {
-        "Create or update a Disk Pool.": {
-          "$ref": ""
-        }
       }
     },
     "patch": {
@@ -188,9 +185,6 @@
       },
       "x-ms-long-running-operation": true,
       "x-ms-examples": {
-        "Create a Disk Pool.": {
-          "$ref": ""
-        }
       }
     },
     "delete": {
@@ -229,9 +223,6 @@
       },
       "x-ms-long-running-operation": true,
       "x-ms-examples": {
-        "Delete a Disk Pool.": {
-          "$ref": ""
-        }
       }
     },
     "get": {
@@ -272,9 +263,6 @@
         }
       },
       "x-ms-examples": {
-        "Get an iSCSI Target.": {
-          "$ref": ""
-        }
       }
     }
   },
@@ -355,9 +343,7 @@
       },
       "x-ms-long-running-operation": true,
       "x-ms-examples": {
-        "Create an iSCSI target.": {
-          "$ref": ""
-        }
+       
       }
     },
     "patch": {
@@ -399,9 +385,7 @@
       },
       "x-ms-long-running-operation": true,
       "x-ms-examples": {
-        "Update a Disk Pool.": {
-          "$ref": ""
-        }
+       
       }
     },
     "delete": {
@@ -418,9 +402,7 @@
       },
       "x-ms-long-running-operation": true,
       "x-ms-examples": {
-        "Delete a Disk Pool.": {
-          "$ref": ""
-        }
+        
       }
     },
     "get": {
@@ -439,9 +421,7 @@
         }
       },
       "x-ms-examples": {
-        "Get a Disk Pool.": {
-          "$ref": ""
-        }
+        
       }
     }
   },
@@ -481,9 +461,6 @@
         }
       },
       "x-ms-examples": {
-        "Get Operation Status.": {
-          "$ref": ""
-        }
       }
     }
   }

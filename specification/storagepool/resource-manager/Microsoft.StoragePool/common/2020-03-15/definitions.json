@@ -154,7 +154,7 @@
         },
         "description": "List of operations supported by the RP."
       },
-      "ErrorResponse": {
+      "Error": {
         "properties": {
           "code": {
             "type": "string",
@@ -371,20 +371,6 @@
                 "type": "object",
                 "$ref": "#/definitions/Error"
             }
-        }
-      },
-      "Error": {
-        "type": "object",
-        "description": "",
-        "properties":{
-          "code": {
-            "type": "string",
-            "description": "http error status"
-          },
-          "message": {
-            "type": "string",
-            "description": "error message"
-          }
         }
       },
       "ArmTopLevelResourcePayload": {
