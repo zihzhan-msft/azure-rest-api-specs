@@ -307,23 +307,23 @@
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
         },
         {
-          "$ref": "../../common/v1/parameters.json#/parameters/ResourceGroupName"
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
         },
         {
-          "$ref": "../../common/v1/parameters.json#/parameters/DiskPoolName"
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
         },
         {
-          "$ref": "../../common/v1/parameters.json#/parameters/IscsiTargetName"
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetName"
         },
         {
-          "$ref": "../../common/v1/definitions.json#/definitions/IscsiTargetPayload"
+          "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
         }
       ],
       "responses": {
         "202": {
           "description": "Accepted",
           "schema": {
-            "$ref": "../../common/v1/definitions.json#/definitions/IscsiTargetPayload"
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
           }
         },
         "default": {
@@ -346,16 +346,16 @@
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
         },
         {
-          "$ref": "../../common/v1/parameters.json#/parameters/ResourceGroupName"
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
         },
         {
-          "$ref": "../../common/v1/parameters.json#/parameters/DiskPoolName"
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
         },
         {
-          "$ref": "../../common/v1/parameters.json#/parameters/IscsiTargetName"
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetName"
         },
         {
-          "$ref": "../../common/v1/definitions.json#/definitions/IscsiTargetPayload"
+          "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
         }
       ],
       "responses": {
