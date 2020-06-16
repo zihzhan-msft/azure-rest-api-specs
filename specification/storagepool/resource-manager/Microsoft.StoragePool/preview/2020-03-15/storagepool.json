@@ -181,7 +181,7 @@
           }
         }
       },
-      "x-ms-long-running-operation": true,
+      "x-ms-long-running-operation": true
     },
     "delete": {
       "tags": [
