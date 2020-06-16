@@ -142,9 +142,7 @@
           }
         }
       },
-      "x-ms-long-running-operation": true,
-      "x-ms-examples": {
-      }
+      "x-ms-long-running-operation": true
     },
     "patch": {
       "tags": [
@@ -184,8 +182,6 @@
         }
       },
       "x-ms-long-running-operation": true,
-      "x-ms-examples": {
-      }
     },
     "delete": {
       "tags": [
@@ -221,9 +217,7 @@
           }
         }
       },
-      "x-ms-long-running-operation": true,
-      "x-ms-examples": {
-      }
+      "x-ms-long-running-operation": true
     },
     "get": {
       "tags": [
@@ -261,8 +255,6 @@
             "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
           }
         }
-      },
-      "x-ms-examples": {
       }
     }
   },
@@ -341,10 +333,7 @@
           }
         }
       },
-      "x-ms-long-running-operation": true,
-      "x-ms-examples": {
-       
-      }
+      "x-ms-long-running-operation": true
     },
     "patch": {
       "description": "",
@@ -383,10 +372,7 @@
           }
         }
       },
-      "x-ms-long-running-operation": true,
-      "x-ms-examples": {
-       
-      }
+      "x-ms-long-running-operation": true
     },
     "delete": {
       "responses": {
@@ -400,10 +386,7 @@
           }
         }
       },
-      "x-ms-long-running-operation": true,
-      "x-ms-examples": {
-        
-      }
+      "x-ms-long-running-operation": true
     },
     "get": {
       "responses": {
@@ -419,9 +402,6 @@
             "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
           }
         }
-      },
-      "x-ms-examples": {
-        
       }
     }
   },
@@ -459,8 +439,6 @@
             "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
           }
         }
-      },
-      "x-ms-examples": {
       }
     }
   }
