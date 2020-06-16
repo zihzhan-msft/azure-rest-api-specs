@@ -56,14 +56,14 @@
         "pattern":  "^[-\\w\\._]+$",
         "minLength": 1,
         "maxLength": 90,
-        "description": "The name of the Disk Pool"
+        "description": "The name of the Disk Pool."
       },
       "IscsiTargetName": {
         "name": "iscsiTargetName",
         "type": "string",
         "required": true,
         "in": "path",
-        "description": "The name of the iSCSI target",
+        "description": "The name of the iSCSI target.",
         "x-ms-parameter-location": "method"
       },
       "OperationId": {
@@ -71,7 +71,15 @@
         "type": "string",
         "required": true,
         "in": "path",
-        "decription": "The unique uuid of an operation",
+        "decription": "The unique uuid of an operation.",
+        "x-ms-parameter-location": "method"
+      },
+      "Location": {
+        "name": "location",
+        "type": "string",
+        "required": true,
+        "in": "path",
+        "decription": "The location of the resource.",
         "x-ms-parameter-location": "method"
       },
       "CorrelationId": {
