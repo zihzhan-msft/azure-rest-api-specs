@@ -66,6 +66,14 @@
         "description": "The name of the iSCSI target",
         "x-ms-parameter-location": "method"
       },
+      "OperationId": {
+        "name": "operationId",
+        "type": "string",
+        "required": true,
+        "in": "path",
+        "decription": "The unique uuid of an operation",
+        "x-ms-parameter-location": "method"
+      },
       "CorrelationId": {
         "name": "x-ms-correlation-request-id",
         "description": "Identifies this specific client request.",
