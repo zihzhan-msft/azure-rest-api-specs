@@ -25,105 +25,107 @@
     "definitions": {
       "Plan": {
         "type": "object",
+        "required": [
+          "name",
+          "publisher",
+          "product"
+        ],
         "properties": {
           "name": {
             "type": "string",
-            "description": "A publisher defined name of the 3rd Party Artifact that is being procured.",
-            "required": true
+            "description": "A publisher defined name of the 3rd Party Artifact that is being procured."
           },
           "publisher": {
             "type": "string",
-            "description": "The publisher of the 3 rd Party Artifact that is being bought.",
-            "required": true
+            "description": "The publisher of the 3 rd Party Artifact that is being bought."
           },
           "product": {
             "type": "string",
-            "description": "The 3rd Party artifact that is being procured.",
-            "required": true
+            "description": "The 3rd Party artifact that is being procured."
           },
           "promotionalCode": {
             "type": "string",
-            "description": "A publisher provided promotion code as provisioned in Data Market for the said product/artifact.",
-            "required": false
+            "description": "A publisher provided promotion code as provisioned in Data Market for the said product/artifact."
           },
           "version": {
             "type": "string",
-            "description": "The version of the desired product/artifact. Ignored by commerce.",
-            "required": false
+            "description": "The version of the desired product/artifact. Ignored by commerce."
           },
           "managedBy": {
             "type": "string",
-            "description": "Indicates if this resource is managed by another azure resource.",
-            "required": false
+            "description": "Indicates if this resource is managed by another azure resource."
           }
         }
       },
       "Sku": {
         "type": "object",
+        "required": [
+          "name"
+        ],
         "properties": {
           "name": {
             "type": "string",
-            "description": "Required (if sku is specified), string. The name of the SKU. This is typically a letter + number code, such as A0 or P3.",
-            "required": true
+            "description": "Required (if sku is specified), string. The name of the SKU. This is typically a letter + number code, such as A0 or P3."
           },
           "tier": {
             "type": "string",
-            "description": "The tier of this particular SKU.",
-            "required": false
+            "description": "The tier of this particular SKU."
           },
           "size": {
-            "type": "string",
-            "required": false
+            "type": "string"
           },
           "family": {
             "type": "string",
-            "description": "If the service has different generations of hardware, for the same SKU, then that can be captured here.",
-            "required": false
+            "description": "If the service has different generations of hardware, for the same SKU, then that can be captured here."
           },
           "capacity": {
             "type": "integer",
-            "description": "If the SKU supports scale out/in then the capacity integer should be included. If scale out/in is not possible for the resource this may be omitted.",
-            "required": false
+            "description": "If the SKU supports scale out/in then the capacity integer should be included. If scale out/in is not possible for the resource this may be omitted."
           }
         }
       },
       "StoragePoolOperationDisplay": {
         "type": "object",
+        "required": [
+          "provider",
+          "resource",
+          "operation",
+          "description"
+        ],
         "properties": {
           "provider": {
             "type": "string",
-            "description": "Localized friendly form of the resource provider name.",
-            "required": true
+            "description": "Localized friendly form of the resource provider name."
           },
           "resource": {
             "type": "string",
-            "description": "Localized friendly form of the resource type related to this action/operation.",
-            "required": true
+            "description": "Localized friendly form of the resource type related to this action/operation."
           },
           "operation": {
             "type": "string",
-            "description": "Localized friendly name for the operation, as it should be shown to the user.",
-            "required": true
+            "description": "Localized friendly name for the operation, as it should be shown to the user."
           },
           "description": {
             "type": "string",
-            "description": "Localized friendly description for the operation, as it should be shown to the user.",
-            "required": true
+            "description": "Localized friendly description for the operation, as it should be shown to the user."
           }
         }
       },
       "StoragePoolRPOperation": {
         "type": "object",
+        "required": [
+          "name",
+          "isDataAction",
+          "display"
+        ],
         "properties": {
           "name": {
             "type": "string",
-            "description": "The name of the operation being performed on this particular object",
-            "required": true
+            "description": "The name of the operation being performed on this particular object"
           },
           "isDataAction": {
             "type": "boolean",
-            "description": "Indicates whether the operation applies to data-plane.",
-            "required": true
+            "description": "Indicates whether the operation applies to data-plane."
           },
           "actionType": {
             "type": "string",
@@ -131,18 +133,19 @@
           },
           "display": {
             "type": "object",
-            "$ref": "#/definitions/StoragePoolOperationDisplay",
-            "required": true
+            "$ref": "#/definitions/StoragePoolOperationDisplay"
           },
           "origin": {
             "type": "string",
-            "description": "The intended executor of the operation; governs the display of the operation in the RBAC UX and the audit logs UX.",
-            "required": false
+            "description": "The intended executor of the operation; governs the display of the operation in the RBAC UX and the audit logs UX."
           }
         }
       },
       "StoragePoolOperationListResult": {
         "type": "object",
+        "required": [
+          "value"
+        ],
         "properties": {
           "value": {
             "type": "array",
@@ -151,53 +154,56 @@
             }
           },
           "nextLink": {
-            "type": "string",
-            "required": false
+            "type": "string"
           }
         },
         "description": "List of operations supported by the RP."
       },
       "Error": {
         "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
         "properties": {
           "code": {
             "type": "string",
-            "description": "Indicates the status code for the error. Required",
-            "required": true
+            "description": "Indicates the status code for the error. Required"
           },
           "message": {
             "type": "string",
-            "description": "Indicates what error occured. Required.",
-            "required": true
+            "description": "Indicates what error occured. Required."
           }
         }
       },
       "DiskPoolListResult": {
         "type": "object",
+        "required": [
+          "value"
+        ],
         "properties": {
             "value": {
                 "type": "array",
-                "items": "#definitions/DiskPoolPayload"
+                "items": {
+                  "$ref": "#definitions/DiskPoolPayload"
+                }
             },
             "nextLink": {
-                "type": "string",
-                "required": "false"
+                "type": "string"
             }
         }
       },
       "DiskPoolPayloadProperties": {
         "type": "object",
+        "required": [
+          "diskPool"
+        ],
         "properties": {
             "diskPool": {
                 "type": "object",
-                "$ref": "#/definitions/DiskPool",
-                "required": true
+                "$ref": "#/definitions/DiskPool"
             },
             "provisioningState": {
-                "type": "string",
-                "description": ""
-            },
-            "comment": {
                 "type": "string",
                 "description": ""
             }
@@ -213,6 +219,9 @@
           {
             "properties": {
               "type": "object",
+              "required": [
+                "properties"
+              ],
               "properties": {
                   "properties": {
                       "type": "object",
@@ -225,62 +234,70 @@
       },
       "IscsiTargetList": {
         "type": "object",
+        "required": [
+          "value"
+        ],
         "properties": {
             "value": {
                 "type": "array",
-                "items": "#definitions/IscsiTargetPayload"
+                "items": {
+                  "$ref": "#definitions/IscsiTargetPayload"
+                }
             },
             "nextLink": {
-                "type": "string",
-                "required": "false"
+                "type": "string"
             }
         }
       },
       "IscsiTargetPayload": {
         "x-ms-azure-resource": true,
         "type": "object",
+        "required": [
+          "initiatorIqn",
+          "targetIqn",
+          "username",
+          "password",
+          "luns"
+        ],
         "properties": {
           "initiatorIqn": {
             "type": "string",
-            "required": true,
             "minLength": 5,
             "maxLength": 223
           },
           "targetIqn": {
-            "type": "string",
-            "required": true
+            "type": "string"
           },
           "username": {
             "type": "string",
-            "required": true,
             "minLength": 7,
             "maxLength": 128
           },
           "password": {
             "type": "string",
-            "required": true,
             "minLength": 12,
             "maxLength": 512
           },
           "luns": {
-            "$ref": "#/definitions/IscsiLunList",
-            "required": true
+            "$ref": "#/definitions/IscsiLunList"
           }
         }
       },
       "IscsiLun": {
         "type": "object",
+        "required": [
+          "lun",
+          "managedDiskAzureResourceId"
+        ],
         "properties": {
           "lun": {
             "type": "integer",
             "minimum": 0,
             "maximum": 63,
-            "required": true,
             "description": ""
           },
           "managedDiskAzureResourceId": {
             "type": "string",
-            "required": true,
             "description": "Unique Azure resource id of the managed disk. Required."
           }
         }
@@ -291,13 +308,15 @@
           "$ref": "#/definitions/IscsiLun"
         },
         "description": "Lun list to be exposed through the Iscsi target. Required",
-        "required": true,
         "minLength": 1,
         "maxLength": 8
       },
       "Disk": {
         "type": "object",
         "description": "Managed disk to attach to the DiskPool. Required.",
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string",
@@ -318,32 +337,35 @@
       "DiskPool": {
         "type": "object",
         "description": "",
+        "required": [
+          "name",
+          "disks"
+        ],
         "properties": {
           "name": {
             "type": "string",
             "description": "Name for the Disk Pool. Required.",
             "minLength": 8,
-            "maxLength": 30,
-            "required": true
+            "maxLength": 30
           },
           "disks": {
-            "$ref": "#/definitions/DiskList",
-            "required": true
+            "$ref": "#/definitions/DiskList"
           }
         }
       },
       "OperationStatusPayload": {
         "type": "object",
+        "required": [
+          "status"
+        ],
         "properties": {
             "id": {
                 "type": "string",
-                "description": "Unique id of the operation.",
-                "required": false
+                "description": "Unique id of the operation."
             },
             "name": {
                 "type": "string",
-                "description": "Last segment of the operation id.",
-                "required": false
+                "description": "Last segment of the operation id."
             },
             "status": {
                 "type": "string",
@@ -356,23 +378,19 @@
                 "x-ms-enum": {
                     "name": "OperationStatus",
                     "modelAsString": false
-                },
-                "required": true
+                }
             },
             "startTime": {
                 "type": "string",
-                "description": "DateLiteral using ISO8601, per 1API guidelines.",
-                "required": false
+                "description": "DateLiteral using ISO8601, per 1API guidelines."
             },
             "endTime": {
                 "type": "string",
-                "description": "DateLiteral using ISO8601, per 1API guidelines.",
-                "required": false
+                "description": "DateLiteral using ISO8601, per 1API guidelines."
             },
             "percentComplete": {
                 "type": "integer",
-                "description": "Double between 0 and 100.",
-                "required": false
+                "description": "Double between 0 and 100."
             },
             "error": {
                 "type": "object",
@@ -382,6 +400,10 @@
       },
       "Tag": {
         "type": "object",
+        "required": [
+          "key",
+          "value"
+        ],
         "properties": {
           "key": {
             "type": "string"
@@ -399,6 +421,9 @@
       },
       "ArmTopLevelResourcePayload": {
         "type": "object",
+        "required": [
+          "location"          
+        ],
         "properties": {
           "location": {
             "type": "string",
