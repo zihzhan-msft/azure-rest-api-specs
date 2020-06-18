@@ -89,9 +89,7 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolListResult"
-            }
+            "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolListResult"
           },
           "default": {
             "description": "Error from the RP",

@@ -71,7 +71,7 @@
         "type": "string",
         "required": true,
         "in": "path",
-        "decription": "The unique uuid of an operation.",
+        "description": "The unique uuid of an operation.",
         "x-ms-parameter-location": "method"
       },
       "Location": {
@@ -79,7 +79,7 @@
         "type": "string",
         "required": true,
         "in": "path",
-        "decription": "The location of the resource.",
+        "description": "The location of the resource.",
         "x-ms-parameter-location": "method"
       },
       "CorrelationId": {
