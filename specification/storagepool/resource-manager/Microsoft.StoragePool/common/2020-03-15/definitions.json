@@ -30,6 +30,7 @@
           "publisher",
           "product"
         ],
+        "description": "",
         "properties": {
           "name": {
             "type": "string",
@@ -62,6 +63,7 @@
         "required": [
           "name"
         ],
+        "description": "",
         "properties": {
           "name": {
             "type": "string",
@@ -92,6 +94,7 @@
           "operation",
           "description"
         ],
+        "description": "",
         "properties": {
           "provider": {
             "type": "string",
@@ -118,6 +121,7 @@
           "isDataAction",
           "display"
         ],
+        "description": "",
         "properties": {
           "name": {
             "type": "string",
@@ -146,6 +150,7 @@
         "required": [
           "value"
         ],
+        "description": "List of operations supported by the RP.",
         "properties": {
           "value": {
             "type": "array",
@@ -156,8 +161,7 @@
           "nextLink": {
             "type": "string"
           }
-        },
-        "description": "List of operations supported by the RP."
+        }
       },
       "Error": {
         "type": "object",
@@ -165,6 +169,7 @@
           "code",
           "message"
         ],
+        "description": "",
         "properties": {
           "code": {
             "type": "string",
@@ -181,6 +186,7 @@
         "required": [
           "value"
         ],
+        "description": "",
         "properties": {
             "value": {
                 "type": "array",
@@ -198,6 +204,7 @@
         "required": [
           "diskPool"
         ],
+        "description": "",
         "properties": {
             "diskPool": {
                 "type": "object",
@@ -212,6 +219,7 @@
       "DiskPoolPayload": {
         "type": "object",
         "x-ms-azure-resource": true,
+        "description": "",
         "allOf": [
           {
             "$ref": "#/definitions/ArmTopLevelResourcePayload"
@@ -222,11 +230,10 @@
               "required": [
                 "properties"
               ],
+              "description": "",
               "properties": {
-                  "properties": {
-                      "type": "object",
-                      "$ref": "#definitions/DiskPoolPayloadProperties"
-                  }
+                "type": "object",
+                "$ref": "#definitions/DiskPoolPayloadProperties"
               }
             }
           }
@@ -237,21 +244,25 @@
         "required": [
           "value"
         ],
+        "description": "",
         "properties": {
             "value": {
                 "type": "array",
+                "description": "",
                 "items": {
                   "$ref": "#definitions/IscsiTargetPayload"
                 }
             },
             "nextLink": {
-                "type": "string"
+                "type": "string",
+                "description": ""
             }
         }
       },
       "IscsiTargetPayload": {
         "x-ms-azure-resource": true,
         "type": "object",
+        "description": "",
         "required": [
           "initiatorIqn",
           "targetIqn",
@@ -262,24 +273,34 @@
         "properties": {
           "initiatorIqn": {
             "type": "string",
+            "description": "",
             "minLength": 5,
             "maxLength": 223
           },
           "targetIqn": {
-            "type": "string"
+            "type": "string",
+            "description": ""
           },
           "username": {
             "type": "string",
+            "description": "",
             "minLength": 7,
             "maxLength": 128
           },
           "password": {
             "type": "string",
+            "description": "",
             "minLength": 12,
             "maxLength": 512
           },
           "luns": {
-            "$ref": "#/definitions/IscsiLunList"
+            "type": "array",
+            "description": "Lun list to be exposed through the Iscsi target. Required",
+            "items": {
+              "$ref": "#/definitions/IscsiLun"
+            },
+            "minLength": 1,
+            "maxLength": 8
           }
         }
       },
@@ -289,6 +310,7 @@
           "lun",
           "managedDiskAzureResourceId"
         ],
+        "description": "",
         "properties": {
           "lun": {
             "type": "integer",
@@ -301,15 +323,6 @@
             "description": "Unique Azure resource id of the managed disk. Required."
           }
         }
-      },
-      "IscsiLunList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/IscsiLun"
-        },
-        "description": "Lun list to be exposed through the Iscsi target. Required",
-        "minLength": 1,
-        "maxLength": 8
       },
       "Disk": {
         "type": "object",
@@ -324,15 +337,6 @@
             "required": true
           }
         }
-      },
-      "DiskList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/Disk"
-        },
-        "description": "List of Azure managed disks to attach to a DiskPool",
-        "minLength": 1,
-        "maxLength": 15
       },
       "DiskPool": {
         "type": "object",
@@ -349,12 +353,19 @@
             "maxLength": 30
           },
           "disks": {
-            "$ref": "#/definitions/DiskList"
+            "type": "array",
+            "description": "List of Azure managed disks to attach to a DiskPool",
+            "items": {
+              "$ref": "#/definitions/Disk"
+            },
+            "minLength": 1,
+            "maxLength": 15
           }
         }
       },
       "OperationStatusPayload": {
         "type": "object",
+        "description": "",
         "required": [
           "status"
         ],
@@ -369,6 +380,7 @@
             },
             "status": {
                 "type": "string",
+                "description": "",
                 "enum": [
                     "Succeeded",
                     "Failed",
@@ -394,6 +406,7 @@
             },
             "error": {
                 "type": "object",
+                "description": "",
                 "$ref": "#/definitions/Error"
             }
         }
@@ -413,12 +426,6 @@
           }
         }
       },
-      "TagList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/Tag"
-        }
-      },
       "ArmTopLevelResourcePayload": {
         "type": "object",
         "required": [
@@ -431,8 +438,10 @@
           },
           "tags": {
             "type": "object",
-            "$ref": "#/definitions/TagList",
-            "description": "Gets or sets a list of key value pairs that describe the resource. These tags can be used for viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key with a length no greater than 128 characters and a value with a length no greater than 256 characters."
+            "additionalProperties": {
+              "type": "string"
+              },
+            "description": "Resource Tags"
           },
           "sku": {
             "type": "object",
