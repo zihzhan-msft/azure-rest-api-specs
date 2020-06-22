@@ -1,101 +1,119 @@
 {
-    "swagger": "2.0",
-    "security": [
-      {
-        "azure_auth": [
-          "user_impersonation"
-        ]
-      }
-    ],
-    "securityDefinitions": {
-      "azure_auth": {
-        "type": "oauth2",
-        "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
-        "flow": "implicit",
-        "description": "Azure Active Directory OAuth2 Flow",
-        "scopes": {
-          "user_impersonation": "impersonate your user account"
-        }
-      }
-    },
-    "info": {
-      "version": "2020-03-15",
-      "title": "Parameters"
-    },
-    "parameters": {
-      "SubscriptionId": {
-        "name": "subscriptionId",
-        "in": "path",
-        "required": true,
-        "type": "string",
-        "description": "The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)"
-      },
-      "ApiVersion": {
-        "name": "api-version",
-        "in": "query",
-        "required": true,
-        "type": "string",
-        "description": "Client Api Version."
-      },
-      "ResourceGroupName": {
-        "name": "resourceGroupName",
-        "in": "path",
-        "required": true,
-        "type": "string",
-        "pattern": "^[-\\w\\._]+$",
-        "minLength": 1,
-        "maxLength": 90,
-        "x-ms-parameter-location": "method",
-        "description": "The name of the Resource group."
-      },
-      "DiskPoolName": {
-        "name": "diskPoolName",
-        "in": "path",
-        "required": true,
-        "type": "string",
-        "pattern":  "^[-\\w\\._]+$",
-        "minLength": 1,
-        "maxLength": 90,
-        "description": "The name of the Disk Pool."
-      },
-      "IscsiTargetName": {
-        "name": "iscsiTargetName",
-        "type": "string",
-        "required": true,
-        "in": "path",
-        "description": "The name of the iSCSI target.",
-        "x-ms-parameter-location": "method"
-      },
-      "OperationId": {
-        "name": "operationId",
-        "type": "string",
-        "required": true,
-        "in": "path",
-        "description": "The unique uuid of an operation.",
-        "x-ms-parameter-location": "method"
-      },
-      "Location": {
-        "name": "location",
-        "type": "string",
-        "required": true,
-        "in": "path",
-        "description": "The location of the resource.",
-        "x-ms-parameter-location": "method"
-      },
-      "CorrelationId": {
-        "name": "x-ms-correlation-request-id",
-        "description": "Identifies this specific client request.",
-        "type": "string",
-        "required": false,
-        "in": "header",
-        "x-ms-parameter-location": "method"
-      },
-      "Referer": {
-        "name": "referer",
-        "type": "string",
-        "description": "The full URI that the client connected to",
-        "required": true,
-        "in": "header"
+  "swagger": "2.0",
+  "security": [
+    {
+      "azure_auth": [
+        "user_impersonation"
+      ]
+    }
+  ],
+  "securityDefinitions": {
+    "azure_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "flow": "implicit",
+      "description": "Azure Active Directory OAuth2 Flow",
+      "scopes": {
+        "user_impersonation": "impersonate your user account"
       }
     }
+  },
+  "info": {
+    "version": "2020-03-15",
+    "title": "Parameters"
+  },
+  "parameters": {
+    "SubscriptionId": {
+      "name": "subscriptionId",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)"
+    },
+    "ApiVersion": {
+      "name": "api-version",
+      "in": "query",
+      "required": true,
+      "type": "string",
+      "description": "Client Api Version."
+    },
+    "ResourceGroupName": {
+      "name": "resourceGroupName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "pattern": "^[-\\w\\._]+$",
+      "minLength": 1,
+      "maxLength": 90,
+      "x-ms-parameter-location": "method",
+      "description": "The name of the Resource group."
+    },
+    "DiskPoolName": {
+      "name": "diskPoolName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "pattern": "^[-\\w\\._]+$",
+      "minLength": 1,
+      "maxLength": 90,
+      "description": "The name of the Disk Pool."
+    },
+    "IscsiTargetName": {
+      "name": "iscsiTargetName",
+      "type": "string",
+      "required": true,
+      "in": "path",
+      "description": "The name of the iSCSI target.",
+      "x-ms-parameter-location": "method"
+    },
+    "OperationId": {
+      "name": "operationId",
+      "type": "string",
+      "required": true,
+      "in": "path",
+      "description": "The unique uuid of an operation.",
+      "x-ms-parameter-location": "method"
+    },
+    "Location": {
+      "name": "location",
+      "type": "string",
+      "required": true,
+      "in": "path",
+      "description": "The location of the resource.",
+      "x-ms-parameter-location": "method"
+    },
+    "DiskPoolPayload": {
+      "name": "parameters",
+      "required": true,
+      "in": "body",
+      "description": "",
+      "schema": {
+        "$ref": "./definitions.json#/definitions/DiskPoolPayload"
+      }
+    },
+    "IscsiTargetPayload": {
+      "name": "parameters",
+      "required": true,
+      "in": "body",
+      "description": "",
+      "schema": {
+        "$ref": "./definitions.json#/definitions/IscsiTargetPayload"
+      }
+    },
+    "CorrelationId": {
+      "name": "x-ms-correlation-request-id",
+      "description": "Identifies this specific client request.",
+      "type": "string",
+      "required": false,
+      "in": "header",
+      "x-ms-parameter-location": "method"
+    },
+    "Referer": {
+      "name": "referer",
+      "type": "string",
+      "description": "The full URI that the client connected to",
+      "required": true,
+      "in": "header"
+    }
   }
+}
