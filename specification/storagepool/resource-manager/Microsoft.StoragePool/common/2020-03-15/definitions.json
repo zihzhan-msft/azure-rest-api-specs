@@ -23,69 +23,6 @@
     "title": "Common types"
   },
   "definitions": {
-    "Plan": {
-      "type": "object",
-      "required": [
-        "name",
-        "publisher",
-        "product"
-      ],
-      "description": "",
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "A publisher defined name of the 3rd Party Artifact that is being procured."
-        },
-        "publisher": {
-          "type": "string",
-          "description": "The publisher of the 3 rd Party Artifact that is being bought."
-        },
-        "product": {
-          "type": "string",
-          "description": "The 3rd Party artifact that is being procured."
-        },
-        "promotionalCode": {
-          "type": "string",
-          "description": "A publisher provided promotion code as provisioned in Data Market for the said product/artifact."
-        },
-        "version": {
-          "type": "string",
-          "description": "The version of the desired product/artifact. Ignored by commerce."
-        },
-        "managedBy": {
-          "type": "string",
-          "description": "Indicates if this resource is managed by another azure resource."
-        }
-      }
-    },
-    "Sku": {
-      "type": "object",
-      "required": [
-        "name"
-      ],
-      "description": "",
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "Required (if sku is specified), string. The name of the SKU. This is typically a letter + number code, such as A0 or P3."
-        },
-        "tier": {
-          "type": "string",
-          "description": "The tier of this particular SKU."
-        },
-        "size": {
-          "type": "string"
-        },
-        "family": {
-          "type": "string",
-          "description": "If the service has different generations of hardware, for the same SKU, then that can be captured here."
-        },
-        "capacity": {
-          "type": "integer",
-          "description": "If the SKU supports scale out/in then the capacity integer should be included. If scale out/in is not possible for the resource this may be omitted."
-        }
-      }
-    },
     "StoragePoolOperationDisplay": {
       "type": "object",
       "required": [
@@ -162,24 +99,6 @@
         }
       }
     },
-    "Error": {
-      "type": "object",
-      "required": [
-        "code",
-        "message"
-      ],
-      "description": "",
-      "properties": {
-        "code": {
-          "type": "string",
-          "description": "Indicates the status code for the error. Required"
-        },
-        "message": {
-          "type": "string",
-          "description": "Indicates what error occured. Required."
-        }
-      }
-    },
     "DiskPoolListResult": {
       "type": "object",
       "required": [
@@ -188,6 +107,7 @@
       "description": "",
       "properties": {
         "value": {
+          "readOnly": true,
           "type": "array",
           "items": {
             "$ref": "#/definitions/DiskPoolPayload"
@@ -198,37 +118,103 @@
         }
       }
     },
-    "DiskPoolPayloadProperties": {
+    "DiskPoolPayload": {
       "type": "object",
       "required": [
         "diskPool"
       ],
       "description": "",
       "properties": {
-        "diskPool": {
+        "properties": {
+          "x-ms-client-flatten": true,
           "type": "object",
-          "$ref": "#/definitions/DiskPool"
+          "$ref": "#/definitions/DiskPoolProperties",
+          "description": "Disk pool properties"
         },
-        "provisioningState": {
-          "type": "string",
-          "description": ""
+        "sku": {
+          "type": "object",
+          "$ref": "../../../common-types/resource-management/v1/types.json#/definitions/Sku",
+          "description": "The Sku."
+        },
+        "plan": {
+          "type": "object",
+          "$ref": "../../../common-types/resource-management/v1/types.json#/definitions/Plan",
+          "description": "The Plan."
         }
-      }
-    },
-    "DiskPoolPayload": {
-      "type": "object",
-      "x-ms-azure-resource": true,
-      "description": "",
+      },
       "allOf": [
         {
-          "$ref": "#/definitions/ArmTopLevelResourcePayload"
+          "$ref": "../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
         }
+      ]
+    },
+    "DiskPoolProperties": {
+      "type": "object",
+      "description": "",
+      "required": [
+        "pool"
       ],
       "properties": {
         "properties": {
-          "type": "object",
-          "description": "",
-          "$ref": "#/definitions/DiskPoolPayloadProperties"
+          "provisioningState": {
+            "readOnly": true,
+            "type": "string",
+            "enum": [
+              "Succeeded",
+              "Failed",
+              "Canceled",
+              "Pending"
+            ],
+            "x-ms-enum": {
+              "name": "ProvisioningStatesEnum",
+              "modelAsString": true
+            },
+            "description": "State of provisioning of the Disk pool"
+          },
+          "pool": {
+            "x-ms-client-flatten": true,
+            "type": "object",
+            "$ref": "#/definitions/DiskPool",
+            "description": "Disk pool definition"
+          }
+        }
+      }
+    },
+    "DiskPool": {
+      "type": "object",
+      "description": "",
+      "required": [
+        "name",
+        "disks"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name for the Disk Pool. Required.",
+          "minLength": 8,
+          "maxLength": 30
+        },
+        "disks": {
+          "type": "array",
+          "description": "List of Azure managed disks to attach to a DiskPool",
+          "items": {
+            "$ref": "#/definitions/Disk"
+          },
+          "minLength": 1,
+          "maxLength": 15
+        }
+      }
+    },
+    "Disk": {
+      "type": "object",
+      "description": "Managed disk to attach to the DiskPool. Required.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique Azure resource id of the managed disk. Required."
         }
       }
     },
@@ -240,6 +226,7 @@
       "description": "",
       "properties": {
         "value": {
+          "readOnly": true,
           "type": "array",
           "description": "",
           "items": {
@@ -253,7 +240,57 @@
       }
     },
     "IscsiTargetPayload": {
-      "x-ms-azure-resource": true,
+      "type": "object",
+      "required": [
+        "diskPool"
+      ],
+      "description": "",
+      "properties": {
+        "properties": {
+          "x-ms-client-flatten": true,
+          "type": "object",
+          "$ref": "#/definitions/IscsiTargetProperties",
+          "description": "iSCSI target properties"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
+        }
+      ]
+    },
+    "IscsiTargetProperties": {
+      "type": "object",
+      "description": "",
+      "required": [
+        "target"
+      ],
+      "properties": {
+        "properties": {
+          "provisioningState": {
+            "readOnly": true,
+            "type": "string",
+            "enum": [
+              "Succeeded",
+              "Failed",
+              "Canceled",
+              "Pending"
+            ],
+            "x-ms-enum": {
+              "name": "ProvisioningStatesEnum",
+              "modelAsString": true
+            },
+            "description": "State of provisioning of the iSCSI target"
+          },
+          "target": {
+            "x-ms-client-flatten": true,
+            "$ref": "#/definitions/IscsiTarget",
+            "description": "iSCSI target definition"
+          }
+        }
+      }
+    },
+    "IscsiTarget": {
       "type": "object",
       "description": "",
       "required": [
@@ -317,44 +354,6 @@
         }
       }
     },
-    "Disk": {
-      "type": "object",
-      "description": "Managed disk to attach to the DiskPool. Required.",
-      "required": [
-        "id"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Unique Azure resource id of the managed disk. Required."
-        }
-      }
-    },
-    "DiskPool": {
-      "type": "object",
-      "description": "",
-      "required": [
-        "name",
-        "disks"
-      ],
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "Name for the Disk Pool. Required.",
-          "minLength": 8,
-          "maxLength": 30
-        },
-        "disks": {
-          "type": "array",
-          "description": "List of Azure managed disks to attach to a DiskPool",
-          "items": {
-            "$ref": "#/definitions/Disk"
-          },
-          "minLength": 1,
-          "maxLength": 15
-        }
-      }
-    },
     "OperationStatusPayload": {
       "type": "object",
       "description": "",
@@ -389,59 +388,7 @@
         "error": {
           "type": "object",
           "description": "",
-          "$ref": "#/definitions/Error"
-        }
-      }
-    },
-    "Tag": {
-      "type": "object",
-      "required": [
-        "key",
-        "value"
-      ],
-      "properties": {
-        "key": {
-          "type": "string"
-        },
-        "value": {
-          "type": "string"
-        }
-      }
-    },
-    "ArmTopLevelResourcePayload": {
-      "type": "object",
-      "required": [
-        "location"
-      ],
-      "properties": {
-        "location": {
-          "type": "string",
-          "description": "Required. Gets or sets the location of the resource. This will be one of the supported and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a resource cannot be changed once it is created, but if an identical geo region is specified on update, the request will succeed."
-        },
-        "tags": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
-          "description": "Resource Tags"
-        },
-        "sku": {
-          "type": "object",
-          "$ref": "#/definitions/Sku",
-          "description": "Required. Gets or sets the SKU name."
-        },
-        "plan": {
-          "type": "object",
-          "$ref": "#/definitions/Plan",
-          "description": "Required. Gets or sets the SKU name."
-        },
-        "kind": {
-          "type": "string",
-          "description": "Required. Indicates the type of storage account."
-        },
-        "managedBy": {
-          "type": "string",
-          "description": "Indicates if this resource is managed by another azure resource."
+          "$ref": "../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
         }
       }
     }
