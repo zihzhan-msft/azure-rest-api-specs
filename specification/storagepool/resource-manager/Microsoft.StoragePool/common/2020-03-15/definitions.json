@@ -133,18 +133,18 @@
         },
         "sku": {
           "type": "object",
-          "$ref": "../../../common-types/resource-management/v1/types.json#/definitions/Sku",
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Sku",
           "description": "The Sku."
         },
         "plan": {
           "type": "object",
-          "$ref": "../../../common-types/resource-management/v1/types.json#/definitions/Plan",
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Plan",
           "description": "The Plan."
         }
       },
       "allOf": [
         {
-          "$ref": "../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
         }
       ]
     },
@@ -255,7 +255,7 @@
       },
       "allOf": [
         {
-          "$ref": "../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
         }
       ]
     },
@@ -388,7 +388,7 @@
         "error": {
           "type": "object",
           "description": "",
-          "$ref": "../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
         }
       }
     }
