@@ -110,14 +110,14 @@
               "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
             }
           }
-        }
-      },
-      "x-ms-pageable": {
-        "nextLinkName": "nextLink"
-      },
-      "x-ms-examples": {
-        "List Disk Pools": {
-          "$ref": "./examples/DiskPools_ListBySubscription.json"
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        },
+        "x-ms-examples": {
+          "List Disk Pools": {
+            "$ref": "./examples/DiskPools_ListBySubscription.json"
+          }
         }
       }
     },
@@ -152,14 +152,14 @@
               "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
             }
           }
-        }
-      },
-      "x-ms-pageable": {
-        "nextLinkName": "nextLink"
-      },
-      "x-ms-examples": {
-        "List Disk Pools": {
-          "$ref": "./examples/DiskPools_ListByResourceGroup.json"
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        },
+        "x-ms-examples": {
+          "List Disk Pools": {
+            "$ref": "./examples/DiskPools_ListByResourceGroup.json"
+          }
         }
       }
     },
