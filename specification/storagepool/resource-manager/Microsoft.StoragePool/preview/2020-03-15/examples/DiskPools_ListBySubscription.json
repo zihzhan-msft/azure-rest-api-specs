@@ -13,7 +13,7 @@
                         "name": "myDiskPool",
                         "properties": {
                             "provisioningState": "succeeded",
-                            "san": {
+                            "pool": {
                                 "disks": [
                                     {
                                         "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/myDataDisk_0"
@@ -41,7 +41,7 @@
                         "name": "myDiskPool2",
                         "properties": {
                             "provisioningState": "succeeded",
-                            "san": {
+                            "pool": {
                                 "disks": [
                                     {
                                         "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/myDataDisk_0"
