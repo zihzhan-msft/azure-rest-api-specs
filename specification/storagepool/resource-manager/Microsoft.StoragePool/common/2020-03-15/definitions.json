@@ -126,7 +126,6 @@
       "type": "object",
       "description": "",
       "x-ms-client-flatten": true,
-      "additionalProperties": false,
       "properties": {
         "properties": {
           "$ref": "#/definitions/DiskPoolProperties"
@@ -146,7 +145,6 @@
     },
     "DiskPoolResponsePayload": {
       "type": "object",
-      "additionalProperties": false,
       "x-ms-client-flatten": true,
       "description": "",
       "properties": {
