@@ -64,7 +64,7 @@
                         "type": "Microsoft.StoragePool/diskPools"
                     }
                 ],
-                "nextLink": null
+                "nextLink": ""
             }
         }
     }

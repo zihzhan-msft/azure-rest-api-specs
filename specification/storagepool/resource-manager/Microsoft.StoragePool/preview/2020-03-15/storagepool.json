@@ -115,7 +115,7 @@
           "nextLinkName": "nextLink"
         },
         "x-ms-examples": {
-          "List Disk Pools": {
+          "List Disk Pools by subscription": {
             "$ref": "./examples/DiskPools_ListBySubscription.json"
           }
         }
