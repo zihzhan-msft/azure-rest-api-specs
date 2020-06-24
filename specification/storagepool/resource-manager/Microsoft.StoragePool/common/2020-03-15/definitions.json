@@ -307,7 +307,6 @@
         "targetIqn",
         "luns"
       ],
-      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string",
