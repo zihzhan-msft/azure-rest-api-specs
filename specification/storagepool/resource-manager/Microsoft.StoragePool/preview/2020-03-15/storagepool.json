@@ -274,10 +274,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Accepted",
-            "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolResponsePayload"
-            }
+            "description": "Accepted"
           },
           "default": {
             "description": "Error from the RP",
