@@ -33,11 +33,15 @@
   },
   "tags": [
     {
+      "name": "StoragePoolOperations",
+      "description": ""
+    },
+    {
       "name": "DiskPools",
       "description": ""
     },
     {
-      "name": "StoragePoolOperations",
+      "name": "IscsiTargets",
       "description": ""
     }
   ],
@@ -119,424 +123,439 @@
           "$ref": "./examples/DiskPools_ListByResourceGroup.json"
         }
       }
-    }
-  },
-  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools/{diskPoolName}": {
-    "put": {
-      "tags": [
-        "DiskPools"
-      ],
-      "operationId": "DiskPools_Create",
-      "description": "Create a new Disk Pool.",
-      "parameters": [
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolPayload"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
-        }
-      ],
-      "responses": {
-        "202": {
-          "description": "Accepted",
-          "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools/{diskPoolName}": {
+      "put": {
+        "tags": [
+          "DiskPools"
+        ],
+        "operationId": "DiskPools_Create",
+        "description": "Create a new Disk Pool.",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolPayload"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
+            }
+          },
+          "default": {
+            "description": "Error from the RP",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+            }
           }
         },
-        "default": {
-          "description": "Error from the RP",
-          "schema": {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+          "Create or Update a Disk Pool": {
+            "$ref": "./examples/DiskPools_PutOrPatch.json"
           }
         }
       },
-      "x-ms-long-running-operation": true,
-      "x-ms-examples": {
-        "Create or Update a Disk Pool": {
-          "$ref": "./examples/DiskPools_PutOrPatch.json"
+      "patch": {
+        "tags": [
+          "DiskPools"
+        ],
+        "operationId": "DiskPools_Update",
+        "description": "Update a Storage Pool.",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolPayload"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
+            }
+          },
+          "default": {
+            "description": "Error from the RP",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Update Disk Pool": {
+            "$ref": "./examples/DiskPools_PutOrPatch.json"
+          }
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "tags": [
+          "DiskPools"
+        ],
+        "operationId": "DiskPools_Delete",
+        "description": "Delete a Disk Pool.",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
+            }
+          },
+          "default": {
+            "description": "Error from the RP",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+          "Delete a Disk Pool": {
+            "$ref": "./examples/DiskPools_Delete.json"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "DiskPools"
+        ],
+        "operationId": "DiskPools_Get",
+        "description": "Get a Disk Pool.",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
+            }
+          },
+          "default": {
+            "description": "Error from the RP",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get a Disk Pool": {
+            "$ref": "./examples/DiskPools_Get.json"
+          }
         }
       }
     },
-    "patch": {
-      "tags": [
-        "DiskPools"
-      ],
-      "operationId": "DiskPools_Update",
-      "description": "Update a Storage Pool.",
-      "parameters": [
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolPayload"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
-        }
-      ],
-      "responses": {
-        "202": {
-          "description": "Accepted",
-          "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools/{diskPoolName}/iscsiTargets": {
+      "get": {
+        "tags": [
+          "IscsiTargets"
+        ],
+        "description": "Get iSCSI Targets within a Disk Pool",
+        "operationId": "DiskPoolIscsiTargets_List",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetList"
+            }
+          },
+          "default": {
+            "description": "Error from the RP",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+            }
           }
         },
-        "default": {
-          "description": "Error from the RP",
-          "schema": {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        },
+        "x-ms-examples": {
+          "List Disk Pools by Resource Group": {
+            "$ref": "./examples/DiskPools_ListByResourceGroup.json"
           }
-        }
-      },
-      "x-ms-examples": {
-        "Update Disk Pool": {
-          "$ref": "./examples/DiskPools_PutOrPatch.json"
-        }
-      },
-      "x-ms-long-running-operation": true
-    },
-    "delete": {
-      "tags": [
-        "DiskPools"
-      ],
-      "operationId": "DiskPools_Delete",
-      "description": "Delete a Disk Pool.",
-      "parameters": [
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
-        }
-      ],
-      "responses": {
-        "202": {
-          "description": "Accepted",
-          "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
-          }
-        },
-        "default": {
-          "description": "Error from the RP",
-          "schema": {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
-          }
-        }
-      },
-      "x-ms-long-running-operation": true,
-      "x-ms-examples": {
-        "Delete a Disk Pool": {
-          "$ref": "./examples/DiskPools_Delete.json"
         }
       }
     },
-    "get": {
-      "tags": [
-        "DiskPools"
-      ],
-      "operationId": "DiskPools_Get",
-      "description": "Get a Disk Pool.",
-      "parameters": [
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
-        }
-      ],
-      "responses": {
-        "200": {
-          "description": "OK",
-          "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools/{diskPoolName}/iscsiTargets/{iscsiTargetName}": {
+      "put": {
+        "tags": [
+          "IscsiTargets"
+        ],
+        "description": "Create or Update an iSCSI target",
+        "operationId": "DiskPoolIscsiTargets_CreateOrUpdate",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetName"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetPayload"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
+            }
+          },
+          "default": {
+            "description": "Error from the RP",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+            }
           }
         },
-        "default": {
-          "description": "Error from the RP",
-          "schema": {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
-          }
-        }
-      },
-      "x-ms-examples": {
-        "Get a Disk Pool": {
-          "$ref": "./examples/DiskPools_Get.json"
-        }
-      }
-    }
-  },
-  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools/{diskPoolName}/iscsiTargets": {
-    "get": {
-      "description": "Get iSCSI Targets within a Disk Pool",
-      "operationId": "DiskPoolIscsiTargets_List",
-      "parameters": [
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
-        }
-      ],
-      "responses": {
-        "200": {
-          "description": "OK",
-          "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetList"
-          }
-        },
-        "default": {
-          "description": "Error from the RP",
-          "schema": {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+          "Create or Update an iSCSI Target": {
+            "$ref": "./examples/IscsiTargets_PutOrPatch.json"
           }
         }
       },
-      "x-ms-pageable": {
-        "nextLinkName": "nextLink"
-      },
-      "x-ms-examples": {
-        "List Disk Pools by Resource Group": {
-          "$ref": "./examples/DiskPools_ListByResourceGroup.json"
-        }
-      }
-    }
-  },
-  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools/{diskPoolName}/iscsiTargets/{iscsiTargetName}": {
-    "put": {
-      "description": "Create or Update an iSCSI target",
-      "operationId": "DiskPoolIscsiTargets_CreateOrUpdate",
-      "parameters": [
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetName"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetPayload"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
-        }
-      ],
-      "responses": {
-        "202": {
-          "description": "Accepted",
-          "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
+      "patch": {
+        "tags": [
+          "IscsiTargets"
+        ],
+        "description": "Update an iSCSI Target",
+        "operationId": "DiskPoolIscsiTargets_Update",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetName"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetPayload"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
+            }
+          },
+          "default": {
+            "description": "Error from the RP",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+            }
           }
         },
-        "default": {
-          "description": "Error from the RP",
-          "schema": {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
-          }
-        }
-      },
-      "x-ms-long-running-operation": true,
-      "x-ms-examples": {
-        "Create or Update an iSCSI Target": {
-          "$ref": "./examples/IscsiTargets_PutOrPatch.json"
-        }
-      }
-    },
-    "patch": {
-      "description": "Update an iSCSI Target",
-      "operationId": "DiskPoolIscsiTargets_Update",
-      "parameters": [
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetName"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetPayload"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
-        }
-      ],
-      "responses": {
-        "202": {
-          "description": "Accepted",
-          "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
-          }
-        },
-        "default": {
-          "description": "Error from the RP",
-          "schema": {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+          "Update an iSCSI Target": {
+            "$ref": "./examples/IscsiTargets_PutOrPatch.json"
           }
         }
       },
-      "x-ms-long-running-operation": true,
-      "x-ms-examples": {
-        "Update an iSCSI Target": {
-          "$ref": "./examples/IscsiTargets_PutOrPatch.json"
-        }
-      }
-    },
-    "delete": {
-      "description": "",
-      "operationId": "DiskPoolIscsiTargets_Delete",
-      "parameters": [
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+      "delete": {
+        "tags": [
+          "IscsiTargets"
+        ],
+        "description": "",
+        "operationId": "DiskPoolIscsiTargets_Delete",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetName"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "default": {
+            "description": "Error from the RP",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+            }
+          }
         },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetName"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
-        }
-      ],
-      "responses": {
-        "202": {
-          "description": "Accepted"
-        },
-        "default": {
-          "description": "Error from the RP",
-          "schema": {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+          "Delete an iSCSI Target": {
+            "$ref": "./examples/IscsiTargets_Delete.json"
           }
         }
       },
-      "x-ms-long-running-operation": true,
-      "x-ms-examples": {
-        "Delete an iSCSI Target": {
-          "$ref": "./examples/IscsiTargets_Delete.json"
+      "get": {
+        "tags": [
+          "IscsiTargets"
+        ],
+        "description": "",
+        "operationId": "DiskPoolIscsiTargets_Get",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetName"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
+            }
+          },
+          "default": {
+            "description": "Error from the RP",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get an iSCSI Target": {
+            "$ref": "./examples/IscsiTargets_Get.json"
+          }
         }
       }
     },
-    "get": {
-      "description": "",
-      "operationId": "DiskPoolIscsiTargets_Get",
-      "parameters": [
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetName"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
-        }
-      ],
-      "responses": {
-        "200": {
-          "description": "Ok",
-          "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
+    "/subscriptions/{subscriptionId}/providers/Microsoft.StoragePool/locations/{location}/operationStatus/{operationId}": {
+      "get": {
+        "description": "Get Operation Status",
+        "operationId": "DiskPoolOperationStatus_Get",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/Location"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/OperationId"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/OperationStatusPayload"
+            }
+          },
+          "default": {
+            "description": "Error from the RP",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+            }
           }
         },
-        "default": {
-          "description": "Error from the RP",
-          "schema": {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+        "x-ms-examples": {
+          "Get Operation Status": {
+            "$ref": "./examples/OperationStatus_Get.json"
           }
-        }
-      },
-      "x-ms-examples": {
-        "Get an iSCSI Target": {
-          "$ref": "./examples/IscsiTargets_Get.json"
-        }
-      }
-    }
-  },
-  "/subscriptions/{subscriptionId}/providers/Microsoft.StoragePool/locations/{location}/operationStatus/{operationId}": {
-    "get": {
-      "description": "Get Operation Status",
-      "operationId": "DiskPoolOperationStatus_Get",
-      "parameters": [
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/Location"
-        },
-        {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/OperationId"
-        },
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
-        }
-      ],
-      "responses": {
-        "200": {
-          "description": "OK",
-          "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/OperationStatusPayload"
-          }
-        },
-        "default": {
-          "description": "Error from the RP",
-          "schema": {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
-          }
-        }
-      },
-      "x-ms-examples": {
-        "Get Operation Status": {
-          "$ref": "./examples/OperationStatus_Get.json"
         }
       }
     }
