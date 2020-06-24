@@ -64,7 +64,8 @@
       "description": "",
       "schema": {
         "$ref": "./definitions.json#/definitions/DiskPoolPayload"
-      }
+      },
+      "x-ms-parameter-location": "method"
     },
     "IscsiTargetPayload": {
       "name": "parameters",
@@ -73,7 +74,8 @@
       "description": "",
       "schema": {
         "$ref": "./definitions.json#/definitions/IscsiTargetPayload"
-      }
+      },
+      "x-ms-parameter-location": "method"
     },
     "CorrelationId": {
       "name": "x-ms-correlation-request-id",
