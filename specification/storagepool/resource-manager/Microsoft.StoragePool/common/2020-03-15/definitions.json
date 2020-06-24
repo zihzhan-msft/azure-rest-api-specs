@@ -127,8 +127,19 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/DiskPoolProperties"
+        },
+        "sku": {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Sku"
+        },
+        "plan": {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Plan"
         }
-      }
+      },
+      "allOf": [
+        {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
+        }
+      ]
     },
     "DiskPoolProperties": {
       "type": "object",
@@ -351,10 +362,6 @@
           "description": "Double between 0 and 100."
         }
       }
-    },
-    "Error": {
-      "type": "object",
-      "properties": {}
     }
   }
 }

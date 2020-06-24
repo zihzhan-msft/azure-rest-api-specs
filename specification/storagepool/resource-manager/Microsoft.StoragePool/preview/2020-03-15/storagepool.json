@@ -59,7 +59,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+              "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
             }
           }
         },
@@ -96,7 +96,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+              "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
             }
           }
         }
@@ -115,10 +115,10 @@
       "description": "Create a new Disk Pool.",
       "parameters": [
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
         },
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
@@ -127,7 +127,7 @@
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolPayload"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
         }
       ],
       "responses": {
@@ -140,7 +140,7 @@
         "default": {
           "description": "Error from the RP",
           "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
           }
         }
       },
@@ -154,10 +154,10 @@
       "description": "Update a Storage Pool.",
       "parameters": [
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
         },
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
@@ -166,7 +166,7 @@
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolPayload"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
         }
       ],
       "responses": {
@@ -179,7 +179,7 @@
         "default": {
           "description": "Error from the RP",
           "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
           }
         }
       },
@@ -193,16 +193,16 @@
       "description": "Delete a Disk Pool.",
       "parameters": [
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
         },
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
         }
       ],
       "responses": {
@@ -215,7 +215,7 @@
         "default": {
           "description": "Error from the RP",
           "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
           }
         }
       },
@@ -229,16 +229,16 @@
       "description": "Get a Disk Pool.",
       "parameters": [
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
         },
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
         }
       ],
       "responses": {
@@ -251,7 +251,7 @@
         "default": {
           "description": "Error from the RP",
           "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
           }
         }
       }
@@ -263,16 +263,16 @@
       "operationId": "DiskPoolIscsiTargets_List",
       "parameters": [
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
         },
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
         }
       ],
       "responses": {
@@ -285,7 +285,7 @@
         "default": {
           "description": "Error from the RP",
           "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
           }
         }
       },
@@ -300,10 +300,10 @@
       "operationId": "DiskPoolIscsiTargets_Create",
       "parameters": [
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
         },
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
@@ -315,7 +315,7 @@
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetPayload"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
         }
       ],
       "responses": {
@@ -328,7 +328,7 @@
         "default": {
           "description": "Error from the RP",
           "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
           }
         }
       },
@@ -339,10 +339,10 @@
       "operationId": "DiskPoolIscsiTargets_Update",
       "parameters": [
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
         },
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
@@ -354,7 +354,7 @@
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetPayload"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
         }
       ],
       "responses": {
@@ -367,13 +367,32 @@
         "default": {
           "description": "Error from the RP",
           "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
           }
         }
       },
       "x-ms-long-running-operation": true
     },
     "delete": {
+      "description": "",
+      "operationId": "DiskPoolIscsiTargets_Delete",
+      "parameters": [
+        {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+        },
+        {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetName"
+        },
+        {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+        }
+      ],
       "responses": {
         "202": {
           "description": "Accepted"
@@ -381,16 +400,35 @@
         "default": {
           "description": "Error from the RP",
           "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
           }
         }
       },
       "x-ms-long-running-operation": true
     },
     "get": {
+      "description": "",
+      "operationId": "DiskPoolIscsiTargets_Get",
+      "parameters": [
+        {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+        },
+        {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/DiskPoolName"
+        },
+        {
+          "$ref": "../../common/2020-03-15/parameters.json#/parameters/IscsiTargetName"
+        },
+        {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+        }
+      ],
       "responses": {
-        "202": {
-          "description": "Accepted",
+        "200": {
+          "description": "Ok",
           "schema": {
             "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
           }
@@ -398,7 +436,7 @@
         "default": {
           "description": "Error from the RP",
           "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
           }
         }
       }
@@ -410,10 +448,10 @@
       "operationId": "DiskPoolOperationStatus_Get",
       "parameters": [
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/SubscriptionId"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ResourceGroupName"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
         },
         {
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/Location"
@@ -422,7 +460,7 @@
           "$ref": "../../common/2020-03-15/parameters.json#/parameters/OperationId"
         },
         {
-          "$ref": "../../common/2020-03-15/parameters.json#/parameters/ApiVersion"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
         }
       ],
       "responses": {
@@ -435,7 +473,7 @@
         "default": {
           "description": "Error from the RP",
           "schema": {
-            "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
           }
         }
       }
