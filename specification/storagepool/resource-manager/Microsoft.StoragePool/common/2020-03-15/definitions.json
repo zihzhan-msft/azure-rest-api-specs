@@ -351,6 +351,10 @@
           "description": "Double between 0 and 100."
         }
       }
+    },
+    "Error": {
+      "type": "object",
+      "properties": {}
     }
   }
 }
