@@ -2,13 +2,8 @@
   "swagger": "2.0",
   "info": {
     "version": "2020-03-15",
-    "title": "StoragePoolManagement",
-    "description": "Exposes Azure Managed Disks as targets through a storage protocol",
-    "x-ms-code-generation-settings": {
-      "name": "storagepoolClient"
-    }
+    "title": "StoragePoolManagement"
   },
-  "host": "management.azure.com",
   "schemes": [
     "https"
   ],
@@ -36,6 +31,16 @@
       }
     }
   },
+  "tags": [
+    {
+      "name": "DiskPools",
+      "description": ""
+    },
+    {
+      "name": "StoragePoolOperations",
+      "description": ""
+    }
+  ],
   "paths": {
     "/providers/Microsoft.StoragePool/operations": {
       "get": {

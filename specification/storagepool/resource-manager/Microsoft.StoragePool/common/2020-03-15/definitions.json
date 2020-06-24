@@ -153,6 +153,7 @@
         "pool"
       ],
       "additionalProperties": false,
+      "x-ms-client-flatten": true,
       "properties": {
         "provisioningState": {
           "readOnly": true,
@@ -242,6 +243,7 @@
         "properties"
       ],
       "additionalProperties": false,
+      "x-ms-client-flatten": true,
       "description": "",
       "properties": {
         "properties": {
@@ -350,6 +352,7 @@
         "status"
       ],
       "additionalProperties": false,
+      "x-ms-client-flatten": true,
       "properties": {
         "id": {
           "type": "string",
