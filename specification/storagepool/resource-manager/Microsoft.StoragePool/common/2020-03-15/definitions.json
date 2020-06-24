@@ -151,6 +151,9 @@
         "properties": {
           "$ref": "#/definitions/DiskPoolProperties"
         },
+        "systemData": {
+          "$ref": "#/definitions/SystemMetadata"
+        },
         "sku": {
           "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Sku"
         },
@@ -161,9 +164,6 @@
       "allOf": [
         {
           "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
-        },
-        {
-          "$ref": "#/definitions/SystemMetadata"
         }
       ]
     },
@@ -173,7 +173,6 @@
       "required": [
         "pool"
       ],
-      "additionalProperties": false,
       "x-ms-client-flatten": true,
       "properties": {
         "provisioningState": {
@@ -203,7 +202,6 @@
         "name",
         "disks"
       ],
-      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string",
