@@ -111,7 +111,7 @@
       },
       "x-ms-examples": {
         "List Disk Pools": {
-          "$ref": "./examples/DiskPools_List.json"
+          "$ref": "./examples/DiskPools_ListByResourceGroup.json"
         }
       }
     }
