@@ -124,11 +124,9 @@
     },
     "DiskPoolPayload": {
       "type": "object",
-      "required": [
-        "properties"
-      ],
-      "additionalProperties": false,
       "description": "",
+      "x-ms-client-flatten": true,
+      "additionalProperties": false,
       "properties": {
         "properties": {
           "$ref": "#/definitions/DiskPoolProperties"
@@ -148,10 +146,8 @@
     },
     "DiskPoolResponsePayload": {
       "type": "object",
-      "required": [
-        "properties"
-      ],
       "additionalProperties": false,
+      "x-ms-client-flatten": true,
       "description": "",
       "properties": {
         "properties": {
@@ -255,7 +251,7 @@
           "type": "array",
           "description": "",
           "items": {
-            "$ref": "#/definitions/IscsiTargetResponsePayload"
+            "$ref": "#/definitions/IscsiTargetPayload"
           }
         },
         "nextLink": {
@@ -280,28 +276,6 @@
       "allOf": [
         {
           "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
-        }
-      ]
-    },
-    "IscsiTargetResponsePayload": {
-      "type": "object",
-      "required": [
-        "properties"
-      ],
-      "additionalProperties": false,
-      "x-ms-client-flatten": true,
-      "description": "",
-      "properties": {
-        "properties": {
-          "$ref": "#/definitions/IscsiTargetProperties"
-        }
-      },
-      "allOf": [
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
-        },
-        {
-          "$ref": "#/definitions/SystemMetadata"
         }
       ]
     },
@@ -339,8 +313,7 @@
       "required": [
         "initiatorIqn",
         "targetIqn",
-        "username",
-        "password",
+        "targetCredentials",
         "luns"
       ],
       "additionalProperties": false,
@@ -355,17 +328,8 @@
           "type": "string",
           "description": ""
         },
-        "username": {
-          "type": "string",
-          "description": "",
-          "minLength": 7,
-          "maxLength": 128
-        },
-        "password": {
-          "type": "string",
-          "description": "",
-          "minLength": 12,
-          "maxLength": 512
+        "targetCredentials": {
+          "$ref": "#/definitions/IscsiTargetCredentials"
         },
         "luns": {
           "type": "array",
@@ -378,19 +342,40 @@
         }
       }
     },
+    "IscsiTargetCredentials": {
+      "type": "object",
+      "required": [
+        "username",
+        "password"
+      ],
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "",
+          "minLength": 7,
+          "maxLength": 128
+        },
+        "password": {
+          "type": "string",
+          "description": "",
+          "minLength": 12,
+          "maxLength": 512
+        }
+      }
+    },
     "IscsiLun": {
       "type": "object",
       "required": [
-        "lun",
+        "name",
         "managedDiskAzureResourceId"
       ],
       "description": "",
       "additionalProperties": false,
       "properties": {
-        "lun": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 63,
+        "name": {
+          "type": "string",
+          "minimum": 7,
+          "maximum": 12,
           "description": ""
         },
         "managedDiskAzureResourceId": {
