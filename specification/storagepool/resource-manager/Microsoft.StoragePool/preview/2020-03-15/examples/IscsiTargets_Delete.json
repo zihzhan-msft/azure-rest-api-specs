@@ -6,5 +6,7 @@
         "diskPoolName": "myDiskPool",
         "iscsiTargetName": "myIscsiTarget"
     },
-    "202": {}
+    "responses": {
+        "202": {}
+    }
 }

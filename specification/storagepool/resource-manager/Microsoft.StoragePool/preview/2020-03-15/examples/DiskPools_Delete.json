@@ -5,5 +5,7 @@
         "resourceGroupName": "myResourceGroup",
         "diskPoolName": "myDiskPool"
     },
-    "202": {}
+    "responses": {
+        "202": {}
+    }
 }
