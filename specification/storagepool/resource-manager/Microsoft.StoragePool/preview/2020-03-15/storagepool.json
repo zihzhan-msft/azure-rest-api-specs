@@ -65,6 +65,11 @@
         },
         "x-ms-pageable": {
           "nextLinkName": null
+        },
+        "x-ms-examples": {
+          "List operations": {
+            "$ref": "./examples/Operations_List.json"
+          }
         }
       }
     },
@@ -103,6 +108,11 @@
       },
       "x-ms-pageable": {
         "nextLinkName": "nextLink"
+      },
+      "x-ms-examples": {
+        "List Disk Pools": {
+          "$ref": "./examples/DiskPools_List.json"
+        }
       }
     }
   },
@@ -144,7 +154,12 @@
           }
         }
       },
-      "x-ms-long-running-operation": true
+      "x-ms-long-running-operation": true,
+      "x-ms-examples": {
+        "List Disk Pools": {
+          "$ref": "./examples/DiskPools_Get.json"
+        }
+      }
     },
     "patch": {
       "tags": [

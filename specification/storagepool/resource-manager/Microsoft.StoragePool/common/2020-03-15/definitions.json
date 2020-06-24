@@ -374,6 +374,10 @@
         "percentComplete": {
           "type": "integer",
           "description": "Double between 0 and 100."
+        },
+        "error": {
+          "type": "object",
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
         }
       }
     }
