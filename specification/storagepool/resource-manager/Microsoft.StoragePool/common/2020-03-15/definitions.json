@@ -326,6 +326,7 @@
           "description": ""
         },
         "targetCredentials": {
+          "writeOnly": true,
           "$ref": "#/definitions/IscsiTargetCredentials"
         },
         "luns": {
