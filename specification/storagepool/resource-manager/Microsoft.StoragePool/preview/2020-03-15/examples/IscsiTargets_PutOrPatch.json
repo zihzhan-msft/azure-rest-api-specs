@@ -33,8 +33,12 @@
         "202": {
             "body": {
                 "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.StoragePool/diskPools/myDiskPool/iscsiTargets/myIscsiTarget",
-                "location": "westus2",
                 "name": "myIscsiTarget",
+                "type": "Microsoft.StoragePool/iscsiTargets",
+                "location": "westus2",
+                "tags": {
+                    "key": "value"
+                },
                 "properties": {
                     "provisioningState": "Pending",
                     "target": {
@@ -52,11 +56,7 @@
                             "password": "some_pa$$word"
                         }
                     }
-                },
-                "tags": {
-                    "key": "value"
-                },
-                "type": "Microsoft.StoragePool/iscsiTargets"
+                }
             }
         }
     }

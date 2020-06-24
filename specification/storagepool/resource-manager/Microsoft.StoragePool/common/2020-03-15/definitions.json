@@ -257,7 +257,7 @@
       }
     },
     "IscsiTargetPayload": {
-      "type": "object",
+      "type": "object", 
       "x-ms-client-flatten": true,
       "description": "",
       "properties": {
@@ -277,7 +277,6 @@
       "required": [
         "target"
       ],
-      "additionalProperties": false,
       "properties": {
         "provisioningState": {
           "readOnly": true,
@@ -303,6 +302,7 @@
       "type": "object",
       "description": "",
       "required": [
+        "name",
         "initiatorIqn",
         "targetIqn",
         "targetCredentials",
@@ -310,6 +310,11 @@
       ],
       "additionalProperties": false,
       "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 7,
+          "maxLength": 24
+        },
         "initiatorIqn": {
           "type": "string",
           "description": "",
