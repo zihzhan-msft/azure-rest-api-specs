@@ -410,7 +410,7 @@
           "202": {
             "description": "Accepted",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetResponsePayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
             }
           },
           "default": {
@@ -457,7 +457,7 @@
           "202": {
             "description": "Accepted",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetResponsePayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
             }
           },
           "default": {
@@ -542,7 +542,7 @@
           "200": {
             "description": "Ok",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetResponsePayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
             }
           },
           "default": {
