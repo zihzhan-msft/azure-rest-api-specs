@@ -191,7 +191,7 @@
           "202": {
             "description": "Accepted",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolResponsePayload"
             }
           },
           "default": {
@@ -235,7 +235,7 @@
           "202": {
             "description": "Accepted",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolResponsePayload"
             }
           },
           "default": {
@@ -276,7 +276,7 @@
           "202": {
             "description": "Accepted",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolResponsePayload"
             }
           },
           "default": {
@@ -317,7 +317,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolResponsePayload"
             }
           },
           "default": {

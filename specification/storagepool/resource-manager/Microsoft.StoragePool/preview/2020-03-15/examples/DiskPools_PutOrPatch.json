@@ -35,8 +35,20 @@
         "200": {
             "body": {
                 "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.StoragePool/diskPools/myDiskPool",
-                "location": "westus2",
                 "name": "myDiskPool",
+                "type": "Microsoft.StoragePool/diskPools",
+                "location": "westus2",
+                "tags": {
+                    "env": "int"
+                },
+                "systemData": {
+                    "createdAt": "2020-06-24T06:53:57+00:00",
+                    "createdBy": "alias",
+                    "createdByType": "User",
+                    "lastModifiedAt": "2020-06-24T06:53:57+00:00",
+                    "lastModifiedBy": "alias",
+                    "lastModifiedByType": "User"
+                },
                 "properties": {
                     "provisioningState": "succeeded",
                     "san": {
@@ -50,19 +62,7 @@
                         ],
                         "name": "myDiskPool"
                     }
-                },
-                "systemData": {
-                    "createdAt": "2020-06-24T06:53:57+00:00",
-                    "createdBy": "alias",
-                    "createdByType": "User",
-                    "lastModifiedAt": "2020-06-24T06:53:57+00:00",
-                    "lastModifiedBy": "alias",
-                    "lastModifiedByType": "User"
-                },
-                "tags": {
-                    "env": "int"
-                },
-                "type": "Microsoft.StoragePool/diskPools"
+                }
             }
         }
     }

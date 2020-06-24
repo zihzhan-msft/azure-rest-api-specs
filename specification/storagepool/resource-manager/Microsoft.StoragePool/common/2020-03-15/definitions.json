@@ -114,7 +114,7 @@
           "readOnly": true,
           "type": "array",
           "items": {
-            "$ref": "#/definitions/DiskPoolPayload"
+            "$ref": "#/definitions/DiskPoolResponsePayload"
           }
         },
         "nextLink": {
@@ -146,6 +146,33 @@
         }
       ]
     },
+    "DiskPoolResponsePayload": {
+      "type": "object",
+      "required": [
+        "properties"
+      ],
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/DiskPoolProperties"
+        },
+        "sku": {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Sku"
+        },
+        "plan": {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Plan"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
+        },
+        {
+          "$ref": "#/definitions/SystemMetadata"
+        }
+      ]
+    },
     "DiskPoolProperties": {
       "type": "object",
       "description": "",
@@ -165,7 +192,7 @@
             "Pending"
           ],
           "x-ms-enum": {
-            "name": "ProvisioningStatesEnum",
+            "name": "ProvisioningStates",
             "modelAsString": true
           },
           "description": "State of provisioning of the Disk pool"
@@ -269,7 +296,7 @@
             "Pending"
           ],
           "x-ms-enum": {
-            "name": "ProvisioningStatesEnum",
+            "name": "ProvisioningStates",
             "modelAsString": true
           },
           "description": "State of provisioning of the iSCSI target"
@@ -381,6 +408,65 @@
         "error": {
           "type": "object",
           "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+        }
+      }
+    },
+    "SystemMetadata": {
+      "type": "object",
+      "required": [
+        "createdAt",
+        "createdBy",
+        "createdByType",
+        "lastModifiedAt",
+        "lastModifiedBy",
+        "lastModifiedByType"
+      ],
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "description": "The timestamp of resource creation (UTC)"
+        },
+        "createdBy": {
+          "type": "string",
+          "description": "a string identifier for the identity that created the resource"
+        },
+        "createdByType": {
+          "readOnly": true,
+          "type": "string",
+          "enum": [
+            "User",
+            "Application",
+            "ManagedIdentity",
+            "Key"
+          ],
+          "x-ms-enum": {
+            "name": "IdentityTypes",
+            "modelAsString": true
+          },
+          "description": "The type of identity that created the resource: user, application, managedIdentity, key."
+        },
+        "lastModifiedAt": {
+          "type": "string",
+          "description": "The timestamp of resource last modification (UTC)."
+        },
+        "lastModifiedBy": {
+          "type": "string",
+          "description": "A string identifier for the identity that last modified the resource."
+        },
+        "lastModifiedByType": {
+          "readOnly": true,
+          "type": "string",
+          "enum": [
+            "User",
+            "Application",
+            "ManagedIdentity",
+            "Key"
+          ],
+          "x-ms-enum": {
+            "name": "IdentityTypes",
+            "modelAsString": true
+          },
+          "description": "The type of identity that last modified the resource: user, application, managedIdentity, key."
         }
       }
     }
