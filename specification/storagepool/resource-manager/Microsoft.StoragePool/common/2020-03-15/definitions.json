@@ -121,32 +121,14 @@
     "DiskPoolPayload": {
       "type": "object",
       "required": [
-        "diskPool"
+        "properties"
       ],
       "description": "",
       "properties": {
         "properties": {
-          "x-ms-client-flatten": true,
-          "type": "object",
-          "$ref": "#/definitions/DiskPoolProperties",
-          "description": "Disk pool properties"
-        },
-        "sku": {
-          "type": "object",
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Sku",
-          "description": "The Sku."
-        },
-        "plan": {
-          "type": "object",
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Plan",
-          "description": "The Plan."
+          "$ref": "#/definitions/DiskPoolProperties"
         }
-      },
-      "allOf": [
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
-        }
-      ]
+      }
     },
     "DiskPoolProperties": {
       "type": "object",
@@ -155,28 +137,23 @@
         "pool"
       ],
       "properties": {
-        "properties": {
-          "provisioningState": {
-            "readOnly": true,
-            "type": "string",
-            "enum": [
-              "Succeeded",
-              "Failed",
-              "Canceled",
-              "Pending"
-            ],
-            "x-ms-enum": {
-              "name": "ProvisioningStatesEnum",
-              "modelAsString": true
-            },
-            "description": "State of provisioning of the Disk pool"
+        "provisioningState": {
+          "readOnly": true,
+          "type": "string",
+          "enum": [
+            "Succeeded",
+            "Failed",
+            "Canceled",
+            "Pending"
+          ],
+          "x-ms-enum": {
+            "name": "ProvisioningStatesEnum",
+            "modelAsString": true
           },
-          "pool": {
-            "x-ms-client-flatten": true,
-            "type": "object",
-            "$ref": "#/definitions/DiskPool",
-            "description": "Disk pool definition"
-          }
+          "description": "State of provisioning of the Disk pool"
+        },
+        "pool": {
+          "$ref": "#/definitions/DiskPool"
         }
       }
     },
@@ -242,22 +219,14 @@
     "IscsiTargetPayload": {
       "type": "object",
       "required": [
-        "diskPool"
+        "properties"
       ],
       "description": "",
       "properties": {
         "properties": {
-          "x-ms-client-flatten": true,
-          "type": "object",
-          "$ref": "#/definitions/IscsiTargetProperties",
-          "description": "iSCSI target properties"
+          "$ref": "#/definitions/IscsiTargetProperties"
         }
-      },
-      "allOf": [
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
-        }
-      ]
+      }
     },
     "IscsiTargetProperties": {
       "type": "object",
@@ -266,27 +235,23 @@
         "target"
       ],
       "properties": {
-        "properties": {
-          "provisioningState": {
-            "readOnly": true,
-            "type": "string",
-            "enum": [
-              "Succeeded",
-              "Failed",
-              "Canceled",
-              "Pending"
-            ],
-            "x-ms-enum": {
-              "name": "ProvisioningStatesEnum",
-              "modelAsString": true
-            },
-            "description": "State of provisioning of the iSCSI target"
+        "provisioningState": {
+          "readOnly": true,
+          "type": "string",
+          "enum": [
+            "Succeeded",
+            "Failed",
+            "Canceled",
+            "Pending"
+          ],
+          "x-ms-enum": {
+            "name": "ProvisioningStatesEnum",
+            "modelAsString": true
           },
-          "target": {
-            "x-ms-client-flatten": true,
-            "$ref": "#/definitions/IscsiTarget",
-            "description": "iSCSI target definition"
-          }
+          "description": "State of provisioning of the iSCSI target"
+        },
+        "target": {
+          "$ref": "#/definitions/IscsiTarget"
         }
       }
     },
@@ -384,11 +349,6 @@
         "percentComplete": {
           "type": "integer",
           "description": "Double between 0 and 100."
-        },
-        "error": {
-          "type": "object",
-          "description": "",
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
         }
       }
     }
