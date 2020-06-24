@@ -1,11 +1,71 @@
 {
     "parameters": {
-
+        "api-version": "2020-03-15",
+        "subscriptionId": "00000000-0000-0000-0000-000000000000",
+        "resourceGroupName": "myResourceGroup"
     },
     "body": {
         "200": {
             "body": {
-                
+                "value": [
+                    {
+                        "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.StoragePool/diskPools/myDiskPool",
+                        "location": "westus2",
+                        "name": "myDiskPool",
+                        "properties": {
+                            "provisioningState": "succeeded",
+                            "san": {
+                                "disks": [
+                                    {
+                                        "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/myDataDisk_0"
+                                    }
+                                ],
+                                "name": "myDiskPool"
+                            }
+                        },
+                        "systemData": {
+                            "createdAt": "2020-06-24T06:53:57+00:00",
+                            "createdBy": "alias",
+                            "createdByType": "User",
+                            "lastModifiedAt": "2020-06-24T06:53:57+00:00",
+                            "lastModifiedBy": "alias",
+                            "lastModifiedByType": "User"
+                        },
+                        "tags": {
+                            "env": "int"
+                        },
+                        "type": "Microsoft.StoragePool/diskPools"
+                    },
+                    {
+                        "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.StoragePool/diskPools/myDiskPool2",
+                        "location": "westus2",
+                        "name": "myDiskPool2",
+                        "properties": {
+                            "provisioningState": "succeeded",
+                            "san": {
+                                "disks": [
+                                    {
+                                        "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/myDataDisk_0"
+                                    }
+                                ],
+                                "name": "myDiskPool2"
+                            }
+                        },
+                        "systemData": {
+                            "createdAt": "2020-06-24T06:53:57+00:00",
+                            "createdBy": "alias",
+                            "createdByType": "User",
+                            "lastModifiedAt": "2020-06-24T06:53:57+00:00",
+                            "lastModifiedBy": "alias",
+                            "lastModifiedByType": "User"
+                        },
+                        "tags": {
+                            "env": "int"
+                        },
+                        "type": "Microsoft.StoragePool/diskPools"
+                    }
+                ],
+                "nextLink": null
             }
         }
     }

@@ -82,12 +82,51 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.StoragePool/diskPools": {
+      "get": {
+        "tags": [
+          "DiskPools"
+        ],
+        "operationId": "DiskPools_ListBySubscription",
+        "description": "Gets a list of Disk Pools in a subscription",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolListResult"
+            }
+          },
+          "default": {
+            "description": "Error from the RP",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "x-ms-pageable": {
+        "nextLinkName": "nextLink"
+      },
+      "x-ms-examples": {
+        "List Disk Pools": {
+          "$ref": "./examples/DiskPools_ListBySubscription.json"
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools": {
       "get": {
         "tags": [
           "DiskPools"
         ],
-        "operationId": "DiskPools_List",
+        "operationId": "DiskPools_ListByResourceGroup",
         "description": "Gets a list of DiskPools.",
         "parameters": [
           {
@@ -301,7 +340,7 @@
           "IscsiTargets"
         ],
         "description": "Get iSCSI Targets within a Disk Pool",
-        "operationId": "DiskPoolIscsiTargets_List",
+        "operationId": "DiskPoolIscsiTargets_ListByDiskPool",
         "parameters": [
           {
             "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
@@ -335,7 +374,7 @@
         },
         "x-ms-examples": {
           "List Disk Pools by Resource Group": {
-            "$ref": "./examples/DiskPools_ListByResourceGroup.json"
+            "$ref": "./examples/IscsiTargets_ListByDiskPool.json"
           }
         }
       }
