@@ -255,7 +255,7 @@
           "type": "array",
           "description": "",
           "items": {
-            "$ref": "#/definitions/IscsiTargetPayload"
+            "$ref": "#/definitions/IscsiTargetResponsePayload"
           }
         },
         "nextLink": {
@@ -276,7 +276,34 @@
         "properties": {
           "$ref": "#/definitions/IscsiTargetProperties"
         }
-      }
+      },
+      "allOf": [
+        {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
+        }
+      ]
+    },
+    "IscsiTargetResponsePayload": {
+      "type": "object",
+      "required": [
+        "properties"
+      ],
+      "additionalProperties": false,
+      "x-ms-client-flatten": true,
+      "description": "",
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/IscsiTargetProperties"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
+        },
+        {
+          "$ref": "#/definitions/SystemMetadata"
+        }
+      ]
     },
     "IscsiTargetProperties": {
       "type": "object",
