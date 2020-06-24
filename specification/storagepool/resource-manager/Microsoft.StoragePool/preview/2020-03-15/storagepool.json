@@ -321,13 +321,18 @@
       },
       "x-ms-pageable": {
         "nextLinkName": "nextLink"
+      },
+      "x-ms-examples": {
+        "List Disk Pools by Resource Group": {
+          "$ref": "./examples/DiskPools_ListByResourceGroup.json"
+        }
       }
     }
   },
   "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StoragePool/diskPools/{diskPoolName}/iscsiTargets/{iscsiTargetName}": {
     "put": {
-      "description": "Create an Iscsi target",
-      "operationId": "DiskPoolIscsiTargets_Create",
+      "description": "Create or Update an iSCSI target",
+      "operationId": "DiskPoolIscsiTargets_CreateOrUpdate",
       "parameters": [
         {
           "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
@@ -362,10 +367,15 @@
           }
         }
       },
-      "x-ms-long-running-operation": true
+      "x-ms-long-running-operation": true,
+      "x-ms-examples": {
+        "Create or Update an iSCSI Target": {
+          "$ref": "./examples/IscsiTargets_PutOrPatch.json"
+        }
+      }
     },
     "patch": {
-      "description": "",
+      "description": "Update an iSCSI Target",
       "operationId": "DiskPoolIscsiTargets_Update",
       "parameters": [
         {
@@ -401,7 +411,12 @@
           }
         }
       },
-      "x-ms-long-running-operation": true
+      "x-ms-long-running-operation": true,
+      "x-ms-examples": {
+        "Update an iSCSI Target": {
+          "$ref": "./examples/IscsiTargets_PutOrPatch.json"
+        }
+      }
     },
     "delete": {
       "description": "",
@@ -434,7 +449,12 @@
           }
         }
       },
-      "x-ms-long-running-operation": true
+      "x-ms-long-running-operation": true,
+      "x-ms-examples": {
+        "Delete an iSCSI Target": {
+          "$ref": "./examples/IscsiTargets_Delete.json"
+        }
+      }
     },
     "get": {
       "description": "",
@@ -469,6 +489,11 @@
             "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
           }
         }
+      },
+      "x-ms-examples": {
+        "Get an iSCSI Target": {
+          "$ref": "./examples/IscsiTargets_Get.json"
+        }
       }
     }
   },
@@ -502,6 +527,11 @@
           "schema": {
             "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
           }
+        }
+      },
+      "x-ms-examples": {
+        "Get Operation Status": {
+          "$ref": "./examples/OperationStatus_Get.json"
         }
       }
     }
