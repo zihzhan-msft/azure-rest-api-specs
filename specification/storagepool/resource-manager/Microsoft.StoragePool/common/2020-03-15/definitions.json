@@ -247,7 +247,7 @@
           "type": "array",
           "description": "",
           "items": {
-            "$ref": "#/definitions/IscsiTargetPayload"
+            "$ref": "#/definitions/IscsiTargetResponsePayload"
           }
         },
         "nextLink": {
@@ -263,6 +263,21 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/IscsiTargetProperties"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
+        }
+      ]
+    },
+    "IscsiTargetResponsePayload": {
+      "type": "object", 
+      "x-ms-client-flatten": true,
+      "description": "",
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/IscsiTargetResponseProperties"
         }
       },
       "allOf": [
@@ -298,7 +313,74 @@
         }
       }
     },
+    "IscsiTargetResponseProperties": {
+      "type": "object",
+      "description": "",
+      "required": [
+        "target"
+      ],
+      "properties": {
+        "provisioningState": {
+          "readOnly": true,
+          "type": "string",
+          "enum": [
+            "Succeeded",
+            "Failed",
+            "Canceled",
+            "Pending"
+          ],
+          "x-ms-enum": {
+            "name": "ProvisioningStates",
+            "modelAsString": true
+          },
+          "description": "State of provisioning of the iSCSI target"
+        },
+        "target": {
+          "$ref": "#/definitions/IscsiTargetResponse"
+        }
+      }
+    },
     "IscsiTarget": {
+      "type": "object",
+      "description": "",
+      "required": [
+        "name",
+        "initiatorIqn",
+        "targetIqn",
+        "luns",
+        "targetCredentials"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 7,
+          "maxLength": 24
+        },
+        "initiatorIqn": {
+          "type": "string",
+          "description": "",
+          "minLength": 5,
+          "maxLength": 223
+        },
+        "targetIqn": {
+          "type": "string",
+          "description": ""
+        },
+        "targetCredentials": {
+          "$ref": "#/definitions/IscsiTargetCredentials"
+        },
+        "luns": {
+          "type": "array",
+          "description": "Lun list to be exposed through the Iscsi target. Required",
+          "items": {
+            "$ref": "#/definitions/IscsiLun"
+          },
+          "minLength": 1,
+          "maxLength": 8
+        }
+      }
+    },
+    "IscsiTargetResponse": {
       "type": "object",
       "description": "",
       "required": [
@@ -322,10 +404,6 @@
         "targetIqn": {
           "type": "string",
           "description": ""
-        },
-        "targetCredentials": {
-          "writeOnly": true,
-          "$ref": "#/definitions/IscsiTargetCredentials"
         },
         "luns": {
           "type": "array",
