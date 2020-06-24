@@ -156,8 +156,8 @@
       },
       "x-ms-long-running-operation": true,
       "x-ms-examples": {
-        "List Disk Pools": {
-          "$ref": "./examples/DiskPools_Get.json"
+        "Create or Update a Disk Pool": {
+          "$ref": "./examples/DiskPools_PutOrPatch.json"
         }
       }
     },
@@ -198,6 +198,11 @@
           }
         }
       },
+      "x-ms-examples": {
+        "Update Disk Pool": {
+          "$ref": "./examples/DiskPools_PutOrPatch.json"
+        }
+      },
       "x-ms-long-running-operation": true
     },
     "delete": {
@@ -234,7 +239,12 @@
           }
         }
       },
-      "x-ms-long-running-operation": true
+      "x-ms-long-running-operation": true,
+      "x-ms-examples": {
+        "Delete a Disk Pool": {
+          "$ref": "./examples/DiskPools_Delete.json"
+        }
+      }
     },
     "get": {
       "tags": [
@@ -268,6 +278,11 @@
           "schema": {
             "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
           }
+        }
+      },
+      "x-ms-examples": {
+        "Get a Disk Pool": {
+          "$ref": "./examples/DiskPools_Get.json"
         }
       }
     }

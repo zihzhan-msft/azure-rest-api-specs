@@ -68,7 +68,7 @@
       "x-ms-parameter-location": "method"
     },
     "IscsiTargetPayload": {
-      "name": "parameters",
+      "name": "iscsiTargetPayload",
       "required": true,
       "in": "body",
       "description": "",
