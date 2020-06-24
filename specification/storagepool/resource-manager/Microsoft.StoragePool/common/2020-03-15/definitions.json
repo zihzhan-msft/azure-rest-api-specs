@@ -258,10 +258,6 @@
     },
     "IscsiTargetPayload": {
       "type": "object",
-      "required": [
-        "properties"
-      ],
-      "additionalProperties": false,
       "x-ms-client-flatten": true,
       "description": "",
       "properties": {

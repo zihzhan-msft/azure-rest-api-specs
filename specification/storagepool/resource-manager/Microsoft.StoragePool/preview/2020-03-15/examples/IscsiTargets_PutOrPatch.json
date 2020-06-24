@@ -5,10 +5,7 @@
         "resourceGroupName": "myResourceGroup",
         "diskPoolName": "myDiskPool",
         "iscsiTargetName": "myIscsiTarget",
-        "target": {
-            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.StoragePool/diskpools/myDiskPool/iscsiTargets/myIscsiTarget",
-            "name": "myIscsiTarget",
-            "type": "Microsoft.StoragePool/iscsiTargets",
+        "iscsiTargetPayload": {
             "location": "westus",
             "tags": {
                 "key": "value"
@@ -39,6 +36,7 @@
                 "location": "westus2",
                 "name": "myIscsiTarget",
                 "properties": {
+                    "provisioningState": "Pending",
                     "target": {
                         "targetIqn": "target iqn",
                         "initiatorIqn": "initiator iqn",
