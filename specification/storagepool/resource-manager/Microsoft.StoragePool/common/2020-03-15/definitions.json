@@ -305,7 +305,6 @@
         "name",
         "initiatorIqn",
         "targetIqn",
-        "targetCredentials",
         "luns"
       ],
       "additionalProperties": false,
