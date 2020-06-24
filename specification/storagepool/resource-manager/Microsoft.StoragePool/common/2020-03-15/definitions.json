@@ -176,6 +176,7 @@
       "x-ms-client-flatten": true,
       "properties": {
         "provisioningState": {
+          "readOnly": true,
           "type": "string",
           "enum": [
             "Succeeded",
@@ -283,6 +284,7 @@
       "additionalProperties": false,
       "properties": {
         "provisioningState": {
+          "readOnly": true,
           "type": "string",
           "enum": [
             "Succeeded",

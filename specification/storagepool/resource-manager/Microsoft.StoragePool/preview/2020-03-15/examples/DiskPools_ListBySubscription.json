@@ -12,7 +12,7 @@
                         "location": "westus2",
                         "name": "myDiskPool",
                         "properties": {
-                            "provisioningState": "succeeded",
+                            "provisioningState": "Succeeded",
                             "pool": {
                                 "disks": [
                                     {
@@ -40,7 +40,7 @@
                         "location": "westus2",
                         "name": "myDiskPool2",
                         "properties": {
-                            "provisioningState": "succeeded",
+                            "provisioningState": "Succeeded",
                             "pool": {
                                 "disks": [
                                     {
