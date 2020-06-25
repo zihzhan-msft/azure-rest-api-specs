@@ -124,15 +124,18 @@
     "DiskPoolPayload": {
       "type": "object",
       "description": "Request payload for Create or Update Disk Pool requests.",
-      "x-ms-client-flatten": true,
       "properties": {
         "properties": {
+          "x-ms-client-flatten": true,
+          "description": "RP defined properties for Disk Pool operations.",
           "$ref": "#/definitions/DiskPoolProperties"
         },
         "sku": {
+          "description": "Sku description.",
           "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Sku"
         },
         "plan": {
+          "description": "Plan description.",
           "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Plan"
         }
       },
@@ -144,19 +147,26 @@
     },
     "DiskPoolResponsePayload": {
       "type": "object",
-      "x-ms-client-flatten": true,
       "description": "Response payload for Disk Pool requests.",
       "properties": {
         "properties": {
+          "x-ms-client-flatten": true,
+          "description": "RP defined properties for Disk Pool operations.",
           "$ref": "#/definitions/DiskPoolProperties"
         },
         "systemData": {
+          "description": "Metadata about the Disk Pool resource.",
+          "x-ms-client-flatten": true,
           "$ref": "#/definitions/SystemMetadata"
         },
         "sku": {
+          "x-ms-client-flatten": true,
+          "description": "Sku description.",
           "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Sku"
         },
         "plan": {
+          "x-ms-client-flatten": true,
+          "description": "Plan description.",
           "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Plan"
         }
       },
@@ -172,7 +182,6 @@
       "required": [
         "pool"
       ],
-      "x-ms-client-flatten": true,
       "properties": {
         "provisioningState": {
           "readOnly": true,
@@ -190,6 +199,8 @@
           "description": "State of provisioning of the Disk pool"
         },
         "pool": {
+          "x-ms-client-flatten": true,
+          "description": "Disk Pool description.",
           "$ref": "#/definitions/DiskPool"
         }
       }
@@ -255,10 +266,11 @@
     },
     "IscsiTargetPayload": {
       "type": "object", 
-      "x-ms-client-flatten": true,
       "description": "Payload for iSCSI Target Create or Update requests.",
       "properties": {
         "properties": {
+          "x-ms-client-flatten": true,
+          "description": "RP defined properties for iSCSI Target operations.",
           "$ref": "#/definitions/IscsiTargetProperties"
         }
       },
@@ -270,10 +282,11 @@
     },
     "IscsiTargetResponsePayload": {
       "type": "object", 
-      "x-ms-client-flatten": true,
       "description": "Response payload for iSCSI Target requests.",
       "properties": {
         "properties": {
+          "x-ms-client-flatten": true,
+          "description": "RP defined properties for iSCSI Target operations.",
           "$ref": "#/definitions/IscsiTargetResponseProperties"
         }
       },
@@ -306,6 +319,8 @@
           "description": "State of provisioning of the iSCSI target"
         },
         "target": {
+          "description": "Description of an iSCSI Target.",
+          "x-ms-client-flatten": true,
           "$ref": "#/definitions/IscsiTarget"
         }
       }
@@ -333,6 +348,8 @@
           "description": "State of provisioning of the iSCSI target"
         },
         "target": {
+          "description": "Description of an iSCSI Target.",
+          "x-ms-client-flatten": true,
           "$ref": "#/definitions/IscsiTargetResponse"
         }
       }
@@ -365,6 +382,8 @@
           "description": "iSCSI target iqn."
         },
         "targetCredentials": {
+          "description": "CHAP credentials for iSCSI target.",
+          "x-ms-client-flatten": true,
           "$ref": "#/definitions/IscsiTargetCredentials"
         },
         "luns": {
@@ -423,6 +442,7 @@
         "username",
         "password"
       ],
+      "description": "CHAP credentials for an iSCSI target",
       "properties": {
         "username": {
           "type": "string",
@@ -466,7 +486,6 @@
         "status"
       ],
       "additionalProperties": true,
-      "x-ms-client-flatten": true,
       "properties": {
         "id": {
           "type": "string",
@@ -503,7 +522,9 @@
           "description": "Double between 0 and 100."
         },
         "error": {
+          "description": "Error description.",
           "type": "object",
+          "x-ms-client-flatten": true,
           "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
         }
       }
@@ -518,6 +539,7 @@
         "lastModifiedBy",
         "lastModifiedByType"
       ],
+      "description": "Metadata about a top-level resource.",
       "properties": {
         "createdAt": {
           "type": "string",
