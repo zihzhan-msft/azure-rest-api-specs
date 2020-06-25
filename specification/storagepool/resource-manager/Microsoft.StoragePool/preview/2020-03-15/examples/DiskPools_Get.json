@@ -11,6 +11,7 @@
                 "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.StoragePool/diskPools/myDiskPool",
                 "location": "westus2",
                 "name": "myDiskPool",
+                "type": "Microsoft.StoragePool/diskPools",
                 "properties": {
                   "provisioningState": "Succeeded",
                   "pool": {
@@ -32,8 +33,7 @@
                 },
                 "tags": {
                     "env": "int"
-                },
-                "type": "Microsoft.StoragePool/diskPools"
+                }
               }
         }
     }
