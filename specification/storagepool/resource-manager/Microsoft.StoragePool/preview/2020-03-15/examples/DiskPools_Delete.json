@@ -6,6 +6,6 @@
         "diskPoolName": "myDiskPool"
     },
     "responses": {
-        "202": {}
+        "204": {}
     }
 }

@@ -31,7 +31,8 @@
       "pattern": "^[-\\w\\._]+$",
       "minLength": 1,
       "maxLength": 90,
-      "description": "The name of the Disk Pool."
+      "description": "The name of the Disk Pool.",
+      "x-ms-parameter-location": "method"
     },
     "IscsiTargetName": {
       "name": "iscsiTargetName",

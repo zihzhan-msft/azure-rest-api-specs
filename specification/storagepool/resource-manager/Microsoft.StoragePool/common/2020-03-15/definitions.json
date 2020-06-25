@@ -92,6 +92,7 @@
       "additionalProperties": false,
       "properties": {
         "value": {
+          "readOnly": true,
           "type": "array",
           "items": {
             "$ref": "#/definitions/StoragePoolRPOperation"
@@ -517,7 +518,6 @@
           "description": "a string identifier for the identity that created the resource"
         },
         "createdByType": {
-          "readOnly": true,
           "type": "string",
           "enum": [
             "User",
@@ -540,7 +540,6 @@
           "description": "A string identifier for the identity that last modified the resource."
         },
         "lastModifiedByType": {
-          "readOnly": true,
           "type": "string",
           "enum": [
             "User",

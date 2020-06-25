@@ -28,7 +28,7 @@
         }
     },
     "responses": {
-        "202": {
+        "201": {
             "body": {
                 "location": "westus2",
                 "tags": {
