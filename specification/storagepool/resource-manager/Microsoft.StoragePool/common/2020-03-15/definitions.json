@@ -20,7 +20,7 @@
   },
   "info": {
     "version": "2020-03-15",
-    "title": "Common types"
+    "title": "StoragePool RP Types"
   },
   "definitions": {
     "StoragePoolOperationDisplay": {
@@ -132,16 +132,16 @@
         },
         "sku": {
           "description": "Sku description.",
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Sku"
+          "$ref": "./common-types.json#/definitions/Sku"
         },
         "plan": {
           "description": "Plan description.",
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Plan"
+          "$ref": "./common-types.json#/definitions/Plan"
         }
       },
       "allOf": [
         {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
+          "$ref": "./common-types.json#/definitions/TrackedResource"
         }
       ]
     },
@@ -162,17 +162,17 @@
         "sku": {
           "x-ms-client-flatten": true,
           "description": "Sku description.",
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Sku"
+          "$ref": "./common-types.json#/definitions/Sku"
         },
         "plan": {
           "x-ms-client-flatten": true,
           "description": "Plan description.",
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Plan"
+          "$ref": "./common-types.json#/definitions/Plan"
         }
       },
       "allOf": [
         {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
+          "$ref": "./common-types.json#/definitions/TrackedResource"
         }
       ]
     },
@@ -276,7 +276,7 @@
       },
       "allOf": [
         {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
+          "$ref": "./common-types.json#/definitions/TrackedResource"
         }
       ]
     },
@@ -292,7 +292,7 @@
       },
       "allOf": [
         {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/TrackedResource"
+          "$ref": "./common-types.json#/definitions/TrackedResource"
         }
       ]
     },
@@ -525,7 +525,7 @@
           "description": "Error description.",
           "type": "object",
           "x-ms-client-flatten": true,
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ErrorResponse"
+          "$ref": "./common-types.json#/definitions/ErrorResponse"
         }
       }
     },
