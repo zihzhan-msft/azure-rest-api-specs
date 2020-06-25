@@ -31,7 +31,7 @@
         "operation",
         "description"
       ],
-      "description": "",
+      "description": "List operations supported by the StoragePool RP.",
       "additionalProperties": false,
       "properties": {
         "provider": {
@@ -59,7 +59,7 @@
         "isDataAction",
         "display"
       ],
-      "description": "",
+      "description": "Description of a StoragePool RP Operation",
       "additionalProperties": false,
       "properties": {
         "name": {
@@ -92,7 +92,6 @@
       "additionalProperties": false,
       "properties": {
         "value": {
-          "readOnly": true,
           "type": "array",
           "items": {
             "$ref": "#/definitions/StoragePoolRPOperation"
@@ -108,11 +107,10 @@
       "required": [
         "value"
       ],
-      "description": "",
+      "description": "List of Disk Pools",
       "additionalProperties": false,
       "properties": {
         "value": {
-          "readOnly": true,
           "type": "array",
           "items": {
             "$ref": "#/definitions/DiskPoolResponsePayload"
@@ -125,7 +123,7 @@
     },
     "DiskPoolPayload": {
       "type": "object",
-      "description": "",
+      "description": "Request payload for Create or Update Disk Pool requests.",
       "x-ms-client-flatten": true,
       "properties": {
         "properties": {
@@ -147,7 +145,7 @@
     "DiskPoolResponsePayload": {
       "type": "object",
       "x-ms-client-flatten": true,
-      "description": "",
+      "description": "Response payload for Disk Pool requests.",
       "properties": {
         "properties": {
           "$ref": "#/definitions/DiskPoolProperties"
@@ -170,7 +168,7 @@
     },
     "DiskPoolProperties": {
       "type": "object",
-      "description": "",
+      "description": "Properties section of the Disk Pool request payload.",
       "required": [
         "pool"
       ],
@@ -198,7 +196,7 @@
     },
     "DiskPool": {
       "type": "object",
-      "description": "",
+      "description": "Describes a Disk Pool object.",
       "required": [
         "name",
         "disks"
@@ -240,27 +238,25 @@
       "required": [
         "value"
       ],
-      "description": "",
+      "description": "List of iSCSI Targets.",
       "additionalProperties": false,
       "properties": {
         "value": {
-          "readOnly": true,
           "type": "array",
-          "description": "",
+          "description": "An array of iSCSI targets within a Disk Pool.",
           "items": {
             "$ref": "#/definitions/IscsiTargetResponsePayload"
           }
         },
         "nextLink": {
-          "type": "string",
-          "description": ""
+          "type": "string"
         }
       }
     },
     "IscsiTargetPayload": {
       "type": "object", 
       "x-ms-client-flatten": true,
-      "description": "",
+      "description": "Payload for iSCSI Target Create or Update requests.",
       "properties": {
         "properties": {
           "$ref": "#/definitions/IscsiTargetProperties"
@@ -275,7 +271,7 @@
     "IscsiTargetResponsePayload": {
       "type": "object", 
       "x-ms-client-flatten": true,
-      "description": "",
+      "description": "Response payload for iSCSI Target requests.",
       "properties": {
         "properties": {
           "$ref": "#/definitions/IscsiTargetResponseProperties"
@@ -289,7 +285,7 @@
     },
     "IscsiTargetProperties": {
       "type": "object",
-      "description": "",
+      "description": "Properties of iSCSI Target request payload.",
       "required": [
         "target"
       ],
@@ -316,7 +312,7 @@
     },
     "IscsiTargetResponseProperties": {
       "type": "object",
-      "description": "",
+      "description": "Properties of iSCSI target response payload",
       "required": [
         "target"
       ],
@@ -343,7 +339,7 @@
     },
     "IscsiTarget": {
       "type": "object",
-      "description": "",
+      "description": "Description of an iSCSI Target.",
       "required": [
         "name",
         "initiatorIqn",
@@ -354,18 +350,19 @@
       "properties": {
         "name": {
           "type": "string",
+          "description": "iSCSI target name.",
           "minLength": 7,
           "maxLength": 24
         },
         "initiatorIqn": {
           "type": "string",
-          "description": "",
+          "description": "iSCSI initiator iqn.",
           "minLength": 5,
           "maxLength": 223
         },
         "targetIqn": {
           "type": "string",
-          "description": ""
+          "description": "iSCSI target iqn."
         },
         "targetCredentials": {
           "$ref": "#/definitions/IscsiTargetCredentials"
@@ -383,7 +380,7 @@
     },
     "IscsiTargetResponse": {
       "type": "object",
-      "description": "",
+      "description": "Response payload for iSCSI Target requests.",
       "required": [
         "name",
         "initiatorIqn",
@@ -393,18 +390,21 @@
       "properties": {
         "name": {
           "type": "string",
+          "description": "iSCSI target name.",
           "minLength": 7,
           "maxLength": 24
         },
         "initiatorIqn": {
           "type": "string",
-          "description": "",
+          "description": "iSCSI initiator iqn.",
           "minLength": 5,
           "maxLength": 223
         },
         "targetIqn": {
           "type": "string",
-          "description": ""
+          "description": "iSCSI target iqn.",
+          "minLength": 5,
+          "maxLength": 223
         },
         "luns": {
           "type": "array",
@@ -426,13 +426,13 @@
       "properties": {
         "username": {
           "type": "string",
-          "description": "",
+          "description": "Username for CHAP authentication.",
           "minLength": 7,
           "maxLength": 128
         },
         "password": {
           "type": "string",
-          "description": "",
+          "description": "Password for CHAP authentication",
           "minLength": 12,
           "maxLength": 512
         }
@@ -444,14 +444,14 @@
         "name",
         "managedDiskAzureResourceId"
       ],
-      "description": "",
+      "description": "Lun to expose the ManagedDisk.",
       "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string",
           "minimum": 7,
           "maximum": 12,
-          "description": ""
+          "description": "Lun name."
         },
         "managedDiskAzureResourceId": {
           "type": "string",
@@ -461,11 +461,11 @@
     },
     "OperationStatusPayload": {
       "type": "object",
-      "description": "",
+      "description": "Response paylod for long Storage Pool RP operations.",
       "required": [
         "status"
       ],
-      "additionalProperties": false,
+      "additionalProperties": true,
       "x-ms-client-flatten": true,
       "properties": {
         "id": {
@@ -478,7 +478,17 @@
         },
         "status": {
           "type": "string",
-          "description": ""
+          "enum": [
+            "Succeeded",
+            "Failed",
+            "Canceled",
+            "Pending"
+          ],
+          "x-ms-enum": {
+            "name": "ProvisioningStates",
+            "modelAsString": true
+          },
+          "description": "RP defined states for asynchronous operations."
         },
         "startTime": {
           "type": "string",
