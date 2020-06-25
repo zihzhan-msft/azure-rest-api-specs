@@ -381,7 +381,7 @@
         "tags": [
           "IscsiTargets"
         ],
-        "description": "Create or Update an iSCSI target",
+        "description": "Create or Update an iSCSI target.",
         "operationId": "DiskPoolIscsiTargets_CreateOrUpdate",
         "parameters": [
           {
@@ -428,7 +428,7 @@
         "tags": [
           "IscsiTargets"
         ],
-        "description": "Update an iSCSI Target",
+        "description": "Update an iSCSI Target.",
         "operationId": "DiskPoolIscsiTargets_Update",
         "parameters": [
           {
@@ -475,7 +475,7 @@
         "tags": [
           "IscsiTargets"
         ],
-        "description": "",
+        "description": "Deletes an iSCSI Target",
         "operationId": "DiskPoolIscsiTargets_Delete",
         "parameters": [
           {
@@ -516,7 +516,7 @@
         "tags": [
           "IscsiTargets"
         ],
-        "description": "",
+        "description": "Gets an iSCSI Target.",
         "operationId": "DiskPoolIscsiTargets_Get",
         "parameters": [
           {

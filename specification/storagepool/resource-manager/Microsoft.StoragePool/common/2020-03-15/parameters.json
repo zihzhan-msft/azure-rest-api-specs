@@ -62,7 +62,7 @@
       "name": "diskPoolPayload",
       "required": true,
       "in": "body",
-      "description": "",
+      "description": "Request payload for Disk Pool operations.",
       "schema": {
         "$ref": "./definitions.json#/definitions/DiskPoolPayload"
       },
@@ -72,7 +72,7 @@
       "name": "iscsiTargetPayload",
       "required": true,
       "in": "body",
-      "description": "",
+      "description": "Request payload for iSCSI target operations.",
       "schema": {
         "$ref": "./definitions.json#/definitions/IscsiTargetPayload"
       },

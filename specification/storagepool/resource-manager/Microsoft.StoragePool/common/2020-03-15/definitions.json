@@ -31,7 +31,7 @@
         "operation",
         "description"
       ],
-      "description": "List operations supported by the StoragePool RP.",
+      "description": "Metadata about an operation.",
       "additionalProperties": false,
       "properties": {
         "provider": {
@@ -75,6 +75,7 @@
           "description": "Indicates the action type."
         },
         "display": {
+          "description": "Additional metadata about RP operation.",
           "$ref": "#/definitions/StoragePoolOperationDisplay"
         },
         "origin": {
@@ -93,11 +94,13 @@
       "properties": {
         "value": {
           "type": "array",
+          "description": "An array of operations supported by the StoragePool RP.",
           "items": {
             "$ref": "#/definitions/StoragePoolRPOperation"
           }
         },
         "nextLink": {
+          "description": "URI to fetch the next section of the paginated response.",
           "type": "string"
         }
       }
@@ -111,12 +114,14 @@
       "additionalProperties": false,
       "properties": {
         "value": {
+          "description": "An array of Disk Pool objects.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/DiskPoolResponsePayload"
           }
         },
         "nextLink": {
+          "description": "URI to fetch the next section of the paginated response.",
           "type": "string"
         }
       }
@@ -260,6 +265,7 @@
           }
         },
         "nextLink": {
+          "description": "URI to fetch the next section of the paginated response.",
           "type": "string"
         }
       }
