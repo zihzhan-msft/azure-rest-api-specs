@@ -46,6 +46,76 @@
     }
   ],
   "paths": {
+    "/subscriptions/{subscriptionId}": {
+      "put": {
+        "tags": [
+          "StoragePoolOperations"
+        ],
+        "operationId": "StoragePool_CreateOrUpdateRegistration",
+        "description": "Registers or updates the registration of the client to the RP.",
+        "parameters": [
+          {
+            "$ref": "../../common/2020-03-15/common-types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../common/2020-03-15/parameters.json#/parameters/RegistrationPayload"
+          },
+          {
+            "$ref": "../../common/2020-03-15/common-types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/RegistrationPayload"
+            }
+          },
+          "default": {
+            "description": "Error from the RP",
+            "schema": {
+              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create or Update Registration": {
+            "$ref": "./examples/Registration_PutOrPatch.json"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "StoragePoolOperations"
+        ],
+        "operationId": "StoragePool_GetRegistration",
+        "description": "Registers or updates the registration of the client to the RP.",
+        "parameters": [
+          {
+            "$ref": "../../common/2020-03-15/common-types.json#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/RegistrationPayload"
+            }
+          },
+          "default": {
+            "description": "Error from the RP",
+            "schema": {
+              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get Registration": {
+            "$ref": "./examples/Registration_Get.json"
+          }
+        }
+      }
+    },
     "/providers/Microsoft.StoragePool/operations": {
       "get": {
         "tags": [

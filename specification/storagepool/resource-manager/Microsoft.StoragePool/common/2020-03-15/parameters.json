@@ -78,6 +78,16 @@
       },
       "x-ms-parameter-location": "method"
     },
+    "RegistrationPayload": {
+      "name": "registrationPayload",
+      "required": true,
+      "in": "body",
+      "description": "Request payload for RP registration.",
+      "schema": {
+        "$ref": "./definitions.json#/definitions/RegistrationPayload"
+      },
+      "x-ms-parameter-location": "method"
+    },
     "CorrelationId": {
       "name": "x-ms-correlation-request-id",
       "description": "Identifies this specific client request.",
