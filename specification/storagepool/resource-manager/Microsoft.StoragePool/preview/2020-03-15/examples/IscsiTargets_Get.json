@@ -11,7 +11,7 @@
             "body": {
                 "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.StoragePool/diskPools/myDiskPool/iscsiTargets/myIscsiTarget",
                 "name": "myIscsiTarget",
-                "type": "Microsoft.StoragePool/iscsiTargets",
+                "type": "Microsoft.StoragePool/diskPools/iscsiTargets",
                 "location": "westus2",
                 "tags": {
                     "key": "value"
@@ -27,7 +27,8 @@
                             }
                         ],
                         "name": "myIscsiTarget"
-                    }
+                    },
+                    "provisioningState": "Succeeded"
                 }
             }
         }

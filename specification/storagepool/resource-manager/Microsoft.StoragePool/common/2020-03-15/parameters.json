@@ -88,6 +88,16 @@
       },
       "x-ms-parameter-location": "method"
     },
+    "SystemMetadata": {
+      "name": "systemMetadataHeader",
+      "required": true,
+      "in": "header",
+      "description": "System metadata for top-level resources",
+      "schema": {
+        "$ref": "./definitions.json#/definitions/SystemMetadata"
+      },
+      "x-ms-parameter-location": "method"
+    },
     "CorrelationId": {
       "name": "x-ms-correlation-request-id",
       "description": "Identifies this specific client request.",

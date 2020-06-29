@@ -37,32 +37,32 @@
                         }
                     },
                     {
-                        "name": "Microsoft.StoragePool/iscsiTargets/read",
+                        "name": "Microsoft.StoragePool/diskPools/iscsiTargets/read",
                         "isDataAction": true,
                         "display": {
                             "provider": "Microsoft.StoragePool",
                             "resource": "iSCSI targets",
-                            "operation": "Read Microsoft.StoragePool/iscsiTargets",
+                            "operation": "Read Microsoft.StoragePool/diskPools/iscsiTargets",
                             "description": "Read iSCSI targets"
                         }
                     },
                     {
-                        "name": "Microsoft.StoragePool/iscsiTargets/write",
+                        "name": "Microsoft.StoragePool/diskPools/iscsiTargets/write",
                         "isDataAction": true,
                         "display": {
                             "provider": "Microsoft.StoragePool",
                             "resource": "iSCSI targets",
-                            "operation": "Create or Update Microsoft.StoragePool/iscsiTargets",
+                            "operation": "Create or Update Microsoft.StoragePool/diskPools/iscsiTargets",
                             "description": "Create or Update iSCSI targets"
                         }
                     },
                     {
-                        "name": "Microsoft.StoragePool/iscsiTargets/delete",
+                        "name": "Microsoft.StoragePool/diskPools/iscsiTargets/delete",
                         "isDataAction": true,
                         "display": {
                             "provider": "Microsoft.StoragePool",
                             "resource": "iSCSI targets",
-                            "operation": "Delete Microsoft.StoragePool/iscsiTargets",
+                            "operation": "Delete Microsoft.StoragePool/diskPools/iscsiTargets",
                             "description": "Delete iSCSI targets"
                         }
                     }

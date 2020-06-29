@@ -431,7 +431,8 @@
       "type": "object",
       "description": "Properties of iSCSI target response payload",
       "required": [
-        "target"
+        "target",
+        "provisioningState"
       ],
       "properties": {
         "provisioningState": {
