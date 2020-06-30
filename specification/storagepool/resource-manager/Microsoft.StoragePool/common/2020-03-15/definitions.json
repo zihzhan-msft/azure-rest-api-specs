@@ -538,7 +538,8 @@
           "description": "DateLiteral using ISO8601, per 1API guidelines."
         },
         "percentComplete": {
-          "type": "integer",
+          "type": "number",
+          "format": "double",
           "description": "Double between 0 and 100."
         },
         "error": {

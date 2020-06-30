@@ -279,8 +279,11 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolResponsePayload"
+            }
           },
           "default": {
             "description": "Error from the RP",
@@ -507,8 +510,11 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetResponsePayload"
+            }
           },
           "default": {
             "description": "Error from the RP",
