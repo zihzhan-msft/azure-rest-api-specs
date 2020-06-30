@@ -279,11 +279,8 @@
           }
         ],
         "responses": {
-          "202": {
-            "description": "Accepted",
-            "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolResponsePayload"
-            }
+          "204": {
+            "description": "No Content"
           },
           "default": {
             "description": "Error from the RP",
@@ -292,12 +289,7 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
-        "x-ms-examples": {
-          "Delete a Disk Pool": {
-            "$ref": "./examples/DiskPools_Delete.json"
-          }
-        }
+        "x-ms-long-running-operation": true
       },
       "get": {
         "tags": [
@@ -510,11 +502,8 @@
           }
         ],
         "responses": {
-          "202": {
-            "description": "Accepted",
-            "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetResponsePayload"
-            }
+          "204": {
+            "description": "No Content"
           },
           "default": {
             "description": "Error from the RP",
@@ -523,12 +512,7 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
-        "x-ms-examples": {
-          "Delete an iSCSI Target": {
-            "$ref": "./examples/IscsiTargets_Delete.json"
-          }
-        }
+        "x-ms-long-running-operation": true
       },
       "get": {
         "tags": [
