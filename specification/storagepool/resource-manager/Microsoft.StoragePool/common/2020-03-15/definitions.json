@@ -354,7 +354,6 @@
       ],
       "properties": {
         "provisioningState": {
-          "readOnly": true,
           "type": "string",
           "enum": [
             "Succeeded",
