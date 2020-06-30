@@ -46,6 +46,7 @@
                     "lastModifiedByType": "User"
                 },
                 "properties": {
+                    "provisioningState": "Succeeded",
                     "pool": {
                         "disks": [
                             {

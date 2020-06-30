@@ -23,102 +23,6 @@
     "title": "StoragePool RP Types"
   },
   "definitions": {
-    "RegistrationPayload": {
-      "type": "object",
-      "description": "Payload for registration related requests to the RP",
-      "properties": {
-        "state": {
-          "$ref": "#/definitions/RegistrationState",
-          "description": "State of the subscription."
-        },
-        "registrationDate": {
-          "type": "string",
-          "description": "Subscription registration date."
-        },
-        "properties": {
-          "$ref": "#/definitions/RegistrationProperties",
-          "description": "Properties of the subscription."
-        }
-      }
-    },
-    "RegistrationProperties": {
-      "type": "object",
-      "description": "Properties field of the subscription request payload",
-      "properties": {
-        "tenantId": {
-          "type": "string",
-          "description": "The AAD directory/tenant to which the subscription belongs."
-        },
-        "locationPlacementId": {
-          "type": "string",
-          "description": "The placement requirement for the subscription based on its country of origin / offer type / offer category / etc."
-        },
-        "quotaId": {
-          "type": "string",
-          "description": "The quota requirement for the subscription based on the offer type / category."
-        },
-        "registeredFeatures": {
-          "type": "array",
-          "description": "All AFEC features that the subscriptions has been registered under RP namespace and platform namespace (Microsoft.Resources).",
-          "items": {
-            "$ref": "#/definitions/RegisteredFeature"
-          }
-        },
-        "subscriptionSpendingLimit": {
-          "type": "string",
-          "description": "Boolean for subscription spending limit"
-        },
-        "subscriptionAccountOwner": {
-          "type": "string",
-          "description": "String for Account owner."
-        },
-        "managedByTenants": {
-          "type": "array",
-          "description": "All tenants managing the subscription.",
-          "items": {
-            "$ref": "#/definitions/ManagedByTenant"
-          }
-        }
-      }
-    },
-    "RegisteredFeature": {
-      "type": "object",
-      "description": "AFEC feature that the subscriptions has been registered under RP namespace and platform namespace (Microsoft.Resources).",
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "AFEC feature name."
-        },
-        "state": {
-          "$ref": "#/definitions/RegistrationState"
-        }
-      }
-    },
-    "RegistrationState": {
-      "type": "string",
-      "description": "Registration state.",
-      "enum": [
-        "Registered",
-        "Unregistered",
-        "Warned",
-        "Suspended",
-        "Deleted"
-      ],
-      "x-ms-enum": {
-        "name": "RegistrationStates",
-        "modelAsString": true
-      }
-    },
-    "ManagedByTenant": {
-      "type": "object",
-      "description": "",
-      "properties": {
-        "tenantId": {
-          "type": "string",
-          "description": "The AAD directory/tenant to which the subscription belongs."
-        }
-      }
-    },
     "StoragePoolOperationDisplay": {
       "type": "object",
       "required": [
@@ -253,7 +157,7 @@
         "properties": {
           "x-ms-client-flatten": true,
           "description": "RP defined properties for Disk Pool operations.",
-          "$ref": "#/definitions/DiskPoolProperties"
+          "$ref": "#/definitions/DiskPoolResponseProperties"
         },
         "systemData": {
           "description": "Metadata about the Disk Pool resource.",
@@ -284,8 +188,22 @@
         "pool"
       ],
       "properties": {
+        "pool": {
+          "x-ms-client-flatten": true,
+          "description": "Disk Pool description.",
+          "$ref": "#/definitions/DiskPool"
+        }
+      }
+    },
+    "DiskPoolResponseProperties": {
+      "type": "object",
+      "description": "Properties section of the Disk Pool request payload.",
+      "required": [
+        "pool",
+        "provisioningState"
+      ],
+      "properties": {
         "provisioningState": {
-          "readOnly": true,
           "type": "string",
           "enum": [
             "Succeeded",
