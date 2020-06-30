@@ -289,7 +289,12 @@
             }
           }
         },
-        "x-ms-long-running-operation": true
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+          "Update Disk Pool": {
+            "$ref": "./examples/DiskPools_Delete.json"
+          }
+        }
       },
       "get": {
         "tags": [
@@ -512,7 +517,12 @@
             }
           }
         },
-        "x-ms-long-running-operation": true
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+          "Update Disk Pool": {
+            "$ref": "./examples/IscsiTargets_Delete.json"
+          }
+        }
       },
       "get": {
         "tags": [
