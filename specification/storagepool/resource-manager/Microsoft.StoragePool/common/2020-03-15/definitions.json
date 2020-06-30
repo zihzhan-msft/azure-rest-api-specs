@@ -610,6 +610,7 @@
     },
     "Error": {
       "type": "object",
+      "description": "The resource management error response.",
       "properties": {
         "error": {
           "type": "object",
