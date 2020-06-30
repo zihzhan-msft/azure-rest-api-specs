@@ -68,7 +68,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
             }
           }
         },
@@ -107,7 +107,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+              "$ref":  "../../common/2020-03-15/definitions.json#/definitions/Error"
             }
           }
         },
@@ -149,7 +149,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/Error"
             }
           }
         },
@@ -203,7 +203,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+              "$ref":  "../../common/2020-03-15/definitions.json#/definitions/Error"
             }
           }
         },
@@ -247,7 +247,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+              "$ref":  "../../common/2020-03-15/definitions.json#/definitions/Error"
             }
           }
         },
@@ -288,7 +288,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+              "$ref":  "../../common/2020-03-15/definitions.json#/definitions/Error"
             }
           }
         },
@@ -329,7 +329,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+              "$ref":  "../../common/2020-03-15/definitions.json#/definitions/Error"
             }
           }
         },
@@ -371,7 +371,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+              "$ref":  "../../common/2020-03-15/definitions.json#/definitions/Error"
             }
           }
         },
@@ -428,7 +428,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+              "$ref":  "../../common/2020-03-15/definitions.json#/definitions/Error"
             }
           }
         },
@@ -475,7 +475,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+              "$ref":  "../../common/2020-03-15/definitions.json#/definitions/Error"
             }
           }
         },
@@ -519,7 +519,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+              "$ref":  "../../common/2020-03-15/definitions.json#/definitions/Error"
             }
           }
         },
@@ -563,7 +563,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+              "$ref":  "../../common/2020-03-15/definitions.json#/definitions/Error"
             }
           }
         },
@@ -602,7 +602,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref": "../../common/2020-03-15/common-types.json#/definitions/ErrorResponse"
+              "$ref":  "../../common/2020-03-15/definitions.json#/definitions/Error"
             }
           }
         },
