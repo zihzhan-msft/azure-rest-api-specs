@@ -282,6 +282,9 @@
           "204": {
             "description": "No Content"
           },
+          "200": {
+            "description": "OK"
+          },
           "default": {
             "description": "Error from the RP",
             "schema": {
@@ -507,6 +510,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK"
+          },
           "204": {
             "description": "No Content"
           },

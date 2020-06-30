@@ -7,7 +7,7 @@
         "iscsiTargetName": "myIscsiTarget"
     },
     "responses": {
-        "204": {
-        }
+        "200": {},
+        "204": {}
     }
 }
