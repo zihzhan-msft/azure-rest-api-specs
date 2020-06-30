@@ -77,16 +77,6 @@
         "$ref": "./definitions.json#/definitions/IscsiTargetPayload"
       },
       "x-ms-parameter-location": "method"
-    },
-    "RegistrationPayload": {
-      "name": "registrationPayload",
-      "required": true,
-      "in": "body",
-      "description": "Request payload for RP registration.",
-      "schema": {
-        "$ref": "./definitions.json#/definitions/RegistrationPayload"
-      },
-      "x-ms-parameter-location": "method"
     }
   }
 }
