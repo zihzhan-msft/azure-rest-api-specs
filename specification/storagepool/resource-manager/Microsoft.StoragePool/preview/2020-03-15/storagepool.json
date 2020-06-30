@@ -261,6 +261,12 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolResponsePayload"
+            }
+          },
           "201": {
             "description": "Created",
             "schema": {
@@ -320,7 +326,7 @@
         },
         "x-ms-examples": {
           "Update Disk Pool": {
-            "$ref": "./examples/DiskPools_PutOrPatch.json"
+            "$ref": "./examples/DiskPools_Patch.json"
           }
         },
         "x-ms-long-running-operation": false
@@ -477,6 +483,12 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Created",
+            "schema": {
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetResponsePayload"
+            }
+          },
           "201": {
             "description": "Created",
             "schema": {
@@ -540,7 +552,7 @@
         "x-ms-long-running-operation": false,
         "x-ms-examples": {
           "Update an iSCSI Target": {
-            "$ref": "./examples/IscsiTargets_PutOrPatch.json"
+            "$ref": "./examples/IscsiTargets_Patch.json"
           }
         }
       },
