@@ -373,6 +373,7 @@
     },
     "SystemMetadata": {
       "type": "object",
+      "readOnly": true,
       "description": "Metadata about a top-level resource.",
       "properties": {
         "createdAt": {
