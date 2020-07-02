@@ -191,13 +191,13 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolResponsePayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
             }
           },
           "201": {
             "description": "Created",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolResponsePayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
             }
           },
           "default": {
@@ -241,7 +241,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolResponsePayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
             }
           },
           "default": {
@@ -323,7 +323,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolResponsePayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/DiskPoolPayload"
             }
           },
           "default": {
@@ -416,13 +416,13 @@
           "200": {
             "description": "Created",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetResponsePayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
             }
           },
           "201": {
             "description": "Created",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetResponsePayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
             }
           },
           "default": {
@@ -469,7 +469,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetResponsePayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
             }
           },
           "default": {
@@ -557,7 +557,7 @@
           "200": {
             "description": "Ok",
             "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetResponsePayload"
+              "$ref": "../../common/2020-03-15/definitions.json#/definitions/IscsiTargetPayload"
             }
           },
           "default": {
@@ -570,45 +570,6 @@
         "x-ms-examples": {
           "Get an iSCSI Target": {
             "$ref": "./examples/IscsiTargets_Get.json"
-          }
-        }
-      }
-    },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.StoragePool/locations/{location}/operationStatus/{operationId}": {
-      "get": {
-        "description": "Get Operation Status",
-        "operationId": "DiskPoolOperationStatus_Get",
-        "parameters": [
-          {
-            "$ref": "../../common/2020-03-15/common-types.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "../../common/2020-03-15/parameters.json#/parameters/Location"
-          },
-          {
-            "$ref": "../../common/2020-03-15/parameters.json#/parameters/OperationId"
-          },
-          {
-            "$ref": "../../common/2020-03-15/common-types.json#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "../../common/2020-03-15/definitions.json#/definitions/OperationStatusPayload"
-            }
-          },
-          "default": {
-            "description": "Error from the RP",
-            "schema": {
-              "$ref":  "../../common/2020-03-15/definitions.json#/definitions/Error"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Get Operation Status": {
-            "$ref": "./examples/OperationStatus_Get.json"
           }
         }
       }

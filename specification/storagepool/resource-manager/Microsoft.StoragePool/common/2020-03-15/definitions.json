@@ -117,7 +117,7 @@
           "description": "An array of Disk Pool objects.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/DiskPoolResponsePayload"
+            "$ref": "#/definitions/DiskPoolPayload"
           }
         },
         "nextLink": {
@@ -147,37 +147,9 @@
       "allOf": [
         {
           "$ref": "./common-types.json#/definitions/TrackedResource"
-        }
-      ]
-    },
-    "DiskPoolResponsePayload": {
-      "type": "object",
-      "description": "Response payload for Disk Pool requests.",
-      "properties": {
-        "properties": {
-          "x-ms-client-flatten": true,
-          "description": "RP defined properties for Disk Pool operations.",
-          "$ref": "#/definitions/DiskPoolResponseProperties"
         },
-        "systemData": {
-          "description": "Metadata about the Disk Pool resource.",
-          "x-ms-client-flatten": true,
-          "$ref": "#/definitions/SystemMetadata"
-        },
-        "sku": {
-          "x-ms-client-flatten": true,
-          "description": "Sku description.",
-          "$ref": "./common-types.json#/definitions/Sku"
-        },
-        "plan": {
-          "x-ms-client-flatten": true,
-          "description": "Plan description.",
-          "$ref": "./common-types.json#/definitions/Plan"
-        }
-      },
-      "allOf": [
         {
-          "$ref": "./common-types.json#/definitions/TrackedResource"
+          "$ref": "#/definitions/SystemMetadata"
         }
       ]
     },
@@ -186,21 +158,6 @@
       "description": "Properties section of the Disk Pool request payload.",
       "required": [
         "pool"
-      ],
-      "properties": {
-        "pool": {
-          "x-ms-client-flatten": true,
-          "description": "Disk Pool description.",
-          "$ref": "#/definitions/DiskPool"
-        }
-      }
-    },
-    "DiskPoolResponseProperties": {
-      "type": "object",
-      "description": "Properties section of the Disk Pool request payload.",
-      "required": [
-        "pool",
-        "provisioningState"
       ],
       "properties": {
         "provisioningState": {
@@ -275,7 +232,7 @@
           "type": "array",
           "description": "An array of iSCSI targets within a Disk Pool.",
           "items": {
-            "$ref": "#/definitions/IscsiTargetResponsePayload"
+            "$ref": "#/definitions/IscsiTargetPayload"
           }
         },
         "nextLink": {
@@ -292,22 +249,6 @@
           "x-ms-client-flatten": true,
           "description": "RP defined properties for iSCSI Target operations.",
           "$ref": "#/definitions/IscsiTargetProperties"
-        }
-      },
-      "allOf": [
-        {
-          "$ref": "./common-types.json#/definitions/TrackedResource"
-        }
-      ]
-    },
-    "IscsiTargetResponsePayload": {
-      "type": "object", 
-      "description": "Response payload for iSCSI Target requests.",
-      "properties": {
-        "properties": {
-          "x-ms-client-flatten": true,
-          "description": "RP defined properties for iSCSI Target operations.",
-          "$ref": "#/definitions/IscsiTargetResponseProperties"
         }
       },
       "allOf": [
@@ -345,35 +286,6 @@
         }
       }
     },
-    "IscsiTargetResponseProperties": {
-      "type": "object",
-      "description": "Properties of iSCSI target response payload",
-      "required": [
-        "target",
-        "provisioningState"
-      ],
-      "properties": {
-        "provisioningState": {
-          "type": "string",
-          "enum": [
-            "Succeeded",
-            "Failed",
-            "Canceled",
-            "Pending"
-          ],
-          "x-ms-enum": {
-            "name": "ProvisioningStates",
-            "modelAsString": true
-          },
-          "description": "State of provisioning of the iSCSI target"
-        },
-        "target": {
-          "description": "Description of an iSCSI Target.",
-          "x-ms-client-flatten": true,
-          "$ref": "#/definitions/IscsiTargetResponse"
-        }
-      }
-    },
     "IscsiTarget": {
       "type": "object",
       "description": "Description of an iSCSI Target.",
@@ -381,8 +293,7 @@
         "name",
         "initiatorIqn",
         "targetIqn",
-        "luns",
-        "targetCredentials"
+        "luns"
       ],
       "properties": {
         "name": {
@@ -405,45 +316,6 @@
           "description": "CHAP credentials for iSCSI target.",
           "x-ms-client-flatten": true,
           "$ref": "#/definitions/IscsiTargetCredentials"
-        },
-        "luns": {
-          "type": "array",
-          "description": "Lun list to be exposed through the Iscsi target. Required",
-          "items": {
-            "$ref": "#/definitions/IscsiLun"
-          },
-          "minLength": 1,
-          "maxLength": 8
-        }
-      }
-    },
-    "IscsiTargetResponse": {
-      "type": "object",
-      "description": "Response payload for iSCSI Target requests.",
-      "required": [
-        "name",
-        "initiatorIqn",
-        "targetIqn",
-        "luns"
-      ],
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "iSCSI target name.",
-          "minLength": 7,
-          "maxLength": 24
-        },
-        "initiatorIqn": {
-          "type": "string",
-          "description": "iSCSI initiator iqn.",
-          "minLength": 5,
-          "maxLength": 223
-        },
-        "targetIqn": {
-          "type": "string",
-          "description": "iSCSI target iqn.",
-          "minLength": 5,
-          "maxLength": 223
         },
         "luns": {
           "type": "array",
@@ -499,67 +371,8 @@
         }
       }
     },
-    "OperationStatusPayload": {
-      "type": "object",
-      "description": "Response paylod for long Storage Pool RP operations.",
-      "required": [
-        "status"
-      ],
-      "additionalProperties": true,
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Unique id of the operation."
-        },
-        "name": {
-          "type": "string",
-          "description": "Last segment of the operation id."
-        },
-        "status": {
-          "type": "string",
-          "enum": [
-            "Succeeded",
-            "Failed",
-            "Canceled",
-            "Pending"
-          ],
-          "x-ms-enum": {
-            "name": "ProvisioningStates",
-            "modelAsString": true
-          },
-          "description": "RP defined states for asynchronous operations."
-        },
-        "startTime": {
-          "type": "string",
-          "description": "DateLiteral using ISO8601, per 1API guidelines."
-        },
-        "endTime": {
-          "type": "string",
-          "description": "DateLiteral using ISO8601, per 1API guidelines."
-        },
-        "percentComplete": {
-          "type": "number",
-          "format": "double",
-          "description": "Double between 0 and 100."
-        },
-        "error": {
-          "description": "Error description.",
-          "type": "object",
-          "x-ms-client-flatten": true,
-          "$ref": "#/definitions/Error"
-        }
-      }
-    },
     "SystemMetadata": {
       "type": "object",
-      "required": [
-        "createdAt",
-        "createdBy",
-        "createdByType",
-        "lastModifiedAt",
-        "lastModifiedBy",
-        "lastModifiedByType"
-      ],
       "description": "Metadata about a top-level resource.",
       "properties": {
         "createdAt": {
