@@ -147,9 +147,6 @@
       "allOf": [
         {
           "$ref": "./common-types.json#/definitions/TrackedResource"
-        },
-        {
-          "$ref": "#/definitions/SystemMetadata"
         }
       ]
     },
@@ -368,57 +365,6 @@
         "managedDiskAzureResourceId": {
           "type": "string",
           "description": "Unique Azure resource id of the managed disk. Required."
-        }
-      }
-    },
-    "SystemMetadata": {
-      "type": "object",
-      "readOnly": true,
-      "description": "Metadata about a top-level resource.",
-      "properties": {
-        "createdAt": {
-          "type": "string",
-          "description": "The timestamp of resource creation (UTC)"
-        },
-        "createdBy": {
-          "type": "string",
-          "description": "a string identifier for the identity that created the resource"
-        },
-        "createdByType": {
-          "type": "string",
-          "enum": [
-            "User",
-            "Application",
-            "ManagedIdentity",
-            "Key"
-          ],
-          "x-ms-enum": {
-            "name": "IdentityTypes",
-            "modelAsString": true
-          },
-          "description": "The type of identity that created the resource: user, application, managedIdentity, key."
-        },
-        "lastModifiedAt": {
-          "type": "string",
-          "description": "The timestamp of resource last modification (UTC)."
-        },
-        "lastModifiedBy": {
-          "type": "string",
-          "description": "A string identifier for the identity that last modified the resource."
-        },
-        "lastModifiedByType": {
-          "type": "string",
-          "enum": [
-            "User",
-            "Application",
-            "ManagedIdentity",
-            "Key"
-          ],
-          "x-ms-enum": {
-            "name": "IdentityTypes",
-            "modelAsString": true
-          },
-          "description": "The type of identity that last modified the resource: user, application, managedIdentity, key."
         }
       }
     },
