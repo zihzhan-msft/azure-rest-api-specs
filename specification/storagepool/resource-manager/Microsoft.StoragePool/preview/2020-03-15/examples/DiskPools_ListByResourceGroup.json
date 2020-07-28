@@ -14,14 +14,11 @@
                         "name": "myDiskPool",
                         "properties": {
                             "provisioningState": "Pending",
-                            "pool": {
-                                "disks": [
-                                    {
-                                        "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/myDataDisk_0"
-                                    }
-                                ],
-                                "name": "myDiskPool"
-                            }
+                            "disks": [
+                                {
+                                    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/myDataDisk_0"
+                                }
+                            ]    
                         },
                         "systemData": {
                             "createdAt": "2020-06-24T06:53:57+00:00",
@@ -42,14 +39,11 @@
                         "name": "myDiskPool2",
                         "properties": {
                             "provisioningState": "Pending",
-                            "pool": {
-                                "disks": [
-                                    {
-                                        "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/myDataDisk_0"
-                                    }
-                                ],
-                                "name": "myDiskPool2"
-                            }
+                            "disks": [
+                                {
+                                    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/myDataDisk_0"
+                                }
+                            ]
                         },
                         "systemData": {
                             "createdAt": "2020-06-24T06:53:57+00:00",

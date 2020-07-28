@@ -459,7 +459,7 @@
         "required": true,
         "type": "string",
         "description": "The name of the resource group. The name is case insensitive.",
-        "pattern": "^[-\\w\\._\\(\\)]+$",
+        "pattern": "^[-\\w\\._]*[0-9A-Za-z]$",
         "minLength": 1,
         "maxLength": 90,
         "x-ms-parameter-location": "method"

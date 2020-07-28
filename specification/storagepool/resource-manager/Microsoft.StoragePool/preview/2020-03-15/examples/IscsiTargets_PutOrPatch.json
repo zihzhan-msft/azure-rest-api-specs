@@ -11,20 +11,19 @@
                 "key": "value"
             },
             "properties": {
-                "target": {
-                    "targetIqn": "target iqn",
-                    "initiatorIqn": "initiator iqn",
-                    "luns": [
-                        {
-                            "managedDiskAzureResourceId": "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/vm-name_DataDisk_1",
-                            "name": "myLun"
-                        }
-                    ],
-                    "name": "myIscsiTarget",
-                    "targetCredentials": {
-                        "username": "some_username",
-                        "password": "some_pa$$word"
+                "targetIqn": "target iqn",
+                "initiatorIqns": [
+                    "initiator iqn"
+                ],
+                "luns": [
+                    {
+                        "managedDiskAzureResourceId": "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/vm-name_DataDisk_1",
+                        "name": "myLun"
                     }
+                ],
+                "targetCredentials": {
+                    "username": "some_username",
+                    "password": "some_pa$$word"
                 }
             }
         }
@@ -41,20 +40,22 @@
                 },
                 "properties": {
                     "provisioningState": "Running",
-                    "target": {
-                        "targetIqn": "target iqn",
-                        "initiatorIqn": "initiator iqn",
-                        "luns": [
-                            {
-                                "managedDiskAzureResourceId": "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/vm-name_DataDisk_1",
-                                "name": "myLun"
-                            }
-                        ],
-                        "name": "myIscsiTarget",
-                        "targetCredentials": {
-                            "username": "some_username",
-                            "password": "some_pa$$word"
+                    "targetIqn": "target iqn",
+                    "initiatorIqns": [
+                        "initiator iqn"
+                    ],
+                    "luns": [
+                        {
+                            "managedDiskAzureResourceId": "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/vm-name_DataDisk_1",
+                            "name": "myLun"
                         }
+                    ],
+                    "credentials": {
+                        "username": "some_username",
+                        "password": "some_pa$$word"
+                    },
+                    "options": {
+                        "authentication": true
                     }
                 }
             }
@@ -70,20 +71,18 @@
                 },
                 "properties": {
                     "provisioningState": "Succeeded",
-                    "target": {
-                        "targetIqn": "target iqn",
-                        "initiatorIqn": "initiator iqn",
-                        "luns": [
-                            {
-                                "managedDiskAzureResourceId": "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/vm-name_DataDisk_1",
-                                "name": "myLun"
-                            }
-                        ],
-                        "name": "myIscsiTarget",
-                        "targetCredentials": {
-                            "username": "some_username",
-                            "password": "some_pa$$word"
+                    "targetIqn": "target iqn",
+                    "initiatorIqns": [
+                        "initiator iqn"
+                    ],
+                    "luns": [
+                        {
+                            "managedDiskAzureResourceId": "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/vm-name_DataDisk_1",
+                            "name": "myLun"
                         }
+                    ],
+                    "options": {
+                        "authentication": true
                     }
                 }
             }

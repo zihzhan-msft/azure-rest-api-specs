@@ -118,11 +118,13 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/DiskPoolPayload"
-          }
+          },
+          "readOnly": true
         },
         "nextLink": {
           "description": "URI to fetch the next section of the paginated response.",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         }
       }
     },
@@ -138,10 +140,6 @@
         "sku": {
           "description": "Sku description.",
           "$ref": "./common-types.json#/definitions/Sku"
-        },
-        "plan": {
-          "description": "Plan description.",
-          "$ref": "./common-types.json#/definitions/Plan"
         }
       },
       "allOf": [
@@ -153,9 +151,6 @@
     "DiskPoolProperties": {
       "type": "object",
       "description": "Properties section of the Disk Pool request payload.",
-      "required": [
-        "pool"
-      ],
       "properties": {
         "provisioningState": {
           "type": "string",
@@ -170,27 +165,6 @@
             "modelAsString": true
           },
           "description": "State of provisioning of the Disk pool"
-        },
-        "pool": {
-          "x-ms-client-flatten": true,
-          "description": "Disk Pool description.",
-          "$ref": "#/definitions/DiskPool"
-        }
-      }
-    },
-    "DiskPool": {
-      "type": "object",
-      "description": "Describes a Disk Pool object.",
-      "required": [
-        "name",
-        "disks"
-      ],
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "Name for the Disk Pool. Required.",
-          "minLength": 8,
-          "maxLength": 30
         },
         "disks": {
           "type": "array",
@@ -230,11 +204,13 @@
           "description": "An array of iSCSI targets within a Disk Pool.",
           "items": {
             "$ref": "#/definitions/IscsiTargetPayload"
-          }
+          },
+          "readOnly": true
         },
         "nextLink": {
           "description": "URI to fetch the next section of the paginated response.",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         }
       }
     },
@@ -250,16 +226,13 @@
       },
       "allOf": [
         {
-          "$ref": "./common-types.json#/definitions/TrackedResource"
+          "$ref": "./common-types.json#/definitions/ProxyResource"
         }
       ]
     },
     "IscsiTargetProperties": {
       "type": "object",
       "description": "Properties of iSCSI Target request payload.",
-      "required": [
-        "target"
-      ],
       "properties": {
         "provisioningState": {
           "readOnly": true,
@@ -276,43 +249,31 @@
           },
           "description": "State of provisioning of the iSCSI target"
         },
-        "target": {
-          "description": "Description of an iSCSI Target.",
-          "x-ms-client-flatten": true,
-          "$ref": "#/definitions/IscsiTarget"
-        }
-      }
-    },
-    "IscsiTarget": {
-      "type": "object",
-      "description": "Description of an iSCSI Target.",
-      "required": [
-        "name",
-        "initiatorIqn",
-        "targetIqn",
-        "luns"
-      ],
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "iSCSI target name.",
-          "minLength": 7,
-          "maxLength": 24
-        },
-        "initiatorIqn": {
-          "type": "string",
-          "description": "iSCSI initiator iqn.",
-          "minLength": 5,
-          "maxLength": 223
+        "initiatorIqns": {
+          "type": "array",
+          "description": "list of iSCSI initiator iqns.",
+          "items": {
+            "$ref":  "#/definitions/IscsiInitiator"
+          }
         },
         "targetIqn": {
           "type": "string",
           "description": "iSCSI target iqn."
         },
-        "targetCredentials": {
+        "credentials": {
           "description": "CHAP credentials for iSCSI target.",
           "x-ms-client-flatten": true,
+          "x-ms-mutability": [
+            "create"
+          ],
           "$ref": "#/definitions/IscsiTargetCredentials"
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          },
+          "description": "Configuration for iSCSI Target"
         },
         "luns": {
           "type": "array",
@@ -324,6 +285,12 @@
           "maxLength": 8
         }
       }
+    },
+    "IscsiInitiator": {
+      "type": "string",
+      "description": "iSCSI initiator iqn",
+      "minLength": 5,
+      "maxLength": 223
     },
     "IscsiTargetCredentials": {
       "type": "object",
