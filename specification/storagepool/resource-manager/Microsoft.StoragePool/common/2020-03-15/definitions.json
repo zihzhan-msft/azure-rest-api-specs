@@ -118,8 +118,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/DiskPoolPayload"
-          },
-          "readOnly": true
+          }
         },
         "nextLink": {
           "description": "URI to fetch the next section of the paginated response.",
@@ -204,8 +203,7 @@
           "description": "An array of iSCSI targets within a Disk Pool.",
           "items": {
             "$ref": "#/definitions/IscsiTargetPayload"
-          },
-          "readOnly": true
+          }
         },
         "nextLink": {
           "description": "URI to fetch the next section of the paginated response.",
