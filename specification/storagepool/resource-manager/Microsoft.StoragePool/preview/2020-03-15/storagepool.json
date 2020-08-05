@@ -282,6 +282,9 @@
           "202": {
             "description": "Accepted"
           },
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "description": "Error from the RP",
             "schema": {
@@ -509,6 +512,9 @@
         "responses": {
           "202": {
             "description": "Accepted"
+          },
+          "204": {
+            "description": "No content"
           },
           "default": {
             "description": "Error from the RP",
