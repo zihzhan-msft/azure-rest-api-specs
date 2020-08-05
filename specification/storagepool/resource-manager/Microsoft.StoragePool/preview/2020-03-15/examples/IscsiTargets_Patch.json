@@ -43,6 +43,7 @@
                 },
                 "properties": {
                     "provisioningState": "Succeeded",
+                    "status": "Healthy",
                     "targetIqn": "target iqn",
                     "initiatorIqns": [
                         "initiator iqn"

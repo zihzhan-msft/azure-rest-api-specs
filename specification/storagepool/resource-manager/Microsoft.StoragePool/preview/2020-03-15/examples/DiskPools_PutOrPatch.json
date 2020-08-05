@@ -43,7 +43,8 @@
                     "lastModifiedByType": "User"
                 },
                 "properties": {
-                    "provisioningState": "Running",
+                    "provisioningState": "Pending",
+                    "status": "Unknown",
                     "disks": [
                         {
                             "id": "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/vm-name_DataDisk_0"
@@ -74,6 +75,7 @@
                 },
                 "properties": {
                     "provisioningState": "Succeeded",
+                    "status": "Uknown",
                     "disks": [
                         {
                             "id": "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/vm-name_DataDisk_0"

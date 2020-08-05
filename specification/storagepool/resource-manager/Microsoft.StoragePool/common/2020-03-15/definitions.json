@@ -153,7 +153,9 @@
       "properties": {
         "provisioningState": {
           "type": "string",
+          "readOnly": true,
           "enum": [
+            "Invalid",
             "Succeeded",
             "Failed",
             "Canceled",
@@ -164,6 +166,22 @@
             "modelAsString": true
           },
           "description": "State of provisioning of the Disk pool"
+        },
+        "status": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "Invalid",
+            "Pending",
+            "Failed",
+            "Canceled",
+            "Succeeded"
+          ],
+          "x-ms-enum": {
+            "name": "OperationalStatus",
+            "modelAsString": true
+          },
+          "description": "Operational status of the Disk pool"
         },
         "disks": {
           "type": "array",
@@ -236,6 +254,7 @@
           "readOnly": true,
           "type": "string",
           "enum": [
+            "Invalid",
             "Succeeded",
             "Failed",
             "Canceled",
@@ -246,6 +265,22 @@
             "modelAsString": true
           },
           "description": "State of provisioning of the iSCSI target"
+        },
+        "status": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "Invalid",
+            "Pending",
+            "Failed",
+            "Canceled",
+            "Succeeded"
+          ],
+          "x-ms-enum": {
+            "name": "OperationalStatus",
+            "modelAsString": true
+          },
+          "description": "Operational status of the Disk pool"
         },
         "initiatorIqns": {
           "type": "array",

@@ -27,7 +27,8 @@
                             "name": "myLun"
                         }
                     ],
-                    "provisioningState": "Succeeded"
+                    "provisioningState": "Succeeded",
+                    "status": "Healthy"
                 }
             }
         }
