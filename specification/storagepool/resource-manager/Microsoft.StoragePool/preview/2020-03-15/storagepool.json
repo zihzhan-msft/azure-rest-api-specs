@@ -285,6 +285,9 @@
           "204": {
             "description": "No content"
           },
+          "200": {
+            "description": "Ok"
+          },
           "default": {
             "description": "Error from the RP",
             "schema": {
@@ -515,6 +518,9 @@
           },
           "204": {
             "description": "No content"
+          },
+          "200": {
+            "description": "Ok"
           },
           "default": {
             "description": "Error from the RP",

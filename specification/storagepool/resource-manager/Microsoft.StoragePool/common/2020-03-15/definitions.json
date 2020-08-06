@@ -296,9 +296,11 @@
         "credentials": {
           "description": "CHAP credentials for iSCSI target.",
           "x-ms-client-flatten": true,
+          "x-ms-secret": true,
           "x-ms-mutability": [
             "create"
           ],
+          
           "$ref": "#/definitions/IscsiTargetCredentials"
         },
         "options": {
