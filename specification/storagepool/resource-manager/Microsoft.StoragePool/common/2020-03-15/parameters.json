@@ -58,23 +58,23 @@
       "description": "The location of the resource.",
       "x-ms-parameter-location": "method"
     },
-    "DiskPoolPayload": {
+    "DiskPool": {
       "name": "diskPoolPayload",
       "required": true,
       "in": "body",
       "description": "Request payload for Disk Pool operations.",
       "schema": {
-        "$ref": "./definitions.json#/definitions/DiskPoolPayload"
+        "$ref": "./definitions.json#/definitions/DiskPool"
       },
       "x-ms-parameter-location": "method"
     },
-    "IscsiTargetPayload": {
+    "IscsiTarget": {
       "name": "iscsiTargetPayload",
       "required": true,
       "in": "body",
       "description": "Request payload for iSCSI target operations.",
       "schema": {
-        "$ref": "./definitions.json#/definitions/IscsiTargetPayload"
+        "$ref": "./definitions.json#/definitions/IscsiTarget"
       },
       "x-ms-parameter-location": "method"
     }

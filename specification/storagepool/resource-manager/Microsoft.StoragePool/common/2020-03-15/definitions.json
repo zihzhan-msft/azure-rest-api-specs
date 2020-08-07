@@ -117,7 +117,7 @@
           "description": "An array of Disk Pool objects.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/DiskPoolPayload"
+            "$ref": "#/definitions/DiskPool"
           }
         },
         "nextLink": {
@@ -127,7 +127,7 @@
         }
       }
     },
-    "DiskPoolPayload": {
+    "DiskPool": {
       "type": "object",
       "description": "Request payload for Create or Update Disk Pool requests.",
       "properties": {
@@ -220,7 +220,7 @@
           "type": "array",
           "description": "An array of iSCSI targets within a Disk Pool.",
           "items": {
-            "$ref": "#/definitions/IscsiTargetPayload"
+            "$ref": "#/definitions/IscsiTarget"
           }
         },
         "nextLink": {
@@ -230,7 +230,7 @@
         }
       }
     },
-    "IscsiTargetPayload": {
+    "IscsiTarget": {
       "type": "object", 
       "description": "Payload for iSCSI Target Create or Update requests.",
       "properties": {
