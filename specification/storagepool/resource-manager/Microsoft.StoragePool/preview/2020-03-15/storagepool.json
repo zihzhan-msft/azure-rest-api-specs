@@ -126,7 +126,7 @@
         "tags": [
           "DiskPools"
         ],
-        "operationId": "DiskPools_ListByResourceGroup",
+        "operationId": "ListDiskPoolsByResourceGroup",
         "description": "Gets a list of DiskPools.",
         "parameters": [
           {
@@ -349,7 +349,7 @@
           "IscsiTargets"
         ],
         "description": "Get iSCSI Targets within a Disk Pool",
-        "operationId": "DiskPoolIscsiTargets_ListByDiskPool",
+        "operationId": "ListByDiskPool",
         "parameters": [
           {
             "$ref": "../../common/2020-03-15/common-types.json#/parameters/SubscriptionIdParameter"
@@ -394,7 +394,7 @@
           "IscsiTargets"
         ],
         "description": "Create or Update an iSCSI target.",
-        "operationId": "DiskPoolIscsiTargets_CreateOrUpdate",
+        "operationId": "CreateOrUpdateIscsiTarget",
         "parameters": [
           {
             "$ref": "../../common/2020-03-15/common-types.json#/parameters/SubscriptionIdParameter"
@@ -447,7 +447,7 @@
           "IscsiTargets"
         ],
         "description": "Update an iSCSI Target.",
-        "operationId": "DiskPoolIscsiTargets_Update",
+        "operationId": "UpdateIscsiTarget",
         "parameters": [
           {
             "$ref": "../../common/2020-03-15/common-types.json#/parameters/SubscriptionIdParameter"
@@ -494,7 +494,7 @@
           "IscsiTargets"
         ],
         "description": "Deletes an iSCSI Target",
-        "operationId": "DiskPoolIscsiTargets_Delete",
+        "operationId": "DeleteIscsiTarget",
         "parameters": [
           {
             "$ref": "../../common/2020-03-15/common-types.json#/parameters/SubscriptionIdParameter"
@@ -541,7 +541,7 @@
           "IscsiTargets"
         ],
         "description": "Gets an iSCSI Target.",
-        "operationId": "DiskPoolIscsiTargets_Get",
+        "operationId": "GetIscsiTarget",
         "parameters": [
           {
             "$ref": "../../common/2020-03-15/common-types.json#/parameters/SubscriptionIdParameter"
