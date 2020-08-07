@@ -51,7 +51,7 @@
         "tags": [
           "StoragePoolOperations"
         ],
-        "operationId": "Operations_List",
+        "operationId": "Operations_ListStoragePoolOperations",
         "description": "Gets a list of StoragePool operations.",
         "parameters": [
           {
@@ -87,7 +87,7 @@
         "tags": [
           "DiskPools"
         ],
-        "operationId": "DiskPools_ListBySubscription",
+        "operationId": "DiskPools_ListDiskPoolsBySubscription",
         "description": "Gets a list of Disk Pools in a subscription",
         "parameters": [
           {
@@ -126,7 +126,7 @@
         "tags": [
           "DiskPools"
         ],
-        "operationId": "ListDiskPoolsByResourceGroup",
+        "operationId": "DiskPools_ListDiskPoolsByResourceGroup",
         "description": "Gets a list of DiskPools.",
         "parameters": [
           {
@@ -168,7 +168,7 @@
         "tags": [
           "DiskPools"
         ],
-        "operationId": "DiskPools_Create",
+        "operationId": "DiskPools_CreateOrUpdateDiskPool",
         "description": "Create a new Disk Pool.",
         "parameters": [
           {
@@ -218,7 +218,7 @@
         "tags": [
           "DiskPools"
         ],
-        "operationId": "DiskPools_Update",
+        "operationId": "DiskPools_UpdateDiskPool",
         "description": "Update a Storage Pool.",
         "parameters": [
           {
@@ -262,7 +262,7 @@
         "tags": [
           "DiskPools"
         ],
-        "operationId": "DiskPools_Delete",
+        "operationId": "DiskPools_DeleteDiskPool",
         "description": "Delete a Disk Pool.",
         "parameters": [
           {
@@ -306,7 +306,7 @@
         "tags": [
           "DiskPools"
         ],
-        "operationId": "DiskPools_Get",
+        "operationId": "DiskPools_GetDiskPool",
         "description": "Get a Disk Pool.",
         "parameters": [
           {
@@ -349,7 +349,7 @@
           "IscsiTargets"
         ],
         "description": "Get iSCSI Targets within a Disk Pool",
-        "operationId": "ListByDiskPool",
+        "operationId": "IscsiTargets_ListByDiskPool",
         "parameters": [
           {
             "$ref": "../../common/2020-03-15/common-types.json#/parameters/SubscriptionIdParameter"
@@ -394,7 +394,7 @@
           "IscsiTargets"
         ],
         "description": "Create or Update an iSCSI target.",
-        "operationId": "CreateOrUpdateIscsiTarget",
+        "operationId": "IscsiTargets_CreateOrUpdateIscsiTarget",
         "parameters": [
           {
             "$ref": "../../common/2020-03-15/common-types.json#/parameters/SubscriptionIdParameter"
@@ -447,7 +447,7 @@
           "IscsiTargets"
         ],
         "description": "Update an iSCSI Target.",
-        "operationId": "UpdateIscsiTarget",
+        "operationId": "IscsiTargets_UpdateIscsiTarget",
         "parameters": [
           {
             "$ref": "../../common/2020-03-15/common-types.json#/parameters/SubscriptionIdParameter"
@@ -494,7 +494,7 @@
           "IscsiTargets"
         ],
         "description": "Deletes an iSCSI Target",
-        "operationId": "DeleteIscsiTarget",
+        "operationId": "IscsiTargets_DeleteIscsiTarget",
         "parameters": [
           {
             "$ref": "../../common/2020-03-15/common-types.json#/parameters/SubscriptionIdParameter"
@@ -541,7 +541,7 @@
           "IscsiTargets"
         ],
         "description": "Gets an iSCSI Target.",
-        "operationId": "GetIscsiTarget",
+        "operationId": "IscsiTargets_GetIscsiTarget",
         "parameters": [
           {
             "$ref": "../../common/2020-03-15/common-types.json#/parameters/SubscriptionIdParameter"
