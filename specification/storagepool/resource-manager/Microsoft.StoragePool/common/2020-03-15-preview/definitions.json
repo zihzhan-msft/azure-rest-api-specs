@@ -19,7 +19,7 @@
     }
   },
   "info": {
-    "version": "2020-03-15",
+    "version": "2020-03-15-preview-preview",
     "title": "StoragePool RP Types"
   },
   "definitions": {
@@ -139,6 +139,13 @@
         "sku": {
           "description": "Sku description.",
           "$ref": "./common-types.json#/definitions/Sku"
+        },
+        "zones": {
+          "type": "array",
+          "description": "Logical zone for DiskPool resource.",
+          "items": {
+            "$ref":  "#/definitions/Zone"
+          }
         }
       },
       "allOf": [
@@ -146,6 +153,10 @@
           "$ref": "./common-types.json#/definitions/TrackedResource"
         }
       ]
+    },
+    "Zone": {
+      "type": "string",
+      "description": "Availability zone"
     },
     "DiskPoolProperties": {
       "type": "object",

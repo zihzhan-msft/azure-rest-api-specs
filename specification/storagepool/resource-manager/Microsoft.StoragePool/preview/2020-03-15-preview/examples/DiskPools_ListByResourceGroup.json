@@ -1,7 +1,8 @@
 {
     "parameters": {
-        "api-version": "2020-03-15",
-        "subscriptionId": "00000000-0000-0000-0000-000000000000"
+        "api-version": "2020-03-15-preview",
+        "subscriptionId": "00000000-0000-0000-0000-000000000000",
+        "resourceGroupName": "myResourceGroup"
     },
     "responses": {
         "200": {
@@ -12,13 +13,13 @@
                         "location": "westus2",
                         "name": "myDiskPool",
                         "properties": {
-                            "provisioningState": "Succeeded",
-                            "status": "Healthy",
+                            "provisioningState": "Pending",
+                            "status": "Unknown",
                             "disks": [
                                 {
                                     "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/myDataDisk_0"
                                 }
-                            ]
+                            ]    
                         },
                         "systemData": {
                             "createdAt": "2020-06-24T06:53:57+00:00",
@@ -38,8 +39,8 @@
                         "location": "westus2",
                         "name": "myDiskPool2",
                         "properties": {
-                            "provisioningState": "Succeeded",
-                            "status": "Healthy",
+                            "provisioningState": "Pending",
+                            "status": "Unknown",
                             "disks": [
                                 {
                                     "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/myDataDisk_0"

@@ -10,7 +10,7 @@ python:
   payload-flattening-threshold: 2
   namespace: Microsoft.StoragePool
   package-name: storagepool
-  package-version: 2020-03-15
+  package-version: 2020-03-15-preview
   clear-output-folder: true
 ```
 
