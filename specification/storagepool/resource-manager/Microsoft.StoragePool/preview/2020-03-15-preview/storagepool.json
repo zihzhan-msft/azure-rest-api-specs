@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2020-03-15-preview-preview",
+    "version": "2020-03-15-preview",
     "title": "StoragePoolManagement"
   },
   "schemes": [
@@ -87,7 +87,7 @@
         "tags": [
           "DiskPools"
         ],
-        "operationId": "DiskPools_ListDiskPoolsBySubscription",
+        "operationId": "DiskPools_ListBySubscription",
         "description": "Gets a list of Disk Pools in a subscription",
         "parameters": [
           {
@@ -126,7 +126,7 @@
         "tags": [
           "DiskPools"
         ],
-        "operationId": "DiskPools_ListDiskPoolsByResourceGroup",
+        "operationId": "DiskPools_ListByResourceGroup",
         "description": "Gets a list of DiskPools.",
         "parameters": [
           {

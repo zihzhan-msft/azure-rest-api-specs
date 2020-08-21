@@ -19,7 +19,7 @@
     }
   },
   "info": {
-    "version": "2020-03-15-preview-preview",
+    "version": "2020-03-15-preview",
     "title": "StoragePool RP Types"
   },
   "definitions": {
@@ -139,13 +139,6 @@
         "sku": {
           "description": "Sku description.",
           "$ref": "./common-types.json#/definitions/Sku"
-        },
-        "zones": {
-          "type": "array",
-          "description": "Logical zone for DiskPool resource.",
-          "items": {
-            "$ref":  "#/definitions/Zone"
-          }
         }
       },
       "allOf": [
@@ -154,7 +147,7 @@
         }
       ]
     },
-    "Zone": {
+    "AvailabilityZone": {
       "type": "string",
       "description": "Availability zone"
     },
@@ -178,15 +171,21 @@
           },
           "description": "State of provisioning of the Disk pool"
         },
+        "availabilityZones": {
+          "type": "array",
+          "description": "Logical zone for DiskPool resource.",
+          "items": {
+            "$ref":  "#/definitions/AvailabilityZone"
+          }
+        },
         "status": {
           "type": "string",
           "readOnly": true,
           "enum": [
             "Invalid",
-            "Pending",
-            "Failed",
-            "Canceled",
-            "Succeeded"
+            "Unknown",
+            "Healthy",
+            "Unhealthy"
           ],
           "x-ms-enum": {
             "name": "OperationalStatus",
@@ -282,10 +281,9 @@
           "readOnly": true,
           "enum": [
             "Invalid",
-            "Pending",
-            "Failed",
-            "Canceled",
-            "Succeeded"
+            "Unknown",
+            "Healthy",
+            "Unhealthy"
           ],
           "x-ms-enum": {
             "name": "OperationalStatus",
