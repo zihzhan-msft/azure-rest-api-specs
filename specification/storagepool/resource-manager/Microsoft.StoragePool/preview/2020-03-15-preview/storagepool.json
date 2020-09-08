@@ -210,7 +210,7 @@
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Create or Update a Disk Pool": {
-            "$ref": "./examples/DiskPools_PutOrPatch.json"
+            "$ref": "./examples/DiskPools_Put.json"
           }
         }
       },
@@ -438,54 +438,7 @@
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Create or Update an iSCSI Target": {
-            "$ref": "./examples/IscsiTargets_PutOrPatch.json"
-          }
-        }
-      },
-      "patch": {
-        "tags": [
-          "IscsiTargets"
-        ],
-        "description": "Update an iSCSI Target.",
-        "operationId": "IscsiTargets_Update",
-        "parameters": [
-          {
-            "$ref": "../../common/2020-03-15-preview/common-types.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "../../common/2020-03-15-preview/common-types.json#/parameters/ResourceGroupNameParameter"
-          },
-          {
-            "$ref": "../../common/2020-03-15-preview/parameters.json#/parameters/DiskPoolName"
-          },
-          {
-            "$ref": "../../common/2020-03-15-preview/parameters.json#/parameters/IscsiTargetName"
-          },
-          {
-            "$ref": "../../common/2020-03-15-preview/parameters.json#/parameters/IscsiTarget"
-          },
-          {
-            "$ref": "../../common/2020-03-15-preview/common-types.json#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "../../common/2020-03-15-preview/definitions.json#/definitions/IscsiTarget"
-            }
-          },
-          "default": {
-            "description": "Error from the RP",
-            "schema": {
-              "$ref":  "../../common/2020-03-15-preview/definitions.json#/definitions/Error"
-            }
-          }
-        },
-        "x-ms-long-running-operation": false,
-        "x-ms-examples": {
-          "Update an iSCSI Target": {
-            "$ref": "./examples/IscsiTargets_Patch.json"
+            "$ref": "./examples/IscsiTargets_Put.json"
           }
         }
       },

@@ -175,7 +175,7 @@
           "type": "array",
           "description": "Logical zone for DiskPool resource.",
           "items": {
-            "$ref":  "#/definitions/AvailabilityZone"
+            "$ref": "#/definitions/AvailabilityZone"
           }
         },
         "status": {
@@ -241,7 +241,7 @@
       }
     },
     "IscsiTarget": {
-      "type": "object", 
+      "type": "object",
       "description": "Payload for iSCSI Target Create or Update requests.",
       "properties": {
         "properties": {
@@ -261,7 +261,6 @@
       "description": "Properties of iSCSI Target request payload.",
       "properties": {
         "provisioningState": {
-          "readOnly": true,
           "type": "string",
           "enum": [
             "Invalid",
@@ -274,11 +273,13 @@
             "name": "ProvisioningStates",
             "modelAsString": true
           },
-          "description": "State of provisioning of the iSCSI target"
+          "description": "State of provisioning of the iSCSI target",
+          "x-ms-mutability": [
+            "read"
+          ]
         },
         "status": {
           "type": "string",
-          "readOnly": true,
           "enum": [
             "Invalid",
             "Unknown",
@@ -289,18 +290,97 @@
             "name": "OperationalStatus",
             "modelAsString": true
           },
+          "x-ms-mutability": [
+            "read"
+          ],
           "description": "Operational status of the Disk pool"
         },
-        "initiatorIqns": {
+        "tpgs": {
           "type": "array",
-          "description": "list of iSCSI initiator iqns.",
+          "description": "list of iSCSI target portal groups",
           "items": {
-            "$ref":  "#/definitions/IscsiInitiator"
-          }
+            "$ref": "#/definitions/TargetPortalGroup"
+          },
+          "maxLength": 1,
+          "minLength": 1
         },
         "targetIqn": {
           "type": "string",
           "description": "iSCSI target iqn."
+        }
+      }
+    },
+    "TargetPortalGroup": {
+      "type": "object",
+      "description": "iSCSI target portal group",
+      "required": [
+        "luns",
+        "acls",
+        "attributes"
+      ],
+      "properties": {
+        "luns": {
+          "type": "array",
+          "description": "Lun list to be exposed through the iSCSI target. Required",
+          "items": {
+            "$ref": "#/definitions/IscsiLun"
+          },
+          "minLength": 1,
+          "maxLength": 8
+        },
+        "acls": {
+          "type": "array",
+          "description": "Node acls for an iSCSI target",
+          "items": {
+            "$ref": "#/definitions/Acl"
+          }
+        },
+        "attributes": {
+          "$ref": "#/definitions/Attributes"
+        },
+        "endpoints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "x-ms-mutability": [
+            "read"
+          ]
+        },
+        "tag": {
+          "type": "integer",
+          "description": "The tag associated with the iSCSI target portal group",
+          "x-ms-mutability": [
+            "read"
+          ]
+        },
+        "port": {
+          "type": "integer",
+          "description": "The port at which the iSCSI target is available",
+          "x-ms-mutability": [
+            "read"
+          ]
+        }
+      }
+    },
+    "Acl": {
+      "type": "object",
+      "description": "",
+      "required": [
+        "initiatorIqn",
+        "mappedLuns"
+      ],
+      "properties": {
+        "initiatorIqn": {
+          "type": "string",
+          "description": "iSCSI initiator IQN"
+        },
+        "mappedLuns": {
+          "type": "array",
+          "description": "Array of lun names mapped to the ACL",
+          "items": {
+            "type": "string"
+          }
         },
         "credentials": {
           "description": "CHAP credentials for iSCSI target.",
@@ -309,32 +389,21 @@
           "x-ms-mutability": [
             "create"
           ],
-          
           "$ref": "#/definitions/IscsiTargetCredentials"
-        },
-        "options": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "boolean"
-          },
-          "description": "Configuration for iSCSI Target"
-        },
-        "luns": {
-          "type": "array",
-          "description": "Lun list to be exposed through the Iscsi target. Required",
-          "items": {
-            "$ref": "#/definitions/IscsiLun"
-          },
-          "minLength": 1,
-          "maxLength": 8
         }
       }
     },
-    "IscsiInitiator": {
-      "type": "string",
-      "description": "iSCSI initiator iqn",
-      "minLength": 5,
-      "maxLength": 223
+    "Attributes": {
+      "type": "object",
+      "description": "Attributes of an iSCSI target",
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "x-ms-mutability": [
+        "read",
+        "create",
+        "update"
+      ]
     },
     "IscsiTargetCredentials": {
       "type": "object",
