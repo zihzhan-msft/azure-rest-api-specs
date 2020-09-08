@@ -7,7 +7,6 @@ These settings apply only when `--azureresourceschema` is specified on the comma
 ``` yaml $(azureresourceschema) && $(multiapi)
 batch:
   - tag: schema-storagepool-2020-03-15
-  
 ```
 
 Please also specify `--azureresourceschema-folder=<path to the root directory of your azure-resource-manager-schemas clone>`.
@@ -19,6 +18,6 @@ output-folder: $(azureresourceschema-folder)/schemas
 
 # all the input files in this apiVersion
 input-file:
-  - Microsoft.ContainerService/preview/2020-03-15/storagepool.json
+  - Microsoft.StoragePool/preview/2020-03-15/storagepool.json
 
 ```
