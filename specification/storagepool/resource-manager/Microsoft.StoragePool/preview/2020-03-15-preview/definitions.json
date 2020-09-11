@@ -154,6 +154,10 @@
     "DiskPoolProperties": {
       "type": "object",
       "description": "Properties section of the Disk Pool request payload.",
+      "required": [
+        "availabilityZones",
+        "subnetId"
+      ],
       "properties": {
         "provisioningState": {
           "type": "string",
@@ -201,6 +205,10 @@
           },
           "minLength": 1,
           "maxLength": 15
+        },
+        "subnetId": {
+          "type": "string",
+          "description": "Azure resource id of the subnet for the DiskPool"
         }
       }
     },
@@ -259,6 +267,10 @@
     "IscsiTargetProperties": {
       "type": "object",
       "description": "Properties of iSCSI Target request payload.",
+      "required": [
+        "tpgs",
+        "targetIqn"
+      ],
       "properties": {
         "provisioningState": {
           "type": "string",
