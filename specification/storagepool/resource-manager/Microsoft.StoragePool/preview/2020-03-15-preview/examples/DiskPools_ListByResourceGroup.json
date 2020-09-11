@@ -13,6 +13,7 @@
                         "location": "westus2",
                         "name": "myDiskPool",
                         "properties": {
+                            "availabilityZones": ["1"],
                             "provisioningState": "Pending",
                             "status": "Unknown",
                             "disks": [
@@ -39,6 +40,7 @@
                         "location": "westus2",
                         "name": "myDiskPool2",
                         "properties": {
+                            "availabilityZones": ["1"],
                             "provisioningState": "Pending",
                             "status": "Unknown",
                             "disks": [

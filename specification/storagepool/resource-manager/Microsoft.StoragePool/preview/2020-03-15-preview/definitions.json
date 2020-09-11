@@ -274,9 +274,7 @@
             "modelAsString": true
           },
           "description": "State of provisioning of the iSCSI target",
-          "x-ms-mutability": [
-            "read"
-          ]
+          "readOnly": true
         },
         "status": {
           "type": "string",
@@ -290,9 +288,7 @@
             "name": "OperationalStatus",
             "modelAsString": true
           },
-          "x-ms-mutability": [
-            "read"
-          ],
+          "readOnly": true,
           "description": "Operational status of the Disk pool"
         },
         "tpgs": {
@@ -306,7 +302,7 @@
         },
         "targetIqn": {
           "type": "string",
-          "description": "iSCSI target iqn."
+          "description": "iSCSI target iqn (iSCSI Qualified Name); example: iqn.2005-03.org.iscsi:server"
         }
       }
     },
@@ -330,7 +326,7 @@
         },
         "acls": {
           "type": "array",
-          "description": "Node acls for an iSCSI target",
+          "description": "Access Control List (ACL) for an iSCSI target lun",
           "items": {
             "$ref": "#/definitions/Acl"
           }
@@ -365,7 +361,7 @@
     },
     "Acl": {
       "type": "object",
-      "description": "",
+      "description": "Access Control List (ACL) for an iSCSI target lun",
       "required": [
         "initiatorIqn",
         "mappedLuns"
@@ -373,7 +369,7 @@
       "properties": {
         "initiatorIqn": {
           "type": "string",
-          "description": "iSCSI initiator IQN"
+          "description": "iSCSI initiator iqn (iSCSI Qualified Name); example: iqn.2005-03.org.iscsi:client"
         },
         "mappedLuns": {
           "type": "array",
@@ -415,13 +411,13 @@
       "properties": {
         "username": {
           "type": "string",
-          "description": "Username for CHAP authentication.",
+          "description": "Username for Challenge Handshake Authentication Protocol (CHAP) authentication",
           "minLength": 7,
           "maxLength": 128
         },
         "password": {
           "type": "string",
-          "description": "Password for CHAP authentication",
+          "description": "Password for Challenge Handshake Authentication Protocol (CHAP) authentication",
           "minLength": 12,
           "maxLength": 512
         }

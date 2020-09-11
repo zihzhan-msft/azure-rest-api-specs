@@ -60,7 +60,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Retrieved RP operations",
             "schema": {
               "$ref": "./definitions.json#/definitions/StoragePoolOperationListResult"
             }
@@ -99,7 +99,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Retrieved diskPools by subscription",
             "schema": {
               "$ref": "./definitions.json#/definitions/DiskPoolListResult"
             }
@@ -141,7 +141,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Retrieved diskPools by resource group",
             "schema": {
               "$ref": "./definitions.json#/definitions/DiskPoolListResult"
             }
@@ -188,14 +188,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "./definitions.json#/definitions/DiskPool"
-            }
-          },
-          "201": {
-            "description": "Created",
+          "202": {
+            "description": "DiskPool is being provisioned",
             "schema": {
               "$ref": "./definitions.json#/definitions/DiskPool"
             }
@@ -239,7 +233,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated DiskPool attributes",
             "schema": {
               "$ref": "./definitions.json#/definitions/DiskPool"
             }
@@ -282,12 +276,6 @@
           "202": {
             "description": "Accepted"
           },
-          "204": {
-            "description": "No content"
-          },
-          "200": {
-            "description": "Ok"
-          },
           "default": {
             "description": "Error from the RP",
             "schema": {
@@ -324,7 +312,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Retrieved diskPool",
             "schema": {
               "$ref": "./definitions.json#/definitions/DiskPool"
             }
@@ -366,7 +354,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Retrieved iscsiTargets for a diskPool",
             "schema": {
               "$ref": "./definitions.json#/definitions/IscsiTargetList"
             }
@@ -416,14 +404,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Created",
-            "schema": {
-              "$ref": "./definitions.json#/definitions/IscsiTarget"
-            }
-          },
-          "201": {
-            "description": "Created",
+          "202": {
+            "description": "iscsiTarget is being created",
             "schema": {
               "$ref": "./definitions.json#/definitions/IscsiTarget"
             }
@@ -467,13 +449,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Accepted"
-          },
-          "204": {
-            "description": "No content"
-          },
-          "200": {
-            "description": "Ok"
+            "description": "Deleting the iscsiTarget"
           },
           "default": {
             "description": "Error from the RP",
@@ -514,7 +490,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "Retrieved iscsiTarget",
             "schema": {
               "$ref": "./definitions.json#/definitions/IscsiTarget"
             }

@@ -11,5 +11,5 @@ csharp:
   clear-output-folder: true
   client-side-validation: false
   namespace: Microsoft.StoragePool
-  output-folder: $(csharp-sdks-folder)/storagepool/management/Microsoft.StoragePool/GeneratedProtocol
+  output-folder: $(csharp-sdks-folder)/storagepool/Azure.Management.StoragePool/src/Generated
 ```

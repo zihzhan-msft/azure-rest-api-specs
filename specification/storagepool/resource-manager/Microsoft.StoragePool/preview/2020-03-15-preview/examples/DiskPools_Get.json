@@ -13,6 +13,7 @@
         "name": "myDiskPool",
         "type": "Microsoft.StoragePool/diskPools",
         "properties": {
+          "availabilityZones": ["1"],
           "provisioningState": "Succeeded",
           "status": "Healthy",
           "disks": [
