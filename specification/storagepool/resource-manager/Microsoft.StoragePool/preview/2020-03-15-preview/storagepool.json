@@ -51,7 +51,7 @@
         "tags": [
           "StoragePoolOperations"
         ],
-        "operationId": "Operations_ListStoragePoolOperations",
+        "operationId": "Operations_List",
         "description": "Gets a list of StoragePool operations.",
         "parameters": [
           {
@@ -107,7 +107,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref":  "#/definitions/Error"
+              "$ref": "#/definitions/Error"
             }
           }
         },
@@ -143,7 +143,7 @@
           "200": {
             "description": "Operation completed successfully; retrieved diskPools by resource group",
             "schema": {
-              "$ref":  "#/definitions/DiskPoolListResult"
+              "$ref": "#/definitions/DiskPoolListResult"
             }
           },
           "default": {
@@ -197,7 +197,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref":  "#/definitions/Error"
+              "$ref": "#/definitions/Error"
             }
           }
         },
@@ -241,7 +241,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref":  "#/definitions/Error"
+              "$ref": "#/definitions/Error"
             }
           }
         },
@@ -279,7 +279,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref":  "#/definitions/Error"
+              "$ref": "#/definitions/Error"
             }
           }
         },
@@ -320,7 +320,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref":  "#/definitions/Error"
+              "$ref": "#/definitions/Error"
             }
           }
         },
@@ -362,7 +362,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref":  "#/definitions/Error"
+              "$ref": "#/definitions/Error"
             }
           }
         },
@@ -413,7 +413,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref":  "#/definitions/Error"
+              "$ref": "#/definitions/Error"
             }
           }
         },
@@ -454,7 +454,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref":  "#/definitions/Error"
+              "$ref": "#/definitions/Error"
             }
           }
         },
@@ -498,7 +498,7 @@
           "default": {
             "description": "Error from the RP",
             "schema": {
-              "$ref":  "#/definitions/Error"
+              "$ref": "#/definitions/Error"
             }
           }
         },
@@ -919,30 +919,37 @@
           }
         },
         "attributes": {
+          "description": "Attributes of an iSCSI target",
           "$ref": "#/definitions/Attributes"
         },
         "endpoints": {
+          "description": "list of public ip addresses to connect to the iSCSI target",
           "type": "array",
           "items": {
             "type": "string"
           },
           "x-ms-mutability": [
             "read"
-          ]
+          ],
+          "readOnly": true
         },
         "tag": {
           "type": "integer",
+          "format": "int32",
           "description": "The tag associated with the iSCSI target portal group",
           "x-ms-mutability": [
             "read"
-          ]
+          ],
+          "readOnly": true
         },
         "port": {
           "type": "integer",
+          "format": "int32",
           "description": "The port at which the iSCSI target is available",
           "x-ms-mutability": [
             "read"
-          ]
+          ],
+          "readOnly": true
         }
       }
     },
@@ -1037,6 +1044,7 @@
       "properties": {
         "error": {
           "type": "object",
+          "description": "RP error response",
           "$ref": "#/definitions/ErrorResponse"
         }
       }
