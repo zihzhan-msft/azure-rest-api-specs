@@ -6,7 +6,6 @@
         "diskPoolName": "myDiskPool",
         "iscsiTargetName": "myIscsiTarget",
         "iscsiTargetPayload": {
-            "location": "westus2",
             "properties": {
                 "targetIqn": "iqn.2005-03.org.iscsi:server1",
                 "tpgs": [
@@ -44,7 +43,6 @@
                 "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.StoragePool/diskPools/myDiskPool/iscsiTargets/myIscsiTarget",
                 "name": "myIscsiTarget",
                 "type": "Microsoft.StoragePool/diskPools/iscsiTargets",
-                "location": "westus2",
                 "properties": {
                     "targetIqn": "iqn.2005-03.org.iscsi:server1",
                     "tpgs": [
