@@ -188,6 +188,12 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK -- returned when the diskPool was already created from a previous request with the same properties specified in the request body.",
+            "schema": {
+              "$ref": "#/definitions/DiskPool"
+            }
+          },
           "202": {
             "description": "Accepted -- Create or update request accepted; operation will complete asynchronously.",
             "schema": {
@@ -410,6 +416,12 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK -- returned when the iscsiTarget was already created from a previous request with the same properties specified in the request body.",
+            "schema": {
+              "$ref": "#/definitions/IscsiTarget"
+            }
+          },
           "202": {
             "description": "Accepted -- Create or update request accepted; operation will complete asynchronously.",
             "schema": {
