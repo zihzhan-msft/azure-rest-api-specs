@@ -754,7 +754,7 @@
       "type": "object",
       "description": "Properties section of the Disk Pool request payload.",
       "required": [
-        "availabilityZones",
+        "availabilityZones"
       ],
       "properties": {
         "provisioningState": {
