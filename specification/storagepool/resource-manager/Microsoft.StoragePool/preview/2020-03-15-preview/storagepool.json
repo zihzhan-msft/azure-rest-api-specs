@@ -273,6 +273,12 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Delete operation completed successfully."
+          },
+          "204": {
+            "description": "Resource does not exist in the subscription."
+          },
           "202": {
             "description": "Delete request accepted; operation will complete asynchronously."
           },
@@ -325,7 +331,7 @@
           }
         },
         "x-ms-examples": {
-          "Get a Disk Pool": {
+          "Get a diskPool": {
             "$ref": "./examples/DiskPools_Get.json"
           }
         }
@@ -448,6 +454,12 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Delete operation completed successfully."
+          },
+          "204": {
+            "description": "Resource does not exist in the subscription."
+          },
           "202": {
             "description": "Delete request accepted; operation will complete asynchronously."
           },
@@ -460,7 +472,7 @@
         },
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Update Disk Pool": {
+          "Delete an iscsiTarget": {
             "$ref": "./examples/IscsiTargets_Delete.json"
           }
         }
@@ -503,7 +515,7 @@
           }
         },
         "x-ms-examples": {
-          "Get an iSCSI Target": {
+          "Get an iscsiTarget": {
             "$ref": "./examples/IscsiTargets_Get.json"
           }
         }
