@@ -4,6 +4,7 @@
     "version": "2020-03-15-preview",
     "title": "StoragePoolManagement"
   },
+  "host": "management.azure.com",
   "schemes": [
     "https"
   ],
@@ -735,10 +736,12 @@
         "sku": {
           "description": "Sku description.",
           "$ref": "#/definitions/Sku"
+        },
+        "systemData": {
+          "description": "Resource metadata required by ARM RPC",
+          "readOnly": true,
+          "$ref": "#/definitions/SystemMetadata"
         }
-      },
-      "additionalProperties": {
-        "type": "object"
       },
       "allOf": [
         {
@@ -877,7 +880,10 @@
             "Succeeded",
             "Failed",
             "Canceled",
-            "Pending"
+            "Pending",
+            "Creating",
+            "Updating",
+            "Deleting"
           ],
           "x-ms-enum": {
             "name": "ProvisioningStates",
@@ -1080,6 +1086,36 @@
           "type": "object",
           "description": "RP error response",
           "$ref": "#/definitions/ErrorResponse"
+        }
+      }
+    },
+    "SystemMetadata": {
+      "type": "object",
+      "description": "Resource metadata required by ARM RPC",
+      "properties": {
+        "createdBy": {
+          "type": "string",
+          "description": "A string identifier for the identity that created the resource."
+        },
+        "createdByType": {
+          "type": "string",
+          "description": "The type of identity that created the resource: user, application, managedIdentity"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "The timestamp of resource creation (UTC)"
+        },
+        "lastModifiedBy": {
+          "type": "string",
+          "description": "A string identifier for the identity that last modified the resource"
+        },
+        "lastModifiedByType": {
+          "type": "string",
+          "description": "The type of identity that last modified the resource: user, application, managedIdentity"
+        },
+        "lastModifiedAt": {
+          "type": "string",
+          "description": "The timestamp of resource last modification (UTC)"
         }
       }
     },
