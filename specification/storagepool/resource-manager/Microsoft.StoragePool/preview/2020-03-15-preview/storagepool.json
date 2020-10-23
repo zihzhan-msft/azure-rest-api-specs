@@ -762,19 +762,8 @@
       "properties": {
         "provisioningState": {
           "type": "string",
-          "readOnly": true,
-          "enum": [
-            "Invalid",
-            "Succeeded",
-            "Failed",
-            "Canceled",
-            "Pending"
-          ],
-          "x-ms-enum": {
-            "name": "ProvisioningStates",
-            "modelAsString": true
-          },
-          "description": "State of provisioning of the Disk pool"
+          "$ref": "#/definitions/ProvisioningState",
+          "readOnly": true
         },
         "availabilityZones": {
           "type": "array",
@@ -875,21 +864,7 @@
       "properties": {
         "provisioningState": {
           "type": "string",
-          "enum": [
-            "Invalid",
-            "Succeeded",
-            "Failed",
-            "Canceled",
-            "Pending",
-            "Creating",
-            "Updating",
-            "Deleting"
-          ],
-          "x-ms-enum": {
-            "name": "ProvisioningStates",
-            "modelAsString": true
-          },
-          "description": "State of provisioning of the iSCSI target",
+          "$ref": "#/definitions/ProvisioningState",
           "readOnly": true
         },
         "status": {
@@ -1088,6 +1063,25 @@
           "$ref": "#/definitions/ErrorResponse"
         }
       }
+    },
+    "ProvisioningState": {
+      "type": "string",
+      "enum": [
+        "Invalid",
+        "Succeeded",
+        "Failed",
+        "Canceled",
+        "Pending",
+        "Creating",
+        "Updating",
+        "Deleting"
+      ],
+      "x-ms-enum": {
+        "name": "ProvisioningStates",
+        "modelAsString": true
+      },
+      "description": "State of provisioning of the iSCSI target",
+      "readOnly": true
     },
     "SystemMetadata": {
       "type": "object",
