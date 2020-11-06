@@ -14,8 +14,13 @@ python:
   clear-output-folder: true
 ```
 
-```yaml $(python)
+``` yaml $(python) && $(python-mode) == 'update'
 python:
-  no-namespace-folders: true
-  output-folder: $(python-sdks-folder)/storage/azure-mgmt-storage/azure/mgmt/storage/v2020_03_15_preview
+    no-namespace-folders: true
+    output-folder: $(python-sdks-folder)/storagepool/azure-mgmt-storagepool/azure/mgmt/storagepool
+```
+``` yaml $(python) && $(python-mode) == 'create'
+python:
+    basic-setup-py: true
+    output-folder: $(python-sdks-folder)/storagepool/azure-mgmt-storagepool
 ```
