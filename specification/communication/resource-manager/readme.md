@@ -55,6 +55,7 @@ swagger-to-sdk:
   - repo: azure-sdk-for-go
   - repo: azure-sdk-for-js
   - repo: azure-sdk-for-java
+  - repo: azure-cli-extensions
 ```
 
 ## CSharp
@@ -72,3 +73,7 @@ See configuration in [readme.go.md](./readme.go.md)
 ## Typescript
 
 See configuration in [readme.typescript.md](./readme.typescript.md)
+
+## Cli
+
+See configuration in [readme.cli.md](./readme.cli.md)
