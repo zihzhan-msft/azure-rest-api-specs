@@ -12,3 +12,17 @@ python-sdk-output-folder: "$(az-output-folder)/azext_diskpool/vendored_sdks/stor
 # add additinal configuration here specific for Azure CLI
 # refer to the faq.md for more details
 ```
+
+## Az.DiskPool
+
+``` yaml
+cli:
+    cli-directive:
+        - where:
+            type: DiskPoolProperties
+            property: disks
+          set:
+            positional: true
+            positionalKeys:
+              - id
+```
