@@ -19,8 +19,7 @@ python-sdk-output-folder: "$(az-output-folder)/azext_diskpool/vendored_sdks/stor
 cli:
     cli-directive:
         - where:
-            type: DiskPoolProperties
-            property: disks
+            param: disks
           set:
             positional: true
             positionalKeys:
