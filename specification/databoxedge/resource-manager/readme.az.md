@@ -29,6 +29,7 @@ directive:
 
 cli:
     cli-directive:
+# -------- rename single command within a group --------
         - where:
             group: Jobs
             op: Get
@@ -44,13 +45,19 @@ cli:
             op: List
           name: list_sku
 
+# -------- Order --------
         - where:
-            type: OrderProperties
-            prop: contactInformation
-          flatten: true
+            param: contactInformation
+          required: true
+          cli-flatten: true
 
         - where:
-            type: OrderProperties
-            prop: shippingAddress
-          flatten: true
+            param: shippingAddress
+          cli-flatten: true
+
+        - where:
+            group: Orders
+            op: CreateOrUpdate#Create
+            param: addressLine1 | postalCode | city | state | country
+          required: true
 ```
