@@ -38,9 +38,19 @@
       - kairu-ms
 
 - rule:
-    paths: "specification/@(resources|powerplatform)/**"
+    paths: "specification/@(resources|powerplatform|appplatform)/**"
     reviewers:
       - raych1
+
+- rule:
+    paths: "specification/sql/**"
+    reviewers:
+      - akning-ms
+      
+- rule:
+    paths: "specification/signalr/**"
+    reviewers:
+      - leni-msft 
       
 - rule:
     paths: "specification/compute/**"
@@ -57,7 +67,7 @@
 
 - rule:
     paths:
-      - "specification/@(azureactivedirectory|appplatform)/**"
+      - "specification/azureactivedirectory/**"
     reviewers:
       - njuCZ
 
