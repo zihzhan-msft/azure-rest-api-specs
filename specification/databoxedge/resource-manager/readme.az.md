@@ -47,17 +47,82 @@ cli:
 
 # -------- Order --------
         - where:
-            param: contactInformation
-          required: true
-          cli-flatten: true
-
-        - where:
-            param: shippingAddress
+            type: Order
+            prop: contactInformation|shippingAddress
           cli-flatten: true
 
         - where:
             group: Orders
             op: CreateOrUpdate#Create
-            param: addressLine1 | postalCode | city | state | country
+            param: addressLine1|postalCode|city|state|country|contactPerson|companyName|phone|emailList
           required: true
+
+        - where:
+            param: addressLine1
+          set:
+            alias: address_line1
+
+        - where:
+            param: addressLine2
+          set:
+            alias: address_line2
+
+        - where:
+            param: addressLine3
+          set:
+            alias: address_line3
+
+        - where:
+            param: postalCode
+          set:
+            alias: postal_code
+
+        - where:
+            param: city
+          set:
+            alias: city
+
+        - where:
+            param: state
+          set:
+            alias: state
+
+        - where:
+            param: country
+          set:
+            alias: country
+
+        - where:
+            param: contactPerson
+          set:
+            alias: contact_person
+
+        - where:
+            param: companyName
+          set:
+            alias: company_name
+
+        - where:
+            param: phone
+          set:
+            alias: phone
+
+        - where:
+            param: emailList
+          set:
+            alias: email_list
+
+        - where:
+            group: Orders
+            op: CreateOrUpdate#Create|CreateOrUpdate#Update
+            param: status
+          set:
+            alias: status
+
+        - where:
+            group: Orders
+            op: CreateOrUpdate#Create|CreateOrUpdate#Update
+            param: comments
+          set:
+            alias: comments
 ```
