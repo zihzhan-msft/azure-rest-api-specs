@@ -29,6 +29,22 @@ directive:
 
 cli:
     cli-directive:
+# -------- DO NOT generate and DO generate --------
+        - where:
+            group: "*"
+            op: "*"
+          hidden: true
+
+        - where:
+            group: Alerts|BandwidthSchedules|Devices|Jobs|Nodes|Orders|Skus
+            op: "*"
+          hidden: false
+
+        - where:
+            group: Devices
+            op: GetExtendedInformation|GetNetworkSettings|CreateOrUpdateSecuritySettings|UploadCertificate
+          hidden: true
+
 # -------- rename single command within a group --------
         - where:
             group: Jobs
