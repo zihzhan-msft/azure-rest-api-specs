@@ -49,6 +49,7 @@ cli:
     - name: IntegrationRuntimes_GetStatus
     - name: IntegrationRuntimes_Start
     - name: IntegrationRuntimes_Stop
+    - name: IntegrationRuntimeNodes_Get
     - name: Triggers_GetEventSubscriptionStatus
     - name: ActivityRuns_QueryByPipelineRun
     - name: Triggers_UnsubscribeFromEvents
