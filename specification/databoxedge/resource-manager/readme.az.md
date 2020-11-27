@@ -61,7 +61,67 @@ cli:
             op: List
           name: list_sku
 
-# -------- Order --------
+# -------- Alerts --------
+        - where:
+            group: Alerts
+            param: deviceName
+          alias:
+            - device_name
+            - d
+
+        - where:
+            group: Alerts
+            param: name
+          alias:
+            - name
+            - n
+
+# -------- BandwidthSchedules --------
+        - where:
+            group: BandwidthSchedules
+            param: deviceName
+          alias:
+            - device_name
+            - d
+
+        - where:
+            group: BandwidthSchedules
+            param: name
+          alias:
+            - name
+            - n
+
+# -------- Jobs --------
+        - where:
+            group: Jobs
+            param: deviceName
+          alias:
+            - device_name
+            - d
+
+        - where:
+            group: Jobs
+            param: name
+          alias:
+            - name
+            - n
+
+# -------- Nodes --------
+        - where:
+            group: Nodes
+            param: deviceName
+          alias:
+            - device_name
+            - d
+
+# -------- Orders --------
+        - where:
+            group: Alerts
+            param: deviceName
+          alias:
+            - device_name
+            - d
+
         - where:
             type: Order
             prop: contactInformation|shippingAddress
@@ -75,70 +135,57 @@ cli:
 
         - where:
             param: addressLine1
-          set:
-            alias: address_line1
+          alias: address_line1
 
         - where:
             param: addressLine2
-          set:
-            alias: address_line2
+          alias: address_line2
 
         - where:
             param: addressLine3
-          set:
-            alias: address_line3
+          alias: address_line3
 
         - where:
             param: postalCode
-          set:
-            alias: postal_code
+          alias: postal_code
 
         - where:
             param: city
-          set:
-            alias: city
+          alias: city
 
         - where:
             param: state
-          set:
-            alias: state
+          alias: state
 
         - where:
             param: country
-          set:
-            alias: country
+          alias: country
 
         - where:
             param: contactPerson
-          set:
-            alias: contact_person
+          alias: contact_person
 
         - where:
             param: companyName
-          set:
-            alias: company_name
+          alias: company_name
 
         - where:
             param: phone
-          set:
-            alias: phone
+          alias: phone
 
         - where:
             param: emailList
-          set:
-            alias: email_list
+          alias: email_list
 
         - where:
             group: Orders
             op: CreateOrUpdate#Create|CreateOrUpdate#Update
             param: status
-          set:
-            alias: status
+          alias: status
 
         - where:
             group: Orders
             op: CreateOrUpdate#Create|CreateOrUpdate#Update
             param: comments
-          set:
-            alias: comments
+          alias: comments
 ```
