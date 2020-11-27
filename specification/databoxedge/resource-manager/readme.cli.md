@@ -17,64 +17,77 @@ cli:
         op: CreateOrUpdate.*
       hidden: true
   test-scenario:
-    - name: DataBoxEdgeDevicePut
-    - name: UserPut
-    - name: RolePut
-    - name: SharePut
-    - name: OrderPut
-    - name: TriggerPut
-    - name: StorageAccountPut
-    - name: BandwidthSchedulePut
-    - name: SACPut
-    - name: ContainerPut
-    - name: ContainerGet
-    - name: SACGet
-    - name: ContainerListAllInDevice
-    - name: BandwidthScheduleGet
-    - name: OperationsStatusGet
-    - name: StorageAccountGet
-    - name: NetworkSettingsGet
-    - name: UpdateSummaryGet
-    - name: TriggerGet
-    - name: SACGetAllInDevice
-    - name: AlertGet
-    - name: ShareGet
-    - name: OrderGet
-    - name: UserGet
-    - name: RoleGet
-    - name: JobsGet
-    - name: BandwidthScheduleGetAllInDevice
-    - name: StorageAccountGetAllInDevice
-    - name: TriggerGetAllInDevice
-    - name: OrderGetAllInDevice
-    - name: AlertGetAllInDevice
-    - name: ShareGetAllInDevice
-    - name: NodesGetAllInDevice
-    - name: RoleGetAllInDevice
-    - name: UserGetAllInDevice
-    - name: DataBoxEdgeDeviceGetByName
-    - name: DataBoxEdgeDeviceGetByResourceGroup
-    - name: DataBoxEdgeDeviceGetBySubscription
-    - name: ListSkus
-    - name: ListAvailableSkus
-    - name: OperationsGet
-    - name: ContainerRefresh
-    - name: CreateOrUpdateSecuritySettings
-    - name: ShareRefreshPost
-    - name: ExtendedInfoPost
-    - name: UploadCertificatePost
-    - name: DownloadUpdatesPost
-    - name: ScanForUpdatesPost
-    - name: InstallUpdatesPost
-    - name: DataBoxEdgeDevicePatch
-    - name: ContainerDelete
-    - name: SACDelete
-    - name: BandwidthScheduleDelete
-    - name: StorageAccountDelete
-    - name: TriggerDelete
-    - name: ShareDelete
-    - name: OrderDelete
-    - name: UserDelete
-    - name: RoleDelete
-    - name: DataBoxEdgeDeviceDelete
+      general:
+        - name: OperationsGet
+        - name: ListSkus
+        - name: ListAvailableSkus
+        - name: OperationsStatusGet
+        - name: JobsGet
+      device_general:
+        - name: DataBoxEdgeDevicePut
+        - name: DataBoxEdgeDeviceGetByName
+        - name: DataBoxEdgeDeviceGetByResourceGroup
+        - name: DataBoxEdgeDeviceGetBySubscription
+        - name: DataBoxEdgeDevicePatch
+        - name: DataBoxEdgeDeviceGetByName
+        - name: DataBoxEdgeDeviceDelete
+      device_manage:
+        - name: NodesGetAllInDevice
+        - name: ScanForUpdatesPost
+        - name: UpdateSummaryGet
+        - name: DownloadUpdatesPost
+        - name: InstallUpdatesPost
+        - name: AlertGetAllInDevice
+        - name: AlertGet
+        - name: NetworkSettingsGet
+        - name: ExtendedInfoPost
+        - name: CreateOrUpdateSecuritySettings
+        - name: UploadCertificatePost
+      order:
+        - name: OrderPut
+        - name: OrderGet
+        - name: OrderGetAllInDevice
+        - name: OrderDelete
+      bandwidth_schedule:
+        - name: BandwidthSchedulePut
+        - name: BandwidthScheduleGet
+        - name: BandwidthScheduleGetAllInDevice
+        - name: BandwidthScheduleDelete
+      user:
+        - name: UserPut
+        - name: UserGet
+        - name: UserGetAllInDevice
+        - name: UserDelete
+      role:
+        - name: RolePut
+        - name: RoleGet
+        - name: RoleGetAllInDevice
+        - name: RoleDelete
+      share:
+        - name: SharePut
+        - name: ShareGet
+        - name: ShareGetAllInDevice
+        - name: ShareRefreshPost
+        - name: ShareDelete
+      trigger:
+        - name: TriggerPut
+        - name: TriggerGet
+        - name: TriggerGetAllInDevice
+        - name: TriggerDelete
+      storage_account:
+        - name: StorageAccountPut
+        - name: StorageAccountGet
+        - name: StorageAccountGetAllInDevice
+        - name: StorageAccountDelete
+      sac:
+        - name: SACPut
+        - name: SACGet
+        - name: SACGetAllInDevice
+        - name: SACDelete
+      container:
+        - name: ContainerPut
+        - name: ContainerGet
+        - name: ContainerListAllInDevice
+        - name: ContainerRefresh
+        - name: ContainerDelete
 ```
