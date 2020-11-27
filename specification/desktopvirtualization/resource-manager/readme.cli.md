@@ -14,4 +14,11 @@ cli:
     #     op: ListByResourceGroup
     #     param: \$filter
     #   name: list-filter
+  test-scenario:
+    - name: /HostPools/get/HostPool_List
+    - name: /HostPools/get/HostPool_ListByResourceGroup
+    - name: /ApplicationGroups/get/ApplicationGroup_List
+    - name: /ApplicationGroups/get/ApplicationGroup_ListByResourceGroup
+    - name: /Workspaces/get/Workspace_ListByResourceGroup
+    - name: /Workspaces/get/Workspace_ListBySubscription
 ```
