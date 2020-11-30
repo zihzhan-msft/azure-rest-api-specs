@@ -102,4 +102,16 @@ cli:
             param: privateLinkResourceId
         alias:
             - plr_id
+      - where:
+            type: FactoryGitHubConfiguration
+        alias:
+            - fghc
+      - where:
+            type: FactoryVstsConfiguration
+        alias:
+            - fvc
+      - where:
+            param: gitHubAccessTokenBaseUrl
+        alias:
+            - ghatbu
 ```
