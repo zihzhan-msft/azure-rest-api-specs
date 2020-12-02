@@ -116,7 +116,7 @@ cli:
 
 # -------- Orders --------
         - where:
-            group: Alerts
+            group: Orders
             param: deviceName
           alias:
             - device_name
