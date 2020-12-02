@@ -61,6 +61,13 @@ cli:
             op: List
           name: list_sku
 
+# -------- Devices --------
+        - where:
+            group: Devices
+            param: dataBoxEdgeDeviceStatus
+          alias:
+            - status
+
 # -------- Alerts --------
         - where:
             group: Alerts
