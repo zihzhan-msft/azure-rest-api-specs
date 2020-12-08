@@ -10,6 +10,7 @@ az:
   disable-checks: true
 az-output-folder: $(azure-cli-extension-folder)/src/mixedreality
 python-sdk-output-folder: "$(az-output-folder)/azext_mixedreality/vendored_sdks/mixedreality"
+sdk-flatten: true
 
 directive:
     - where:

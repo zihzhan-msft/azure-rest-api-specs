@@ -11,6 +11,7 @@ az:
   disable-checks: true
 az-output-folder:  $(azure-cli-extension-folder)/src/datafactory
 python-sdk-output-folder: "$(az-output-folder)/azext_datafactory/vendored_sdks/datafactory"
+sdk-flatten: true
 
 input-file:
 - Microsoft.DataFactory/stable/2018-06-01/entityTypes/DataFlow.json

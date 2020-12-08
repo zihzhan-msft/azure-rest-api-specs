@@ -10,7 +10,7 @@ az:
   disable-checks: true
 az-output-folder: $(azure-cli-extension-folder)/src/kusto
 python-sdk-output-folder: "$(az-output-folder)/azext_kusto/vendored_sdks/kusto"
-
+sdk-flatten: true
 
 cli:
     cli-directive:
