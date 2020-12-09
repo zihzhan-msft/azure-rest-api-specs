@@ -2,30 +2,30 @@
 
 These settings apply only when `--az` is specified on the command line.
 
-``` yaml $(az)
+``` yaml $(az) && $(target-mode) == 'core'
 az:
-  extensions: data-box-edge
+  extensions: databoxedge
   package-name: azure-mgmt-databoxedge
   namespace: azure.mgmt.databoxedge
-az-output-folder: $(azure-cli-extension-folder)/src/databoxedge
-python-sdk-output-folder: "$(az-output-folder)/azext_databoxedge/vendored_sdks/databoxedge/v2019_08_01"
+az-output-folder: $(azure-cli-folder)/src/azure-cli/azure/cli/command_modules/databoxedge
+python-sdk-output-folder: "$(az-output-folder)/vendored_sdks/databoxedge"
 extension-mode: preview
 
 directive:
     - where:
-        group: data-box-edge job
+        group: databoxedge job
       set:
-        group: data-box-edge
+        group: databoxedge
 
     - where:
-        group: data-box-edge node
+        group: databoxedge node
       set:
-        group: data-box-edge
+        group: databoxedge
 
     - where:
-        group: data-box-edge sku
+        group: databoxedge sku
       set:
-        group: data-box-edge
+        group: databoxedge
 
 cli:
     cli-directive:
