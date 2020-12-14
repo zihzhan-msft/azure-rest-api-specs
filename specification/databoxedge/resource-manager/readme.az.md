@@ -132,7 +132,7 @@ cli:
         - where:
             type: Order
             prop: contactInformation|shippingAddress
-          cli-flatten: true
+          flatten: true
 
         - where:
             group: Orders
