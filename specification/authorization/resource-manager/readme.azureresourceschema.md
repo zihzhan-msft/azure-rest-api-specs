@@ -14,6 +14,7 @@ batch:
   - tag: schema-authorization-2015-07-01
   - tag: schema-authorization-2015-06-01
   - tag: schema-authorization-2018-05-01-preview
+  - tag: schema-authorization-2021-01-01-preview
 
 ```
 
@@ -110,5 +111,16 @@ output-folder: $(azureresourceschema-folder)/schemas
 # all the input files in this apiVersion
 input-file:
   - Microsoft.Authorization/preview/2015-06-01/authorization-ClassicAdminCalls.json
+
+```
+
+### Tag: schema-authorization-2021-01-01-preview and azureresourceschema
+
+``` yaml $(tag) == 'schema-authorization-2021-01-01-preview' && $(azureresourceschema)
+output-folder: $(azureresourceschema-folder)/schemas
+
+# all the input files in this apiVersion
+input-file:
+  - Microsoft.Authorization/preview/2021-01-01-preview/authorization-RoleAssignmentApprovalCalls.json
 
 ```
