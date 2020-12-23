@@ -8,9 +8,9 @@ az:
   namespace: azure.mgmt.kusto
   package-name: azure-mgmt-kusto
   disable-checks: true
+  randomize-names: true
 az-output-folder: $(azure-cli-extension-folder)/src/kusto
 python-sdk-output-folder: "$(az-output-folder)/azext_kusto/vendored_sdks/kusto"
-sdk-flatten: true
 
 cli:
     cli-directive:
@@ -24,5 +24,8 @@ cli:
             op: 'dataConnectionValidation'
             param: 'properties'
         poly-resource: true
-
+      - where:
+            param: userAssignedIdentities
+        alias:
+            - user_assigned
 ```
