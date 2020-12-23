@@ -21,7 +21,7 @@
               }
             },
             "sku": {
-              "name": "Standard_L8s",
+              "name": "Standard_D11_v2",
               "capacity": 2,
               "tier": "Standard"
             }
@@ -35,7 +35,7 @@
               "provisioningState": "Succeeded"
             },
             "sku": {
-              "name": "Standard_L8s",
+              "name": "Standard_D11_v2",
               "capacity": 2,
               "tier": "Standard"
             }
