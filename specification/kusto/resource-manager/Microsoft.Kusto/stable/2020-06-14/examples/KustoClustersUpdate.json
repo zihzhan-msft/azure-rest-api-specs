@@ -5,7 +5,7 @@
     "clusterName": "kustoclusterrptest4",
     "api-version": "2020-06-14",
     "parameters": {
-      "location": "westus"
+      "location": "southcentralus"
     },
     "identity": {
       "type": "SystemAssigned"
@@ -26,7 +26,7 @@
         "id": "/subscriptions/12345678-1234-1234-1234-123456789098/resourceGroups/kustorptest/providers/Microsoft.Kusto/Clusters/KustoClusterRPTest4",
         "name": "KustoClusterRPTest4",
         "type": "Microsoft.Kusto/Clusters",
-        "location": "westus",
+        "location": "southcentralus",
         "properties": {
           "provisioningState": "Succeeded",
           "enableStreamingIngest": true,
@@ -55,7 +55,7 @@
         "id": "/subscriptions/12345678-1234-1234-1234-123456789098/resourceGroups/kustorptest/providers/Microsoft.Kusto/Clusters/KustoClusterRPTest4",
         "name": "KustoClusterRPTest4",
         "type": "Microsoft.Kusto/Clusters",
-        "location": "westus",
+        "location": "southcentralus",
         "properties": {
           "provisioningState": "Succeeded",
           "enableStreamingIngest": true,
@@ -84,7 +84,7 @@
         "id": "/subscriptions/12345678-1234-1234-1234-123456789098/resourceGroups/kustorptest/providers/Microsoft.Kusto/Clusters/KustoClusterRPTest4",
         "name": "KustoClusterRPTest4",
         "type": "Microsoft.Kusto/Clusters",
-        "location": "westus",
+        "location": "southcentralus",
         "properties": {
           "provisioningState": "Succeeded",
           "enableStreamingIngest": true,
