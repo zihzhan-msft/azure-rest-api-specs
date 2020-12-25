@@ -28,18 +28,18 @@ cli:
     - name: KustoClusterDetachFollowerDatabases
     - name: KustoDatabaseCheckNameAvailability
     - name: KustoClusterListFollowerDatabases
-    - name: KustoClustersStart
-    - name: KustoClustersStop
-    - name: KustoClustersUpdate
+    # - name: KustoClustersStart
+    # - name: KustoClustersStop
+    # - name: KustoClustersUpdate
     - name: KustoClustersCheckNameAvailability
     - name: AttachedDatabaseConfigurationsDelete
     - name: KustoDataConnectionsDelete
+    # - name: KustoDatabasePrincipalAssignmentsCreateOrUpdate
+    # - name: KustoClusterPrincipalAssignmentsCreateOrUpdate
+    # - name: KustoDatabasePrincipalAssignmentsGet
+    # - name: KustoClusterPrincipalAssignmentsGet
+    # - name: KustoDatabasePrincipalAssignmentsDelete
+    # - name: KustoClusterPrincipalAssignmentsDelete
     - name: KustoDatabasesDelete
     - name: KustoClustersDelete
-    - name: KustoDatabasePrincipalAssignmentsGet
-    - name: KustoDatabasePrincipalAssignmentsCreateOrUpdate
-    - name: KustoDatabasePrincipalAssignmentsDelete
-    - name: KustoClusterPrincipalAssignmentsGet
-    - name: KustoClusterPrincipalAssignmentsCreateOrUpdate
-    - name: KustoClusterPrincipalAssignmentsDelete
 ```
