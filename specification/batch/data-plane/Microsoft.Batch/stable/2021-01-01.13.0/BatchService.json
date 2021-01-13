@@ -14011,14 +14011,17 @@
     "InstanceViewStatus": {
       "properties": {
         "code": {
+          "readOnly": true,
           "type": "string",
           "title": "The status code."
         },
         "displayStatus": {
+          "readOnly": true,
           "type": "string",
           "title": "The localized label for the status."
         },
         "level": {
+          "readOnly": true,
           "type": "string",
           "title": "Level code.",
           "enum": [
@@ -14043,10 +14046,12 @@
           }
         },
         "message": {
+          "readOnly": true,
           "type": "string",
           "title": "The detailed status message."
         },
         "time": {
+          "readOnly": true,
           "type": "string",
           "description": "The time of the status."
         }
@@ -14056,10 +14061,12 @@
     "VMExtensionInstanceView": {
       "properties": {
         "name": {
+          "readOnly": true,
           "type": "string",
           "title": "The name of the vm extension instance view."
         },
         "statuses": {
+          "readOnly": true,
           "type": "array",
           "items": {
             "$ref": "#/definitions/InstanceViewStatus"
@@ -14067,6 +14074,7 @@
           "description": "The resource status information."
         },
         "subStatuses": {
+          "readOnly": true,
           "type": "array",
           "items": {
             "$ref": "#/definitions/InstanceViewStatus"
@@ -14079,6 +14087,7 @@
     "NodeVMExtension": {
       "properties": {
         "provisioningState": {
+          "readOnly": true,
           "type": "string",
           "title": "The provisioning state of the virtual machine extension."
         },
@@ -14088,6 +14097,7 @@
         },
         "instanceView": {
           "$ref": "#/definitions/VMExtensionInstanceView",
+          "readOnly": true,
           "title": "The virtual machine extension instance view."
         }
       },
