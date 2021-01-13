@@ -118,7 +118,10 @@
             }
           }
         },
-        "x-ms-long-running-operation": true
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        }
       },
       "patch": {
         "tags": [
@@ -222,7 +225,10 @@
             }
           }
         },
-        "x-ms-long-running-operation": true
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        }
       },
       "get": {
         "tags": [
@@ -1262,8 +1268,7 @@
               "$ref": "#/definitions/CloudError"
             }
           }
-        },
-        "x-ms-long-running-operation": true
+        }
       },
       "patch": {
         "tags": [
@@ -1362,9 +1367,6 @@
           "200": {
             "description": "The operation was successful."
           },
-          "204": {
-            "description": "The operation was successful."
-          },
           "202": {
             "description": "The operation will be completed asynchronously.",
             "headers": {
@@ -1379,6 +1381,9 @@
               }
             }
           },
+          "204": {
+            "description": "The operation was successful."
+          },
           "default": {
             "description": "Error response describing why the operation failed.",
             "schema": {
@@ -1386,7 +1391,10 @@
             }
           }
         },
-        "x-ms-long-running-operation": true
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        }
       },
       "get": {
         "tags": [
@@ -1739,22 +1747,11 @@
               "$ref": "#/definitions/PrivateEndpointConnection"
             }
           },
+          "202": {
+            "description": "The operation was accepted and will be performed in the background."
+          },
           "204": {
             "description": "The operation was successful."
-          },
-          "202": {
-            "description": "The operation will be completed asynchronously.",
-            "headers": {
-              "Location": {
-                "description": "The URL of the resource used to check the status of the asynchronous operation.",
-                "type": "string"
-              },
-              "Retry-After": {
-                "description": "Suggested delay to check the status of the asynchronous operation. The value is an integer that represents the seconds.",
-                "type": "integer",
-                "format": "int32"
-              }
-            }
           },
           "default": {
             "description": "Error response describing why the operation failed.",
@@ -1763,7 +1760,10 @@
             }
           }
         },
-        "x-ms-long-running-operation": true
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation"
+        }
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/pools": {
@@ -1931,8 +1931,7 @@
               "$ref": "#/definitions/CloudError"
             }
           }
-        },
-        "x-ms-long-running-operation": true
+        }
       },
       "patch": {
         "tags": [
@@ -2040,9 +2039,6 @@
           "200": {
             "description": "The operation was successful."
           },
-          "204": {
-            "description": "The operation was successful."
-          },
           "202": {
             "description": "The operation will be completed asynchronously.",
             "headers": {
@@ -2057,6 +2053,9 @@
               }
             }
           },
+          "204": {
+            "description": "The operation was successful."
+          },
           "default": {
             "description": "Error response describing why the operation failed.",
             "schema": {
@@ -2064,7 +2063,10 @@
             }
           }
         },
-        "x-ms-long-running-operation": true
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        }
       },
       "get": {
         "tags": [
