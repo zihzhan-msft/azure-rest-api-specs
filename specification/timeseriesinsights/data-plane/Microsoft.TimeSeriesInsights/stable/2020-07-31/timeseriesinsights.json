@@ -1019,6 +1019,426 @@
       }
     }
   },
+  "x-ms-paths": {
+    "/timeseries/query?overload=getEvents": {
+      "post": {
+        "tags": [
+          "Query"
+        ],
+        "operationId": "Query_GetEvents",
+        "description": "Executes A Time Series Query in raw event pages.",
+        "x-ms-examples": {
+          "QueryGetEventsPage1": {
+            "$ref": "./examples/QueryGetEventsPage1.json"
+          },
+          "QueryGetEventsPage2": {
+            "$ref": "./examples/QueryGetEventsPage2.json"
+          },
+          "QueryGetEventsPage3": {
+            "$ref": "./examples/QueryGetEventsPage3.json"
+          },
+          "QueryGetEventsPage4": {
+            "$ref": "./examples/QueryGetEventsPage4.json"
+          },
+          "ColdStoreQueryGetEventsPage1": {
+            "$ref": "./examples/ColdStoreQueryGetEventsPage1.json"
+          },
+          "ColdStoreQueryGetEventsPage2": {
+            "$ref": "./examples/ColdStoreQueryGetEventsPage2.json"
+          },
+          "ColdStoreQueryGetEventsPage3": {
+            "$ref": "./examples/ColdStoreQueryGetEventsPage3.json"
+          },
+          "ColdStoreQueryGetEventsPage4": {
+            "$ref": "./examples/ColdStoreQueryGetEventsPage4.json"
+          },
+          "WarmStoreQueryGetEventsPage1": {
+            "$ref": "./examples/WarmStoreQueryGetEventsPage1.json"
+          },
+          "WarmStoreQueryGetEventsPage2": {
+            "$ref": "./examples/WarmStoreQueryGetEventsPage2.json"
+          },
+          "WarmStoreQueryGetEventsPage3": {
+            "$ref": "./examples/WarmStoreQueryGetEventsPage3.json"
+          },
+          "WarmStoreQueryGetEventsPage4": {
+            "$ref": "./examples/WarmStoreQueryGetEventsPage4.json"
+          },
+          "QueryGetEventsWithTakePage1": {
+            "$ref": "./examples/QueryGetEventsWithTakePage1.json"
+          },
+          "QueryGetEventsWithTakePage2": {
+            "$ref": "./examples/QueryGetEventsWithTakePage2.json"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersion"
+          },
+          {
+            "$ref": "#/parameters/StoreType"
+          },
+          {
+            "$ref": "#/parameters/ContinuationToken"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/QueryGetEventsRequest"
+            },
+            "description": "Time series query request body."
+          },
+          {
+            "$ref": "#/parameters/ClientRequestId"
+          },
+          {
+            "$ref": "#/parameters/ClientSessionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful query.",
+            "schema": {
+              "$ref": "#/definitions/QueryResultPage"
+            },
+            "headers": {
+              "x-ms-request-id": {
+                "x-ms-client-name": "serverRequestId",
+                "type": "string",
+                "description": "Server-generated request ID. Can be used to contact support to investigate a request."
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error.",
+            "schema": {
+              "$ref": "#/definitions/TsiError"
+            },
+            "headers": {
+              "x-ms-request-id": {
+                "x-ms-client-name": "serverRequestId",
+                "type": "string",
+                "description": "Server-generated request ID. Can be used to contact support to investigate a request."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/timeseries/query?overload=getSeries": {
+      "post": {
+        "tags": [
+          "Query"
+        ],
+        "operationId": "Query_GetSeries",
+        "description": "Executes Time Series Query in pages of series results.",
+        "x-ms-examples": {
+          "QueryGetSeriesPage1": {
+            "$ref": "./examples/QueryGetSeriesPage1.json"
+          },
+          "QueryGetSeriesPage2": {
+            "$ref": "./examples/QueryGetSeriesPage2.json"
+          },
+          "QueryGetSeriesPage3": {
+            "$ref": "./examples/QueryGetSeriesPage3.json"
+          },
+          "QueryGetSeriesWithTakePage1": {
+            "$ref": "./examples/QueryGetSeriesWithTakePage1.json"
+          },
+          "QueryGetSeriesWithTakePage2": {
+            "$ref": "./examples/QueryGetSeriesWithTakePage2.json"
+          },
+          "ColdStoreQueryGetSeriesPage1": {
+            "$ref": "./examples/ColdStoreQueryGetSeriesPage1.json"
+          },
+          "ColdStoreQueryGetSeriesPage2": {
+            "$ref": "./examples/ColdStoreQueryGetSeriesPage2.json"
+          },
+          "ColdStoreQueryGetSeriesPage3": {
+            "$ref": "./examples/ColdStoreQueryGetSeriesPage3.json"
+          },
+          "WarmStoreQueryGetSeriesPage1": {
+            "$ref": "./examples/WarmStoreQueryGetSeriesPage1.json"
+          },
+          "WarmStoreQueryGetSeriesPage2": {
+            "$ref": "./examples/WarmStoreQueryGetSeriesPage2.json"
+          },
+          "WarmStoreQueryGetSeriesPage3": {
+            "$ref": "./examples/WarmStoreQueryGetSeriesPage3.json"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersion"
+          },
+          {
+            "$ref": "#/parameters/StoreType"
+          },
+          {
+            "$ref": "#/parameters/ContinuationToken"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/QueryGetSeriesRequest"
+            },
+            "description": "Time series query request body."
+          },
+          {
+            "$ref": "#/parameters/ClientRequestId"
+          },
+          {
+            "$ref": "#/parameters/ClientSessionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful query.",
+            "schema": {
+              "$ref": "#/definitions/QueryResultPage"
+            },
+            "headers": {
+              "x-ms-request-id": {
+                "x-ms-client-name": "serverRequestId",
+                "type": "string",
+                "description": "Server-generated request ID. Can be used to contact support to investigate a request."
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error.",
+            "schema": {
+              "$ref": "#/definitions/TsiError"
+            },
+            "headers": {
+              "x-ms-request-id": {
+                "x-ms-client-name": "serverRequestId",
+                "type": "string",
+                "description": "Server-generated request ID. Can be used to contact support to investigate a request."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/timeseries/query?overload=getAggregateSeries": {
+      "post": {
+        "tags": [
+          "Query"
+        ],
+        "operationId": "Query_GetAggregateSeries",
+        "description": "Executes Time Series Query in pages of aggregate series results.",
+        "x-ms-examples": {
+          "QueryAggregateSeriesPage1": {
+            "$ref": "./examples/QueryAggregateSeriesPage1.json"
+          },
+          "QueryAggregateSeriesPage2": {
+            "$ref": "./examples/QueryAggregateSeriesPage2.json"
+          },
+          "ColdStoreQueryAggregateSeriesPage1": {
+            "$ref": "./examples/ColdStoreQueryAggregateSeriesPage1.json"
+          },
+          "ColdStoreQueryAggregateSeriesPage2": {
+            "$ref": "./examples/ColdStoreQueryAggregateSeriesPage2.json"
+          },
+          "WarmStoreQueryAggregateSeriesPage": {
+            "$ref": "./examples/WarmStoreQueryAggregateSeriesPage.json"
+          },
+          "QueryAggregateSeriesWithSampleInterpolation": {
+            "$ref": "./examples/QueryAggregateSeriesWithSampleInterpolation.json"
+          },
+          "QueryAggregateSeriesWithCategoricalVariable": {
+            "$ref": "./examples/QueryAggregateSeriesWithCategoricalVariable.json"
+          },
+          "QueryAggregateSeriesWithCategoricalInterpolatedVariable": {
+            "$ref": "./examples/QueryAggregateSeriesWithCategoricalInterpolatedVariable.json"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersion"
+          },
+          {
+            "$ref": "#/parameters/StoreType"
+          },
+          {
+            "$ref": "#/parameters/ContinuationToken"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/QueryGetAggregatedSeriesRequest"
+            },
+            "description": "Time series query request body."
+          },
+          {
+            "$ref": "#/parameters/ClientRequestId"
+          },
+          {
+            "$ref": "#/parameters/ClientSessionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful query.",
+            "schema": {
+              "$ref": "#/definitions/QueryResultPage"
+            },
+            "headers": {
+              "x-ms-request-id": {
+                "x-ms-client-name": "serverRequestId",
+                "type": "string",
+                "description": "Server-generated request ID. Can be used to contact support to investigate a request."
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error.",
+            "schema": {
+              "$ref": "#/definitions/TsiError"
+            },
+            "headers": {
+              "x-ms-request-id": {
+                "x-ms-client-name": "serverRequestId",
+                "type": "string",
+                "description": "Server-generated request ID. Can be used to contact support to investigate a request."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/timeseries/instances/$batch?overload=getInstancesByIds": {
+      "post": {
+        "tags": [
+          "TimeSeriesInstances"
+        ],
+        "operationId": "TimeSeriesInstances_GetInstancesByIds",
+        "description": "Get Time Series instances for the provided Time Series Ids.",
+        "x-ms-examples": {
+          "InstancesBatchGetByIds": {
+            "$ref": "./examples/InstancesBatchGetByIds.json"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersion"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/InstancesBatchGetByIdsRequest"
+            },
+            "description": "Time series get instances by Ids request body."
+          },
+          {
+            "$ref": "#/parameters/ClientRequestId"
+          },
+          {
+            "$ref": "#/parameters/ClientSessionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation.",
+            "schema": {
+              "$ref": "#/definitions/InstancesBatchResponse"
+            },
+            "headers": {
+              "x-ms-request-id": {
+                "x-ms-client-name": "serverRequestId",
+                "type": "string",
+                "description": "Server-generated request ID. Can be used to contact support to investigate a request."
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error.",
+            "schema": {
+              "$ref": "#/definitions/TsiError"
+            },
+            "headers": {
+              "x-ms-request-id": {
+                "x-ms-client-name": "serverRequestId",
+                "type": "string",
+                "description": "Server-generated request ID. Can be used to contact support to investigate a request."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/timeseries/instances/$batch?overload=getInstancesByNames": {
+      "post": {
+        "tags": [
+          "TimeSeriesInstances"
+        ],
+        "operationId": "TimeSeriesInstances_GetInstancesByNames",
+        "description": "Get Time Series instances for the provided Time Series names.",
+        "x-ms-examples": {
+          "InstancesBatchGetByNames": {
+            "$ref": "./examples/InstancesBatchGetByNames.json"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersion"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/InstancesBatchGetByNamesRequest"
+            },
+            "description": "Time series get instances by names request body."
+          },
+          {
+            "$ref": "#/parameters/ClientRequestId"
+          },
+          {
+            "$ref": "#/parameters/ClientSessionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation.",
+            "schema": {
+              "$ref": "#/definitions/InstancesBatchResponse"
+            },
+            "headers": {
+              "x-ms-request-id": {
+                "x-ms-client-name": "serverRequestId",
+                "type": "string",
+                "description": "Server-generated request ID. Can be used to contact support to investigate a request."
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error.",
+            "schema": {
+              "$ref": "#/definitions/TsiError"
+            },
+            "headers": {
+              "x-ms-request-id": {
+                "x-ms-client-name": "serverRequestId",
+                "type": "string",
+                "description": "Server-generated request ID. Can be used to contact support to investigate a request."
+              }
+            }
+          }
+        }
+      }
+    }    
+  },
   "definitions": {
     "AvailabilityResponse": {
       "description": "Response of Get Availability operation. When environment has no data, availability property is null.",
@@ -1095,6 +1515,36 @@
           "description": "Get Series query. Allows to retrieve time series of calculated variable values from events for a given Time Series ID and search span.",
           "$ref": "#/definitions/GetSeries"
         },
+        "aggregateSeries": {
+          "description": "Aggregate Series query. Allows to calculate an aggregated time series from events for a given Time Series ID and search span.",
+          "$ref": "#/definitions/AggregateSeries"
+        }
+      }
+    },
+    "QueryGetEventsRequest": {
+      "type": "object",
+      "description": "Request to execute a get raw events operation on a time series environment.",
+      "properties": {
+        "getEvents": {
+          "description": "Get Events query. Allows to retrieve raw events for a given Time Series ID and search span.",
+          "$ref": "#/definitions/GetEvents"
+        }
+      }
+    },
+    "QueryGetSeriesRequest": {
+      "type": "object",
+      "description": "Request to execute a get series operation on a time series environment.",
+      "properties": {
+        "getSeries": {
+          "description": "Get Series query. Allows to retrieve time series of calculated variable values from events for a given Time Series ID and search span.",
+          "$ref": "#/definitions/GetSeries"
+        }
+      }
+    },
+    "QueryGetAggregatedSeriesRequest": {
+      "type": "object",
+      "description": "Request to execute a get aggregated series operation on a time series environment.",
+      "properties": {
         "aggregateSeries": {
           "description": "Aggregate Series query. Allows to calculate an aggregated time series from events for a given Time Series ID and search span.",
           "$ref": "#/definitions/AggregateSeries"
@@ -1260,6 +1710,7 @@
           "type": "object",
           "properties": {
             "span": {
+              "description": "<Need description here>",
               "type": "string",
               "format": "duration"
             }
@@ -1358,6 +1809,7 @@
               "$ref": "#/definitions/Interpolation"
             },
             "categories": {
+              "description": "<This property needs a description>",
               "type": "array",
               "items": {
                 "$ref": "#/definitions/TimeSeriesAggregateCategory"
@@ -1568,6 +2020,26 @@
         }
       }
     },
+    "InstancesBatchGetByIdsRequest": {
+      "description": "Request to get instances by Time Series Ids.",
+      "type": "object",
+      "properties": {
+        "get": {
+          "description": "Time series IDs of time series instances to return.",
+          "$ref": "#/definitions/InstancesRequestBatchByIds"
+        }
+      }
+    },
+    "InstancesBatchGetByNamesRequest": {
+      "description": "Request to get instances by Time Series names.",
+      "type": "object",
+      "properties": {
+        "get": {
+          "description": "Time series names of time series instances to return.",
+          "$ref": "#/definitions/InstancesRequestBatchByNames"
+        }
+      }
+    },
     "InstancesRequestBatchGetOrDelete": {
       "description": "Request to get or delete instances by time series IDs or time series names. Exactly one of \"timeSeriesIds\" or \"names\" must be set.",
       "type": "object",
@@ -1581,6 +2053,32 @@
         },
         "names": {
           "description": "List of names of the time series instances to return or delete.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "InstancesRequestBatchByIds": {
+      "description": "Batch request by time series IDs.",
+      "type": "object",
+      "properties": {
+        "timeSeriesIds": {
+          "description": "List of time series IDs.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TimeSeriesId"
+          }
+        }
+      }
+    },
+    "InstancesRequestBatchByNames": {
+      "description": "Batch request by time series names",
+      "type": "object",
+      "properties": {
+        "names": {
+          "description": "List of Time Series names.",
           "type": "array",
           "items": {
             "type": "string"
