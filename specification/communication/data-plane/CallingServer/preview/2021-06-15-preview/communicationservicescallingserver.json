@@ -5,9 +5,6 @@
     "title": "Azure Communication CallingServer Service",
     "description": "Azure Communication CallingServer Service"
   },
-  "schemes": [
-    "https"
-  ],
   "consumes": [
     "application/json"
   ],
